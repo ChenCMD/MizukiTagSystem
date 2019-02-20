@@ -1,4 +1,4 @@
-tellraw @a [{"selector":"@e[tag=SM,nbt={FallDistance:138204.6f}]","color":"green"},{"text":" loaded.","color":"green"}]
+tellraw @a [{"selector":"@e[tag=SM,nbt={FallDistance:138204.6f}]","color":"green"},{"text":" loaded.","color":"gold"}]
 tellraw @a[tag=OP] [{"text":"[Chen'sSystem] ","color":"aqua"},{"text":"LoadingSystem","color":"green"},{"text":" : ","color":"white"},{"text":"VeryGood.","color":"green"}]
 execute if entity @e[tag=SM,nbt={FallDistance:138204.6f}] run tellraw @a[tag=OP] [{"text":"[Chen'sSystem] ","color":"aqua"},{"text":"MemorySystem","color":"green"},{"text":" : ","color":"white"},{"text":"VeryGood.","color":"green"}]
 execute unless entity @e[tag=SM,nbt={FallDistance:138204.6f}] run tellraw @a[tag=OP] [{"text":"[Chen'sSystem] ","color":"aqua"},{"text":"MemorySystem","color":"green"},{"text":" : ","color":"white"},{"text":"Error!","color":"red"}]
