@@ -9,6 +9,7 @@ give @s minecraft:arrow
 execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},tag=!NoSkillMode] run function system:skill/skill_set
 execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},tag=HideMode] run effect give @s invisibility 999999 0 true
 effect clear @s minecraft:weakness
+effect clear @s minecraft:glowing
 function system:main/effect
 xp set @s 0 levels
 tp @s @e[sort=random,tag=HunterSpawnPoint,limit=1]
