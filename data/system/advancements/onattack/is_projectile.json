@@ -1,0 +1,36 @@
+{
+    "display": {
+        "title": "ArrowHit",
+        "description": "",
+        "icon": {
+            "item": "minecraft:arrow"
+        },
+        "background": "minecraft:textures/block/quartz_block_top.png",
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": false
+    },
+    "criteria": {
+        "onAttack": {
+            "trigger": "minecraft:player_hurt_entity",
+            "conditions": {
+                "damage": {
+                    "type": {
+                        "bypasses_magic": false,
+                        "is_explosion": false,
+                        "is_fire": false,
+                        "is_magic": false,
+                        "is_projectile": true,
+                        "direct_entity": {
+                            "type": "arrow"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "system:main/job_systems/calc/arrow_attack"
+    }
+}

@@ -1,0 +1,37 @@
+{
+    "display": {
+        "title": "onDamage",
+        "description": "",
+        "icon": {
+            "item": "minecraft:arrow"
+        },
+        "background": "minecraft:textures/block/quartz_block_top.png",
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "onDamage": {
+            "trigger": "minecraft:entity_hurt_player",
+            "conditions": {
+                "damage": {
+                    "type": {
+                        "bypasses_magic": false,
+                        "is_explosion": false,
+                        "is_fire": false,
+                        "is_magic": false,
+                        "is_projectile": true,
+                        "direct_entity": {
+                            "type": "arrow",
+                            "nbt": "{life:1s}"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "system:main/job_systems/calc/arrow_health"
+    }
+}

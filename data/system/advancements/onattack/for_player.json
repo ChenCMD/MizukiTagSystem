@@ -1,0 +1,37 @@
+{
+    "display": {
+        "title": "onAttack",
+        "description": "",
+        "icon": {
+            "item": "minecraft:diamond_sword"
+        },
+        "background": "minecraft:textures/block/quartz_block_top.png",
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "onAttack": {
+            "trigger": "minecraft:player_hurt_entity",
+            "conditions": {
+                "damage": {
+                    "type": {
+                        "bypasses_magic": false,
+                        "is_explosion": false,
+                        "is_fire": false,
+                        "is_magic": false,
+                        "is_projectile": false,
+                        "direct_entity": {
+                            "type": "player",
+                            "nbt": "{SelectedItem:{tag:{isWeapon:1b}}}"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "system:main/job_systems/calc/attack"
+    }
+}

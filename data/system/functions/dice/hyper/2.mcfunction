@@ -1,0 +1,1 @@
+give @s minecraft:clock{display:{Name:"{\"text\":\"はいタンマ～\",\"color\":\"yellow\",\"italic\":false}",Lore:["§eインベントリにあるだけで体力が0になった際","§e無かったことにして復活する"]},Enchantments:[{id:"sharpness",lvl:1}],HideFlags:63}

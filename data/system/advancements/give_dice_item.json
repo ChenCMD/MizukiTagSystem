@@ -1,0 +1,25 @@
+{
+    "display": {
+        "title": "Dice Item",
+        "description": "",
+        "icon": {
+            "item": "minecraft:chest"
+        },
+        "background": "minecraft:textures/block/quartz_block_top.png",
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "imp": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "rewards": {
+        "loot": [
+            "system:dice/item"
+        ],
+        "function": "system:dice/reset"
+    }
+}
