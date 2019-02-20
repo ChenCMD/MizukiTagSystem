@@ -7,8 +7,8 @@ execute at @s run summon armor_stand ~ ~0.5 ~ {Tags:["FacingTP"],NoGravity:1b,Sm
 execute store result entity @e[tag=FacingTP,limit=1] Rotation[0] float 1 run data get entity @s Rotation[0]
 execute as @e[tag=FacingTP,limit=1] at @s run tp @s ~ ~ ~ ~ 0
 execute as @e[tag=FacingTP,limit=1] at @s if block ~ ~ ~ #system:targets if block ^ ^ ^0.2 #system:targets if block ^ ^1 ^0.2 #system:targets run function system:skill/escape/teleport/loop
+execute as @e[tag=FacingTP,limit=1] at @s if block ~ ~-0.5 ~ #system:targets run tp @s ~ ~-0.5 ~
 execute as @e[tag=FacingTP,limit=1] at @s unless block ~ ~ ~ #system:notp align xz positioned ~0.5 ~ ~0.5 run tp @s ~ ~ ~
-execute as @e[tag=FacingTP,limit=1] at @s unless block ~ ~-0.5 ~ #system:targets run tp @s ~ ~-0.5 ~
 execute at @s run playsound minecraft:entity.enderman.teleport ambient @a ~ ~ ~ 1.2 1
 execute store result entity @e[tag=FacingTP,limit=1] Rotation[1] float 1 run data get entity @s Rotation[1]
 tp @s @e[tag=FacingTP,limit=1]
