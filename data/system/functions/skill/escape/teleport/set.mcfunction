@@ -14,4 +14,4 @@ execute store result entity @e[tag=FacingTP,limit=1] Rotation[1] float 1 run dat
 tp @s @e[tag=FacingTP,limit=1]
 execute at @s run playsound minecraft:entity.enderman.teleport ambient @a ~ ~ ~ 1.2 1
 kill @e[tag=FacingTP,limit=1]
-xp add @s 60 levels
+xp add @s 80 levels

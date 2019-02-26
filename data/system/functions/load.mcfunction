@@ -61,7 +61,7 @@ execute as @a[scores={use_hide=1..}] run function system:skill/escape/hide/use
 execute as @a[scores={InvisibleArmor=1..}] run function system:skill/escape/hide/act
 
 #スキル処理: テレポート#######################################################################################
-give @a[tag=TeleportRemove,team=!Wait] minecraft:ender_eye{HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§5テレポート\"",Lore:["§f25m前方向にテレポートする","§f途中に貫通できないブロックがあった場合そこで止まる","§aCT§f: §b100秒"]}}
+give @a[tag=TeleportRemove,team=!Wait] minecraft:ender_eye{HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§5テレポート\"",Lore:["§f25m前方向にテレポートする","§f途中に貫通できないブロックがあった場合そこで止まる","§aCT§f: §b80秒"]}}
 tag @a[tag=TeleportRemove] remove TeleportRemove
 execute as @a[team=!Died,scores={use_teleport=1..}] run tellraw @a[team=OP,tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"selector":"@s","color":"dark_aqua"},{"text":" is Use Teleport","color":"dark_aqua"}]
 execute as @a[scores={use_teleport=1..}] run function system:skill/escape/teleport/use
@@ -99,8 +99,8 @@ execute as @a[team=!Died,scores={use_arrow_c=1..}] run tellraw @a[team=OP,tag=De
 execute as @a[scores={use_arrow_c=1..}] run function system:skill/hunter/chase_arrow/use
 execute as @e[tag=Arrow_Chase,type=arrow] at @s run function system:skill/hunter/chase_arrow/act
 
-#トラップ
-give @a[tag=TrapRemove,team=Hunter] minecraft:black_carpet{HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§8トラップ\"",Lore:["§aトラップを設置する","§a範囲§f: §b3x3","§a効果§f: §c鈍足/盲目/不運/発光 (0:05)","§a威力§f: §c35ダメージ","§aCT§f: §b15秒 §f| §a消滅§f: §b120秒"]}}
+#トラップ # "§a威力§f: §c35ダメージ",
+give @a[tag=TrapRemove,team=Hunter] minecraft:black_carpet{HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§8トラップ\"",Lore:["§aトラップを設置する","§a範囲§f: §b3x3","§a効果§f: §c鈍足/盲目/不運/発光 (0:05)","§aCT§f: §b15秒 §f| §a消滅§f: §b120秒"]}}
 tag @a[tag=TrapRemove] remove TrapRemove
 execute as @a[team=!Died,scores={use_trap=1..}] run tellraw @a[team=OP,tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"selector":"@s","color":"dark_aqua"},{"text":" is Use Trap","color":"dark_aqua"}]
 execute as @a[scores={use_trap=1..}] run function system:skill/hunter/trap/use
@@ -197,6 +197,9 @@ tag @e[tag=!NoKill,type=item,nbt=!{Item:{tag:{NoKill:1b}}},nbt=!{Item:{id:"minec
 tag @e[type=arrow,nbt={inGround:true}] add kill
 tag @e[type=spectral_arrow,nbt={inGround:true}] add kill
 kill @e[tag=kill,type=!player]
+
+execute as @a[scores={Trigger=1..}] run function system:main/stats_view
+scoreboard players enable @a Trigger
 
 
 advancement revoke @a only system:onattack/for_player
