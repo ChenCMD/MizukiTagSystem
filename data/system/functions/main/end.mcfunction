@@ -16,7 +16,6 @@ tag @e[tag=SM,nbt={FallDistance:138204.6f}] remove GameStartCount
 tag @s remove ChaseArrowReady
 tag @s remove GravityArrowReady
 xp set @a 0 levels
-scoreboard players reset @e[tag=SM,nbt={FallDistance:138204.6f}] Jailbreaked
 scoreboard players reset @e[tag=SM,nbt={FallDistance:138204.6f}] GameStartCount
 execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},scores={UseRuleSelect=3}] run scoreboard players set @a[team=Died] Winstroke 0
 execute as @a[team=Escape]
