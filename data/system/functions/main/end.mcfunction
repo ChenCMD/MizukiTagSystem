@@ -17,6 +17,7 @@ tag @a remove ChaseArrowReady
 tag @a remove GravityArrowReady
 xp set @a 0 levels
 scoreboard players reset @s GameStartCount
+scoreboard players add @s GameCount 1
 execute if entity @s[scores={UseRuleSelect=3}] run scoreboard players set @a[team=Died] Winstroke 0
 scoreboard players set @a Health 999999
 tag @a remove GamePlayer

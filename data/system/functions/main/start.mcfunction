@@ -11,6 +11,8 @@ bossbar set mizuki:time players @a
 scoreboard players set @s END_COUNT 1
 #参加者にタグ付与
 tag @a[gamemode=!spectator,team=!OP] add GamePlayer
+#ゲーム回数をプレイヤーにコピー
+scoreboard players operation @a GameCount = @s GameCount
 #ゲームモード変更
 gamemode adventure @a[gamemode=!spectator,team=!OP]
 #全員逃走者join
