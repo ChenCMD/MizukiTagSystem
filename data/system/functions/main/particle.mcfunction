@@ -1,1 +1,0 @@
-execute if entity @s[scores={isParticle=1}] run particle minecraft:witch ~ ~ ~ 0.02 0.02 0.02 0.1 3 force
