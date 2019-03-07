@@ -12,16 +12,15 @@ kill @e[tag=Landmine]
 kill @e[tag=Totem]
 kill @e[tag=Flash]
 tp @a[team=!Wait] 1237.5 201.5 684.5
-tag @e[tag=SM,nbt={FallDistance:138204.6f}] remove GameStartCount
-tag @s remove ChaseArrowReady
-tag @s remove GravityArrowReady
+tag @s[tag=SM,nbt={FallDistance:138204.6f}] remove GameStartCount
+tag @a remove ChaseArrowReady
+tag @a remove GravityArrowReady
 xp set @a 0 levels
-scoreboard players reset @e[tag=SM,nbt={FallDistance:138204.6f}] GameStartCount
-execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},scores={UseRuleSelect=3}] run scoreboard players set @a[team=Died] Winstroke 0
-execute as @a[team=Escape]
+scoreboard players reset @s GameStartCount
+execute if entity @s[scores={UseRuleSelect=3}] run scoreboard players set @a[team=Died] Winstroke 0
 scoreboard players set @a Health 999999
 tag @a remove GamePlayer
 team join Wait @a[team=!OP]
-tag @e[tag=SM,nbt={FallDistance:138204.6f}] remove GameTime_Yes
+tag @s remove GameTime_Yes
 scoreboard players operation @s GameTimeB = @s GameTimeC
 bossbar set mizuki:time players
