@@ -21,6 +21,7 @@ execute if entity @s[scores={UseRuleSelect=3}] run scoreboard players set @a[tea
 scoreboard players set @a Health 999999
 tag @a remove GamePlayer
 team join Wait @a[team=!OP]
+tag @s remove GameRN
 tag @s remove GameTime_Yes
 scoreboard players operation @s GameTimeB = @s GameTimeC
 bossbar set mizuki:time players

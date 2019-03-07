@@ -62,5 +62,7 @@ execute as @a[team=Escape] run tp @s @e[sort=random,tag=EscapeSpawnPoint,limit=1
 execute as @a[team=Hunter] run tp @s @e[sort=random,tag=HunterSpawnPoint,limit=1]
 #スタートフラグ設定
 tag @s add GameStartCount
+#ゲーム中フラグ
+tag @s add GameRN
 #一応のtitle time設定
 title @a times 5 20 5
