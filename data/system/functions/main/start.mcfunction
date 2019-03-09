@@ -6,7 +6,9 @@ clear @a minecraft:diamond
 clear @a minecraft:emerald
 #時間関連の設定
 scoreboard players operation @s GameTimeB = @s GameTimeC
-execute store result bossbar mizuki:time max run scoreboard players get @s GameTimeC
+execute store result bossbar mizuki:time/mode1 max run scoreboard players get @s GameTimeC
+execute store result bossbar mizuki:time/mode2 max run scoreboard players get @s GameTimeC
+execute store result bossbar mizuki:time/mode3 max run scoreboard players get @s GameTimeC
 execute if entity @s[scores={UseRuleSelect=1}] run bossbar set mizuki:time/mode1 players @a
 execute if entity @s[scores={UseRuleSelect=2}] run bossbar set mizuki:time/mode2 players @a
 execute if entity @s[scores={UseRuleSelect=3}] run bossbar set mizuki:time/mode3 players @a
