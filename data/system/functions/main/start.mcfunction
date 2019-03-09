@@ -7,7 +7,9 @@ clear @a minecraft:emerald
 #時間関連の設定
 scoreboard players operation @s GameTimeB = @s GameTimeC
 execute store result bossbar mizuki:time max run scoreboard players get @s GameTimeC
-bossbar set mizuki:time players @a
+execute if entity @s[scores={UseRuleSelect=1}] run bossbar set mizuki:time/mode/1 players @a
+execute if entity @s[scores={UseRuleSelect=2}] run bossbar set mizuki:time/mode/2 players @a
+execute if entity @s[scores={UseRuleSelect=3}] run bossbar set mizuki:time/mode/3 players @a
 scoreboard players set @s END_COUNT 1
 #参加者にタグ付与
 tag @a[gamemode=!spectator,team=!OP] add GamePlayer

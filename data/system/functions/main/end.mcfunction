@@ -25,4 +25,6 @@ team join Wait @a[team=!OP]
 tag @s remove GameRN
 tag @s remove GameTime_Yes
 scoreboard players operation @s GameTimeB = @s GameTimeC
-bossbar set mizuki:time players
+bossbar set mizuki:time/mode/1 players
+bossbar set mizuki:time/mode/2 players
+bossbar set mizuki:time/mode/3 players
