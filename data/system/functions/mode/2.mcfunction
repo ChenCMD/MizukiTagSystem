@@ -6,7 +6,7 @@ give @s[scores={TotalKill=0..99}] minecraft:stick{isWeapon:1b,display:{Name:"\"�
 give @s[scores={TotalKill=100..}] minecraft:blaze_rod{isWeapon:1b,display:{Name:"\"§6警棒\"",Lore:["§e100人以上を捕まえた人のみが","§e扱える警棒","§e金色に輝いている..."]},HideFlags:61,AttributeModifiers:[{AttributeName:"generic.attackSpeed",Name:"generic.attackSpeed",Amount:1,Operation:0,UUIDLeast:310539,UUIDMost:26428,Slot:"mainhand"}],Enchantments:[{id:"sharpness",lvl:99}],HideFlags:1}
 give @s minecraft:bow{Unbreakable:1,HideFlags:63,display:{Lore:["§a矢が戻ってこない場合弓を投げてください"]}}
 give @s minecraft:arrow
-execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},tag=!NoSkillMode] run function system:skill/skill_set
+execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},tag=!NoSkillMode] run function system:skill/skill_set_once
 execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},tag=HideMode] run effect give @s invisibility 999999 0 true
 effect clear @s minecraft:weakness
 effect clear @s minecraft:glowing
