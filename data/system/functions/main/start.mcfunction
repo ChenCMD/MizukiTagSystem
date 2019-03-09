@@ -29,6 +29,12 @@ execute if entity @s[scores={PlayerCount-AA=4}] if score @s UTSTCount < @s Playe
 execute if entity @s[scores={PlayerCount-AA=5}] if score @s UTSTCount < @s PlayerCount-AA run team join Hunter @a[sort=random,limit=5,gamemode=!spectator,team=!OP]
 execute if entity @s[scores={PlayerCount-AA=6}] if score @s UTSTCount < @s PlayerCount-AA run team join Hunter @a[sort=random,limit=6,gamemode=!spectator,team=!OP]
 execute if entity @s[scores={PlayerCount-AA=7}] if score @s UTSTCount < @s PlayerCount-AA run team join Hunter @a[sort=random,limit=7,gamemode=!spectator,team=!OP]
+execute if entity @s[scores={PlayerCount-AA=8}] if score @s UTSTCount < @s PlayerCount-AA run team join Hunter @a[sort=random,limit=8,gamemode=!spectator,team=!OP]
+execute if entity @s[scores={PlayerCount-AA=9}] if score @s UTSTCount < @s PlayerCount-AA run team join Hunter @a[sort=random,limit=9,gamemode=!spectator,team=!OP]
+execute if entity @s[scores={PlayerCount-AA=10}] if score @s UTSTCount < @s PlayerCount-AA run team join Hunter @a[sort=random,limit=10,gamemode=!spectator,team=!OP]
+execute if entity @s[scores={PlayerCount-AA=11}] if score @s UTSTCount < @s PlayerCount-AA run team join Hunter @a[sort=random,limit=11,gamemode=!spectator,team=!OP]
+execute if entity @s[scores={PlayerCount-AA=12}] if score @s UTSTCount < @s PlayerCount-AA run team join Hunter @a[sort=random,limit=12,gamemode=!spectator,team=!OP]
+execute if entity @s[scores={PlayerCount-AA=13}] if score @s UTSTCount < @s PlayerCount-AA run team join Hunter @a[sort=random,limit=13,gamemode=!spectator,team=!OP]
 execute if entity @s[scores={PlayerCount-AA=1}] if score @s UTSTCount >= @s PlayerCount-AA if entity @a[scores={UseTeamSelect=2}] if score @s PlayerCount-AA matches 1 run team join Hunter @a[sort=random,limit=1,scores={UseTeamSelect=2},gamemode=!spectator,team=!OP]
 execute if entity @s[scores={PlayerCount-AA=2}] if score @s UTSTCount >= @s PlayerCount-AA if entity @a[scores={UseTeamSelect=2}] if score @s PlayerCount-AA matches 2 run team join Hunter @a[sort=random,limit=2,scores={UseTeamSelect=2},gamemode=!spectator,team=!OP]
 execute if entity @s[scores={PlayerCount-AA=3}] if score @s UTSTCount >= @s PlayerCount-AA if entity @a[scores={UseTeamSelect=2}] if score @s PlayerCount-AA matches 3 run team join Hunter @a[sort=random,limit=3,scores={UseTeamSelect=2},gamemode=!spectator,team=!OP]
@@ -36,6 +42,12 @@ execute if entity @s[scores={PlayerCount-AA=4}] if score @s UTSTCount >= @s Play
 execute if entity @s[scores={PlayerCount-AA=5}] if score @s UTSTCount >= @s PlayerCount-AA if entity @a[scores={UseTeamSelect=2}] if score @s PlayerCount-AA matches 5 run team join Hunter @a[sort=random,limit=5,scores={UseTeamSelect=2},gamemode=!spectator,team=!OP]
 execute if entity @s[scores={PlayerCount-AA=6}] if score @s UTSTCount >= @s PlayerCount-AA if entity @a[scores={UseTeamSelect=2}] if score @s PlayerCount-AA matches 6 run team join Hunter @a[sort=random,limit=6,scores={UseTeamSelect=2},gamemode=!spectator,team=!OP]
 execute if entity @s[scores={PlayerCount-AA=7}] if score @s UTSTCount >= @s PlayerCount-AA if entity @a[scores={UseTeamSelect=2}] if score @s PlayerCount-AA matches 7 run team join Hunter @a[sort=random,limit=7,scores={UseTeamSelect=2},gamemode=!spectator,team=!OP]
+execute if entity @s[scores={PlayerCount-AA=8}] if score @s UTSTCount >= @s PlayerCount-AA if entity @a[scores={UseTeamSelect=2}] if score @s PlayerCount-AA matches 2 run team join Hunter @a[sort=random,limit=8,scores={UseTeamSelect=2},gamemode=!spectator,team=!OP]
+execute if entity @s[scores={PlayerCount-AA=9}] if score @s UTSTCount >= @s PlayerCount-AA if entity @a[scores={UseTeamSelect=2}] if score @s PlayerCount-AA matches 3 run team join Hunter @a[sort=random,limit=9,scores={UseTeamSelect=2},gamemode=!spectator,team=!OP]
+execute if entity @s[scores={PlayerCount-AA=10}] if score @s UTSTCount >= @s PlayerCount-AA if entity @a[scores={UseTeamSelect=2}] if score @s PlayerCount-AA matches 4 run team join Hunter @a[sort=random,limit=10,scores={UseTeamSelect=2},gamemode=!spectator,team=!OP]
+execute if entity @s[scores={PlayerCount-AA=11}] if score @s UTSTCount >= @s PlayerCount-AA if entity @a[scores={UseTeamSelect=2}] if score @s PlayerCount-AA matches 5 run team join Hunter @a[sort=random,limit=11,scores={UseTeamSelect=2},gamemode=!spectator,team=!OP]
+execute if entity @s[scores={PlayerCount-AA=12}] if score @s UTSTCount >= @s PlayerCount-AA if entity @a[scores={UseTeamSelect=2}] if score @s PlayerCount-AA matches 6 run team join Hunter @a[sort=random,limit=12,scores={UseTeamSelect=2},gamemode=!spectator,team=!OP]
+execute if entity @s[scores={PlayerCount-AA=13}] if score @s UTSTCount >= @s PlayerCount-AA if entity @a[scores={UseTeamSelect=2}] if score @s PlayerCount-AA matches 7 run team join Hunter @a[sort=random,limit=13,scores={UseTeamSelect=2},gamemode=!spectator,team=!OP]
 #逃走者弱体化付与
 effect give @a[team=Escape] minecraft:weakness 999999 99 true
 effect give @a[team=Escape] minecraft:resistance 999999 4 true
