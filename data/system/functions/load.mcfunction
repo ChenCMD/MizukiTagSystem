@@ -19,13 +19,13 @@ execute as @e[tag=MenuPos] at @s if block ~1 ~-1 ~ minecraft:redstone_wire[power
 execute as @a[scores={SignTrigger=1..}] run function system:main/job_systems/sign_trigger
 
 #システムサポートサブ処理#####################################################################################
-execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},tag=HideMode] as @a[team=Hunter] at @s run particle block minecraft:black_wool ~ ~0.1 ~ 0.2 0 0.2 1 1 force @a
+execute if entity @e[tag=SM,tag=HideMode] as @a[team=Hunter] at @s run particle block minecraft:black_wool ~ ~0.1 ~ 0.2 0 0.2 1 1 force @a
 
 #ドアシステム#################################################################################################
-scoreboard players add @e[tag=SM,nbt={FallDistance:138204.6f},scores={Door=1..80}] Door 1
-execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},scores={Door=1..80}] run function system:door/open
-scoreboard players add @e[tag=SM,nbt={FallDistance:138204.6f},scores={Door=101..180}] Door 1
-execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},scores={Door=101..180}] run function system:door/close
+scoreboard players add @e[tag=SM,scores={Door=1..80}] Door 1
+execute if entity @e[tag=SM,scores={Door=1..80}] run function system:door/open
+scoreboard players add @e[tag=SM,scores={Door=101..180}] Door 1
+execute if entity @e[tag=SM,scores={Door=101..180}] run function system:door/close
 
 #鬼抽選処理参加|拒否##########################################################################################
 execute as @a[scores={UTST1=1..}] run function system:main/team_select/no
@@ -132,10 +132,10 @@ scoreboard players reset @a Drop_Arrow
 
 
 #Count系変数処理##############################################################################################
-execute if entity @e[tag=!GameStartCount,tag=!GameTime_Yes,tag=SM,nbt={FallDistance:138204.6f}] run scoreboard players set @e[tag=SM,nbt={FallDistance:138204.6f}] UTSTCount 0
-execute if entity @e[tag=!GameStartCount,tag=!GameTime_Yes,tag=SM,nbt={FallDistance:138204.6f}] as @a[scores={UseTeamSelect=2},gamemode=!spectator,team=!OP] run scoreboard players add @e[tag=SM,nbt={FallDistance:138204.6f}] UTSTCount 1
-execute if entity @e[tag=!GameStartCount,tag=!GameTime_Yes,tag=SM,nbt={FallDistance:138204.6f}] run scoreboard players set @e[tag=SM,nbt={FallDistance:138204.6f}] PlayerCount 0
-execute if entity @e[tag=!GameStartCount,tag=!GameTime_Yes,tag=SM,nbt={FallDistance:138204.6f}] as @a[team=Wait,gamemode=!spectator] run scoreboard players add @e[tag=SM,nbt={FallDistance:138204.6f}] PlayerCount 1
+execute if entity @e[tag=!GameStartCount,tag=!GameTime_Yes,tag=SM] run scoreboard players set @e[tag=SM] UTSTCount 0
+execute if entity @e[tag=!GameStartCount,tag=!GameTime_Yes,tag=SM] as @a[scores={UseTeamSelect=2},gamemode=!spectator,team=!OP] run scoreboard players add @e[tag=SM] UTSTCount 1
+execute if entity @e[tag=!GameStartCount,tag=!GameTime_Yes,tag=SM] run scoreboard players set @e[tag=SM] PlayerCount 0
+execute if entity @e[tag=!GameStartCount,tag=!GameTime_Yes,tag=SM] as @a[team=Wait,gamemode=!spectator] run scoreboard players add @e[tag=SM] PlayerCount 1
 
 #鬼ペナ処理
 execute as @a[scores={HunterPenalty=1..}] run function system:mode/penalty
@@ -148,36 +148,36 @@ execute as @a[team=Hunter,tag=ChaseArrowReady,tag=!GravityArrowReady] run functi
 
 execute as @a[team=Escape] run function system:main/job_systems/health
 execute if entity @a[scores={CT=1..}] run function system:main/ct
-execute if entity @e[tag=!GameStartCount,tag=!GameTime_Yes,tag=SM,nbt={FallDistance:138204.6f}] run function system:main/actionbar_mes
+execute if entity @e[tag=!GameStartCount,tag=!GameTime_Yes,tag=SM] run function system:main/actionbar_mes
 
 #自然回復
-execute unless entity @e[tag=SM,nbt={FallDistance:138204.6f},tag=!NoHealthRegen] run function system:main/regen
+execute unless entity @e[tag=SM,tag=!NoHealthRegen] run function system:main/regen
 
 
-execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},scores={UseRuleSelect=3}] run function system:mode/3-a
+execute if entity @e[tag=SM,scores={UseRuleSelect=3}] run function system:mode/3-a
 
 
 #スタートカウントダウン処理 [必要: GameStartCount]########################################################
-execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},tag=GameStartCount] run function system:main/time/start_count
+execute if entity @e[tag=SM,tag=GameStartCount] run function system:main/time/start_count
 
 #制限時間処理 [必要: GameTime_Yes]############################################################################
-execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},tag=GameTime_Yes] run function system:main/time/act
+execute if entity @e[tag=SM,tag=GameTime_Yes] run function system:main/time/act
 
 #ゲーム終了処理確認 [必要: GameEndSystem_Confirm]#############################################################
-execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},tag=GameEndSystem_Confirm] run function system:main/end_check
+execute if entity @e[tag=SM,tag=GameEndSystem_Confirm] run function system:main/end_check
 
 #ディスプレイ同期処理#########################################################################################
-scoreboard players operation §a残り時間 Display = @e[tag=SM,nbt={FallDistance:138204.6f}] GameTimeB
-scoreboard players set @e[tag=SM,nbt={FallDistance:138204.6f}] PlayersCount 0
-execute as @a[team=Escape] run scoreboard players add @e[tag=SM,nbt={FallDistance:138204.6f}] PlayersCount 1
-scoreboard players operation §b残り逃走者数 Display = @e[tag=SM,nbt={FallDistance:138204.6f}] PlayersCount
-execute store result bossbar mizuki:time/1 value run scoreboard players get @e[tag=SM,nbt={FallDistance:138204.6f},limit=1] GameTimeB
-execute store result bossbar mizuki:time/2 value run scoreboard players get @e[tag=SM,nbt={FallDistance:138204.6f},limit=1] GameTimeB
-execute store result bossbar mizuki:time/3 value run scoreboard players get @e[tag=SM,nbt={FallDistance:138204.6f},limit=1] GameTimeB
+scoreboard players operation §a残り時間 Display = @e[tag=SM] GameTimeB
+scoreboard players set @e[tag=SM] PlayersCount 0
+execute as @a[team=Escape] run scoreboard players add @e[tag=SM] PlayersCount 1
+scoreboard players operation §b残り逃走者数 Display = @e[tag=SM] PlayersCount
+execute store result bossbar mizuki:time/1 value run scoreboard players get @e[tag=SM,limit=1] GameTimeB
+execute store result bossbar mizuki:time/2 value run scoreboard players get @e[tag=SM,limit=1] GameTimeB
+execute store result bossbar mizuki:time/3 value run scoreboard players get @e[tag=SM,limit=1] GameTimeB
 
 #処理完了
-execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},tag=!SystemFix] run tellraw @a[tag=OP] [{"text":"[Chen'sSystem] ","color":"aqua"},{"text":"MainSystem","color":"green"},{"text":" : ","color":"white"},{"text":"VeryGood.","color":"green"}]
-tag @e[tag=SM,nbt={FallDistance:138204.6f}] add SystemFix
+execute if entity @e[tag=SM,tag=!SystemFix] run tellraw @a[tag=OP] [{"text":"[Chen'sSystem] ","color":"aqua"},{"text":"MainSystem","color":"green"},{"text":" : ","color":"white"},{"text":"VeryGood.","color":"green"}]
+tag @e[tag=SM] add SystemFix
 
 
 tag @e[tag=!NoKill,type=item,nbt=!{Item:{tag:{NoKill:1b}}},nbt=!{Item:{id:"minecraft:carrot_on_a_stick"}}] add kill

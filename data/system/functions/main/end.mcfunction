@@ -12,7 +12,7 @@ kill @e[tag=Landmine]
 kill @e[tag=Totem]
 kill @e[tag=Flash]
 tp @a[team=!Wait] 1237.5 201.5 684.5
-tag @s[tag=SM,nbt={FallDistance:138204.6f}] remove GameStartCount
+tag @s[tag=SM] remove GameStartCount
 tag @a remove ChaseArrowReady
 tag @a remove GravityArrowReady
 xp set @a 0 levels
