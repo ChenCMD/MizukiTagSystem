@@ -1,14 +1,14 @@
 execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},scores={Menu=1}] run function system:main/startitem
 execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},scores={Menu=1}] run function system:menu/pattern/0
 
-execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},scores={Menu=3}] run scoreboard players set @e[tag=SM,nbt={FallDistance:138204.6f}] PlayerCount-AA 1
-execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},scores={Menu=4}] run scoreboard players set @e[tag=SM,nbt={FallDistance:138204.6f}] PlayerCount-AA 2
-execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},scores={Menu=5}] run scoreboard players set @e[tag=SM,nbt={FallDistance:138204.6f}] PlayerCount-AA 3
-execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},scores={Menu=6}] run scoreboard players set @e[tag=SM,nbt={FallDistance:138204.6f}] PlayerCount-AA 4
-execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},scores={Menu=7}] run scoreboard players set @e[tag=SM,nbt={FallDistance:138204.6f}] PlayerCount-AA 5
-execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},scores={Menu=8}] run scoreboard players set @e[tag=SM,nbt={FallDistance:138204.6f}] PlayerCount-AA 6
-execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},scores={Menu=9}] run scoreboard players set @e[tag=SM,nbt={FallDistance:138204.6f}] PlayerCount-AA 7
-execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},scores={Menu=3..9}] run tellraw @a [{"text":"鬼人数を","color":"red"},{"score":{"name":"@e[tag=SM,nbt={FallDistance:138204.6f}]","objective":"PlayerCount-AA"},"color":"red"},{"text":"人に設定しました","color":"red"}]
+execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},scores={Menu=3}] run scoreboard players set @e[tag=SM,nbt={FallDistance:138204.6f}] HunterCount 1
+execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},scores={Menu=4}] run scoreboard players set @e[tag=SM,nbt={FallDistance:138204.6f}] HunterCount 2
+execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},scores={Menu=5}] run scoreboard players set @e[tag=SM,nbt={FallDistance:138204.6f}] HunterCount 3
+execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},scores={Menu=6}] run scoreboard players set @e[tag=SM,nbt={FallDistance:138204.6f}] HunterCount 4
+execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},scores={Menu=7}] run scoreboard players set @e[tag=SM,nbt={FallDistance:138204.6f}] HunterCount 5
+execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},scores={Menu=8}] run scoreboard players set @e[tag=SM,nbt={FallDistance:138204.6f}] HunterCount 6
+execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},scores={Menu=9}] run scoreboard players set @e[tag=SM,nbt={FallDistance:138204.6f}] HunterCount 7
+execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},scores={Menu=3..9}] run tellraw @a [{"text":"鬼人数を","color":"red"},{"score":{"name":"@e[tag=SM,nbt={FallDistance:138204.6f}]","objective":"HunterCount"},"color":"red"},{"text":"人に設定しました","color":"red"}]
 execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},scores={Menu=3..9}] run function system:menu/pattern/2
 
 execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},scores={Menu=11}] run scoreboard players set @e[tag=SM,nbt={FallDistance:138204.6f}] UseRuleSelect 1
@@ -30,5 +30,5 @@ execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},scores={Menu=17}] run t
 execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},scores={Menu=11..17}] run function system:menu/pattern/1
 
 
-execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},scores={Menu=19}] as @e[tag=MenuPos] run tellraw @a[distance=..6,sort=nearest,limit=1] ["",{"text":"この設定でゲームを始めますか？ ","color":"green"},{"text":">>スタート<<","color":"gold","clickEvent":{"action":"run_command","value":"/execute as @e[tag=SM,nbt={FallDistance:138204.6f},tag=!GameStartCount] run function system:main/start"}},{"text":"\n"},{"text":"ゲーム時間","color":"green"},{"text":" : "},{"score":{"name":"@e[tag=SM,nbt={FallDistance:138204.6f}]","objective":"GameMinutes"},"color":"light_purple"},{"text":"分","color":"green"},{"text":"\n"},{"text":"鬼人数","color":"green"},{"text":" : "},{"score":{"name":"@e[tag=SM,nbt={FallDistance:138204.6f}]","objective":"PlayerCount-AA"},"color":"light_purple"},{"text":"人","color":"green"}]
+execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},scores={Menu=19}] as @e[tag=MenuPos] run tellraw @a[distance=..6,sort=nearest,limit=1] ["",{"text":"この設定でゲームを始めますか？ ","color":"green"},{"text":">>スタート<<","color":"gold","clickEvent":{"action":"run_command","value":"/execute as @e[tag=SM,nbt={FallDistance:138204.6f},tag=!GameStartCount] run function system:main/start"}},{"text":"\n"},{"text":"ゲーム時間","color":"green"},{"text":" : "},{"score":{"name":"@e[tag=SM,nbt={FallDistance:138204.6f}]","objective":"GameMinutes"},"color":"light_purple"},{"text":"分","color":"green"},{"text":"\n"},{"text":"鬼人数","color":"green"},{"text":" : "},{"score":{"name":"@e[tag=SM,nbt={FallDistance:138204.6f}]","objective":"HunterCount"},"color":"light_purple"},{"text":"人","color":"green"}]
 execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},scores={Menu=19}] run function system:menu/pattern/0
