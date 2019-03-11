@@ -186,7 +186,9 @@ scoreboard players operation §a残り時間 Display = @e[tag=SM,nbt={FallDistan
 scoreboard players set @e[tag=SM,nbt={FallDistance:138204.6f}] PlayersCount 0
 execute as @a[team=Escape] run scoreboard players add @e[tag=SM,nbt={FallDistance:138204.6f}] PlayersCount 1
 scoreboard players operation §b残り逃走者数 Display = @e[tag=SM,nbt={FallDistance:138204.6f}] PlayersCount
-execute store result bossbar mizuki:time value run scoreboard players get @e[tag=SM,nbt={FallDistance:138204.6f},limit=1] GameTimeB
+execute store result bossbar mizuki:time/1 value run scoreboard players get @e[tag=SM,nbt={FallDistance:138204.6f},limit=1] GameTimeB
+execute store result bossbar mizuki:time/2 value run scoreboard players get @e[tag=SM,nbt={FallDistance:138204.6f},limit=1] GameTimeB
+execute store result bossbar mizuki:time/3 value run scoreboard players get @e[tag=SM,nbt={FallDistance:138204.6f},limit=1] GameTimeB
 
 #処理完了
 execute if entity @e[tag=SM,nbt={FallDistance:138204.6f},tag=!SystemFix] run tellraw @a[tag=OP] [{"text":"[Chen'sSystem] ","color":"aqua"},{"text":"MainSystem","color":"green"},{"text":" : ","color":"white"},{"text":"VeryGood.","color":"green"}]
