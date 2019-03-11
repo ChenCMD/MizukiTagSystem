@@ -1,1 +1,0 @@
-give @s minecraft:potion{display:{Name:"{\"text\":\"不思議なポーション\",\"color\":\"aqua\",\"italic\":\"false\"}"},CustomPotionEffects:[{Id:1b,Amplifier:0b,Duration:1800,ShowParticles:1b},{Id:14b,Amplifier:0b,Duration:1800,ShowParticles:1b}],CustomPotionColor:16777215} 1
