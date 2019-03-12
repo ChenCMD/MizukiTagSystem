@@ -1,4 +1,4 @@
-tellraw @a ["",{"selector":"@s","color":"green"},{"text":" が ","color":"green"},{"selector":"@a[tag=SkillDeath]","color":"green"},{"text":" を捕まえた！","color":"green"}]
+tellraw @a ["",{"selector":"@s","color":"green"},{"text":" が ","color":"green"},{"selector":"@a[tag=SkillDeath]","color":"green"},{"text":" のランドマインで爆散した...","color":"green"}]
 scoreboard players add @s TotalKill 1
 tellraw @s ["",{"text":"累計捕獲数: ","color":"aqua"},{"score":{"name":"@s","objective":"TotalKill"}}]
 function system:main/totalkill_mes
