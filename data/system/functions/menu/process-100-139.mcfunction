@@ -32,7 +32,7 @@ execute if entity @e[tag=SM,scores={Menu=130}] run scoreboard players set @e[tag
 execute if entity @e[tag=SM,scores={Menu=131}] run scoreboard players set @e[tag=SM] Effect4 1
 execute if entity @e[tag=SM,scores={Menu=130}] run tellraw @a [{"text":"[Effect] ","color":"green"},{"text":"発光","color":"yellow"},{"text":": ","color":"white"},{"text":"OFF","color":"red"}]
 execute if entity @e[tag=SM,scores={Menu=131}] run tellraw @a [{"text":"[Effect] ","color":"green"},{"text":"発光","color":"yellow"},{"text":": ","color":"white"},{"text":"ON","color":"green"}]
-execute if entity @e[tag=SM,scores={Menu=100..131}] run function system:menu/pattern/5
+execute if entity @e[tag=SM,scores={Menu=100..131}] run function system:menu/pattern/4
 
 execute if entity @e[tag=SM,scores={Menu=132}] run tag @e[tag=SM] remove NoHealthRegen
 execute if entity @e[tag=SM,scores={Menu=132}] run tellraw @a [{"text":"体力の自然回復を無効にしました","color":"red"}]

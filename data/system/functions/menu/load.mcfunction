@@ -4,8 +4,7 @@ execute if entity @e[tag=SM,limit=1,scores={Menu=0}] run function system:menu/pa
 execute if entity @e[tag=SM,limit=1,scores={Menu=-1}] run function system:menu/pattern/1
 execute if entity @e[tag=SM,limit=1,scores={Menu=-2}] run function system:menu/pattern/2
 execute if entity @e[tag=SM,limit=1,scores={Menu=-3}] run function system:menu/pattern/3
-execute if entity @e[tag=SM,limit=1,scores={Menu=-4}] run function system:menu/pattern/0
-execute if entity @e[tag=SM,limit=1,scores={Menu=-5}] run function system:menu/pattern/5
+execute if entity @e[tag=SM,limit=1,scores={Menu=-4}] run function system:menu/pattern/4
 
 execute if entity @e[tag=SM,limit=1,scores={Menu=01..19}] run function system:menu/process-01-19
 execute if entity @e[tag=SM,limit=1,scores={Menu=20..49}] run function system:menu/process-20-49
