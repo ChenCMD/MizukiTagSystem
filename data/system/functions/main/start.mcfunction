@@ -37,8 +37,6 @@ execute if entity @s[tag=!NoSkillMode] as @a[team=Hunter] run function system:sk
 #防具
 execute as @a[team=Escape] run function system:armor/escape
 execute if entity @s[tag=!HideMode] as @a[team=Hunter] run function system:armor/hunter
-#ダイス用ピッケル
-#give @a[team=Escape] minecraft:diamond_pickaxe{Unbreakable:1,CanDestroy:["minecraft:obsidian"],Enchantments:[{id:"minecraft:efficiency",lvl:1}],AttributeModifiers:[{AttributeName:"generic.movementSpeed",Name:"generic.movementSpeed",Amount:-0.5,Operation:1,UUIDLeast:5,UUIDMost:666,Slot:"mainhand"}]} 1
 #ハイドモードの場合鬼に透明付与
 execute if entity @s[tag=HideMode] run effect give @a[team=Hunter] invisibility 999999 0 true
 #鬼の特殊Effects付与
