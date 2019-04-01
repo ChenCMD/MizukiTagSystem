@@ -11,7 +11,7 @@ kill @e[tag=Trap]
 kill @e[tag=Landmine]
 kill @e[tag=Totem]
 kill @e[tag=Flash]
-tp @a[team=!Wait] 1237.5 201.5 684.5
+tp @a[team=!Wait] 9989.5 136.5 9996.5
 tag @s[tag=SM] remove GameStartCount
 tag @a remove ChaseArrowReady
 tag @a remove GravityArrowReady
