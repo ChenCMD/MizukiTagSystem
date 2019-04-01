@@ -105,6 +105,25 @@ execute as @a[team=!Died,scores={use_territory_t=1..}] run tellraw @a[team=OP,ta
 execute as @a[scores={use_territory_t=1..}] run function system:skill/hunter/territory_totem/use
 execute as @e[tag=Totem] at @s positioned ~-9 ~ ~-9 run function system:skill/hunter/territory_totem/act
 
+#ハイパージャンプ
+give @a[tag=HyperJumpRemove,team=Hunter] minecraft:slime_ball{HyperJump:1b,HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§bハイパージャンプ\"",Lore:["§a持った状態でシフトで溜める","§a溜め中は動くことが出来ない","§a最大10m飛ぶことが出来る"]}}
+tag @a[tag=HyperJumpRemove] remove HyperJumpRemove
+tag @a[scores={use_highjump=1..}] add HyperJumpRemove
+scoreboard players reset @a[scores={use_highjump=1..}] use_highjump
+
+execute as @a[nbt={SelectedItem:{tag:{HyperJump:1b}}},scores={Sneak=1..}] run function system:skill/hunter/hyper_jump/act
+execute as @a unless entity @s[scores={Sneak=0..}] run scoreboard players reset @s HighJump
+execute as @a unless entity @s[scores={Sneak=0..}] run effect clear @s minecraft:slowness
+execute as @a unless entity @s[scores={Sneak=0..}] run effect clear @s minecraft:jump_boost
+execute as @a[scores={Jump=0..}] run scoreboard players reset @s HighJump
+execute as @a[scores={Jump=0..}] run effect clear @s minecraft:slowness
+execute as @a[scores={Jump=0..}] run effect clear @s minecraft:jump_boost
+execute as @a[nbt=!{SelectedItem:{tag:{HyperJump:1b}}}] run scoreboard players reset @s HighJump
+execute as @a[nbt=!{SelectedItem:{tag:{HyperJump:1b}}}] run effect clear @s minecraft:slowness
+execute as @a[nbt=!{SelectedItem:{tag:{HyperJump:1b}}}] run effect clear @s minecraft:jump_boost
+scoreboard players reset @a Jump
+scoreboard players reset @a Sneak
+
 
 #アイテム戻ってくるやつ#########################################################################################
 give @a[tag=BlazeRodRemove,scores={TotalKill=100..}] minecraft:blaze_rod{display:{Name:"\"§6警棒\"",Lore:["§e100人以上を捕まえた人のみが","§e扱える警棒","§e金色に輝いている..."]},HideFlags:63,AttributeModifiers:[{AttributeName:"generic.attackSpeed",Name:"generic.attackSpeed",Amount:1,Operation:0,UUIDLeast:310539,UUIDMost:26428,Slot:"mainhand"}],Enchantments:[{id:"sharpness",lvl:99}],HideFlags:1}
@@ -142,9 +161,9 @@ execute as @a[scores={HunterPenalty=1..}] run function system:mode/penalty
 
 
 #アイテム系Title処理##########################################################################################
-execute as @a[team=Hunter,tag=!ChaseArrowReady,tag=!GravityArrowReady] run function system:main/job_systems/health
-execute as @a[team=Hunter,tag=!ChaseArrowReady,tag=GravityArrowReady] run function system:main/job_systems/gravity_health
-execute as @a[team=Hunter,tag=ChaseArrowReady,tag=!GravityArrowReady] run function system:main/job_systems/chase_health
+execute as @a[team=Hunter,tag=!ChaseArrowReady,tag=!GravityArrowReady] unless score @s HighJump matches 0.. run function system:main/job_systems/health
+execute as @a[team=Hunter,tag=!ChaseArrowReady,tag=GravityArrowReady] unless score @s HighJump matches 0.. run function system:main/job_systems/gravity_health
+execute as @a[team=Hunter,tag=ChaseArrowReady,tag=!GravityArrowReady] unless score @s HighJump matches 0.. run function system:main/job_systems/chase_health
 
 execute as @a[team=Escape] run function system:main/job_systems/health
 execute if entity @a[scores={CT=1..}] run function system:main/ct

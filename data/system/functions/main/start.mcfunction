@@ -46,6 +46,7 @@ give @a[team=Hunter,scores={TotalKill=0..99}] minecraft:stick{isWeapon:1b,displa
 give @a[team=Hunter,scores={TotalKill=100..}] minecraft:blaze_rod{isWeapon:1b,display:{Name:"\"§6警棒\"",Lore:["§e100人以上を捕まえた人のみが","§e扱える警棒","§e金色に輝いている..."]},HideFlags:61,AttributeModifiers:[{AttributeName:"generic.attackSpeed",Name:"generic.attackSpeed",Amount:1,Operation:0,UUIDLeast:310539,UUIDMost:26428,Slot:"mainhand"}],Enchantments:[{id:"sharpness",lvl:99}],HideFlags:1}
 give @a[team=Hunter] minecraft:bow{Unbreakable:1,HideFlags:63,display:{Lore:["§a矢が戻ってこない場合弓を投げてください"]}}
 give @a[team=Hunter] minecraft:arrow
+replaceitem entity @a[team=Hunter] hotbar.8 minecraft:slime_ball{HyperJump:1b,HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§bハイパージャンプ\"",Lore:["§a持った状態でシフトで溜める","§a溜め中は動くことが出来ない","§a最大10m飛ぶことが出来る"]}}
 #参加者体力設定
 scoreboard players set @a[team=Hunter] Health 300
 scoreboard players set @a[team=Escape] Health 100
