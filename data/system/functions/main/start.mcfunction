@@ -1,9 +1,5 @@
 #アイテムclear
-clear @a minecraft:gravel
-clear @a minecraft:barrier
-clear @a minecraft:lime_wool
-clear @a minecraft:diamond
-clear @a minecraft:emerald
+clear @a[gamemode=!spectator,team=!OP]
 #時間関連の設定
 scoreboard players operation @s GameTimeB = @s GameTimeC
 execute store result bossbar mizuki:time/mode1 max run scoreboard players get @s GameTimeC
