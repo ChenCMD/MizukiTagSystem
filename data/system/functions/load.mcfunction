@@ -126,7 +126,7 @@ scoreboard players reset @a Sneak
 
 
 #アイテム戻ってくるやつ#########################################################################################
-give @a[tag=BlazeRodRemove,scores={TotalKill=100..}] minecraft:blaze_rod{display:{Name:"\"§6警棒\"",Lore:["§e100人以上を捕まえた人のみが","§e扱える警棒","§e金色に輝いている..."]},HideFlags:63,AttributeModifiers:[{AttributeName:"generic.attackSpeed",Name:"generic.attackSpeed",Amount:1,Operation:0,UUIDLeast:310539,UUIDMost:26428,Slot:"mainhand"}],Enchantments:[{id:"sharpness",lvl:99}],HideFlags:1}
+give @a[tag=BlazeRodRemove,scores={TotalKill=100..}] minecraft:blaze_rod{isWeapon:1b,display:{Name:"\"§6警棒\"",Lore:["§e100人以上を捕まえた人のみが","§e扱える警棒","§e金色に輝いている..."]},HideFlags:63,AttributeModifiers:[{AttributeName:"generic.attackSpeed",Name:"generic.attackSpeed",Amount:1,Operation:0,UUIDLeast:310539,UUIDMost:26428,Slot:"mainhand"}],Enchantments:[{id:"sharpness",lvl:99}],HideFlags:1}
 tag @a[tag=BlazeRodRemove] remove BlazeRodRemove
 tag @a[scores={Drop_BlazeRod=1..},team=!Died] add BlazeRodRemove
 scoreboard players reset @a Drop_BlazeRod
