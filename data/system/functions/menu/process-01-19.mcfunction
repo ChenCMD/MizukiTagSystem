@@ -19,6 +19,7 @@ execute if entity @e[tag=SM,scores={Menu=17}] run tag @e[tag=SM] add NoSkillMode
 execute if entity @e[tag=SM,scores={Menu=17}] run tellraw @a [{"text":"ノースキルモードを有効にしました","color":"green"}]
 execute if entity @e[tag=SM,scores={Menu=11..17}] run function system:menu/pattern/1
 
-
+execute if entity @e[tag=SM,scores={Menu=19}] run scoreboard players remove @e[tag=SM] HunterCount 1
 execute if entity @e[tag=SM,scores={Menu=19}] as @e[tag=MenuPos] run tellraw @a[distance=..6,sort=nearest,limit=1] ["",{"text":"この設定でゲームを始めますか？ ","color":"green"},{"text":">>スタート<<","color":"gold","clickEvent":{"action":"run_command","value":"/execute as @e[tag=SM,tag=!GameStartCount] run function system:main/start"}},{"text":"\n"},{"text":"ゲーム時間","color":"green"},{"text":" : "},{"score":{"name":"@e[tag=SM]","objective":"GameMinutes"},"color":"light_purple"},{"text":"分","color":"green"},{"text":"\n"},{"text":"鬼人数","color":"green"},{"text":" : "},{"score":{"name":"@e[tag=SM]","objective":"HunterCount"},"color":"light_purple"},{"text":"人","color":"green"}]
+execute if entity @e[tag=SM,scores={Menu=19}] run scoreboard players add @e[tag=SM] HunterCount 1
 execute if entity @e[tag=SM,scores={Menu=19}] run function system:menu/pattern/0

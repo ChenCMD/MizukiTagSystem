@@ -29,4 +29,5 @@ execute if entity @e[tag=SM,scores={Menu=76}] run scoreboard players set @e[tag=
 #execute if entity @e[tag=SM,scores={Menu=78}] run scoreboard players set @e[tag=SM]
 #execute if entity @e[tag=SM,scores={Menu=79}] run scoreboard players set @e[tag=SM]
 execute if entity @e[tag=SM,scores={Menu=50..79}] run tellraw @a [{"text":"鬼人数を","color":"red"},{"score":{"name":"@e[tag=SM]","objective":"HunterCount"},"color":"red"},{"text":"人に設定しました","color":"red"}]
+execute if entity @e[tag=SM,scores={Menu=50..79}] run scoreboard players add @e[tag=SM] HunterCount 1
 function system:menu/pattern/2
