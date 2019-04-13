@@ -171,6 +171,9 @@ execute if entity @e[tag=!GameStartCount,tag=!GameTime_Yes,tag=SM] run function 
 #自然回復
 execute unless entity @e[tag=SM,tag=!NoHealthRegen] run function system:main/regen
 
+#定期フラッシュ
+execute as @e[tag=DeleyFlash] run scoreboard players add @s TimeFlash 1
+execute as @e[tag=DeleyFlash] if score @s TimeFlash > $TimeFlash AddTmp at @s run function system:event/fixed_time_flash/act
 
 execute if entity @e[tag=SM,scores={UseRuleSelect=3}] run function system:mode/3-a
 

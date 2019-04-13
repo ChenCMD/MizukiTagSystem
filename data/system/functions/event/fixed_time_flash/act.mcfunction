@@ -1,0 +1,2 @@
+execute as @a[distance=..20] if score @s UserID = @e[type=item,tag=DeleyFlash,distance=0,limit=1] UserID run effect give @s minecraft:glowing 30 0 true
+kill @e[type=item,tag=DeleyFlash,distance=0,limit=1]
