@@ -1,2 +1,1 @@
-execute as @a[team=Escape] at @s run summon item ~ ~ ~ {Tags:["NoKill","DeleyFlash"],Glowing:1b,NoGravity:1b,Item:{id:"minecraft:nether_star",Count:1b},Age:-32768,PickupDelay:32767,Glowing:1b}
-execute as @a[team=Escape] at @s run scoreboard players operation @e[tag=DeleyFlash,distance=0] UserID = @s UserID
+execute as @a[team=Escape] at @s run function system:event/fixed_time_flash/set2
