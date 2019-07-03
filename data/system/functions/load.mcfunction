@@ -67,17 +67,17 @@ execute as @e[tag=Flash] at @s run function system:skill/hunter/flash_marking/ac
 
 #弓全般
 execute as @a[team=!Died,scores={UseBow=1..}] run tellraw @a[team=OP,tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"selector":"@s","color":"dark_aqua"},{"text":" is Use Bow","color":"dark_aqua"}]
-execute as @a[scores={UseBow=1..}] at @s run function system:skill/hunter/sorted
+execute as @a[scores={UseBow=1..}] at @s if entity @e[type=arrow,distance=..5,sort=nearest,limit=1,nbt={crit:1b}] run function system:skill/hunter/sorted
 execute if entity @e[nbt={inGround:1b},type=arrow] as @a run function system:main/arrow/id_verification
 
 #グラビティアロー
-give @a[tag=ArrowGRemove,team=Hunter] minecraft:firework_star{HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"{\"text\":\"グラビティアロー\",\"color\":\"dark_purple\",\"italic\":false}",Lore:["§a矢が§n重力の影響を受けず§r§a音速で飛んでいく","§a射程§f: §d150m","§a威力§f: §c40ダメージ","§aCT§f: §b10秒"]}}
+give @a[tag=ArrowGRemove,team=Hunter] minecraft:firework_star{HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"{\"text\":\"グラビティアロー\",\"color\":\"dark_purple\",\"italic\":false}",Lore:["§a矢が§n重力の影響を受けず§r§a音速で飛んでいく","§c最大まで引かなければ放てない","§a射程§f: §d100m","§a威力§f: §c35ダメージ","§aCT§f: §b20秒"]}}
 tag @a[tag=ArrowGRemove] remove ArrowGRemove
 execute as @a[team=!Died,scores={use_arrow_g=1..}] run tellraw @a[team=OP,tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"selector":"@s","color":"dark_aqua"},{"text":" is Use GravityArrow","color":"dark_aqua"}]
 execute as @a[scores={use_arrow_g=1..}] run function system:skill/hunter/gravity_arrow/use
 
 #チェイスアロー
-give @a[tag=ArrowCRemove,team=Hunter] minecraft:emerald{HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"{\"text\":\"チェイスアロー\",\"color\":\"green\",\"italic\":false}",Lore:["§a矢の§b§n半径4m§r§a以内に逃走者がいる場合","§aテレポートしてヒットする","§a威力§f: §c35ダメージ","§aCT§f: §b15秒"]}}
+give @a[tag=ArrowCRemove,team=Hunter] minecraft:emerald{HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"{\"text\":\"チェイスアロー\",\"color\":\"green\",\"italic\":false}",Lore:["§a矢の§b§n半径4m§r§a以内に逃走者がいる場合","§aテレポートしてヒットする","§c最大まで引かなければ放てない","§a威力§f: §c35ダメージ","§aCT§f: §b10秒"]}}
 tag @a[tag=ArrowCRemove] remove ArrowCRemove
 execute as @a[team=!Died,scores={use_arrow_c=1..}] run tellraw @a[team=OP,tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"selector":"@s","color":"dark_aqua"},{"text":" is Use ChaseArrow","color":"dark_aqua"}]
 execute as @a[scores={use_arrow_c=1..}] run function system:skill/hunter/chase_arrow/use
