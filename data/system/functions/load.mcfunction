@@ -31,6 +31,21 @@ execute if entity @e[tag=SM,scores={Door=101..180}] run function system:door/clo
 execute as @a[scores={UTST1=1..}] run function system:main/team_select/no
 execute as @a[scores={UTST2=1..}] run function system:main/team_select/yes
 
+#ダイス処理##################################################################################################
+execute as @a[scores={OB_Break=1..}] run function system:dice/break_obsidian
+execute as @e[tag=DBParticle] at @s run particle minecraft:enchanted_hit ~ ~0.5 ~ 0.3 0.3 0.3 0.01 3 force
+execute as @e[tag=MDBParticle] at @s run particle minecraft:end_rod ~ ~0.5 ~ 0.45 0.45 0.45 0.01 1 force
+execute as @a[scores={Beacon_Break=1..}] run function system:dice/give
+execute as @a[scores={DiceDrop=1..}] run function system:dice/drop
+execute as @e[tag=Link_Dice] run function system:dice/act
+
+#アイテムs
+#リセットポーション
+execute as @a[nbt={ActiveEffects:[{Id:26b,Amplifier:12b,Duration:0}]}] run tellraw @s {"text":"リセットポーションを飲んだ！","color":"green"}
+execute as @a[nbt={ActiveEffects:[{Id:26b,Amplifier:12b,Duration:0}]}] run xp set @s 0 levels
+execute as @a[team=Hunter,nbt={ActiveEffects:[{Id:26b,Amplifier:12b,Duration:0}]}] run scoreboard players set @s Health 300
+execute as @a[team=Escape,nbt={ActiveEffects:[{Id:26b,Amplifier:12b,Duration:0}]}] run scoreboard players set @s Health 100
+
 
 #スキル処理: スピード#########################################################################################
 give @a[tag=SpeedRemove,team=!Wait] minecraft:feather{HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§aスピード\"",Lore:["§f自身に 移動速度上昇Ⅱ (0:05)の効果を付与する","§aCT§f: §b20秒"]}}

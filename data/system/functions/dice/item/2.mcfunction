@@ -1,0 +1,1 @@
+give @p minecraft:potion{display:{Name:"{\"text\":\"リセットポーション\",\"color\":\"green\",\"italic\":\"false\"}"},HideFlags:32,CustomPotionEffects:[{Id:26b,Amplifier:12b,Duration:0,ShowParticles:1b}],CustomPotionColor:11075505} 1
