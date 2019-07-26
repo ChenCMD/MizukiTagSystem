@@ -32,9 +32,6 @@ execute as @a[scores={UTST1=1..}] run function system:main/team_select/no
 execute as @a[scores={UTST2=1..}] run function system:main/team_select/yes
 
 #ダイス処理##################################################################################################
-execute as @a[scores={OB_Break=1..}] run function system:dice/break_obsidian
-execute as @e[tag=DBParticle] at @s run particle minecraft:enchanted_hit ~ ~0.5 ~ 0.3 0.3 0.3 0.01 3 force
-execute as @e[tag=MDBParticle] at @s run particle minecraft:end_rod ~ ~0.5 ~ 0.45 0.45 0.45 0.01 1 force
 execute as @a[scores={Beacon_Break=1..}] run function system:dice/give
 execute as @a[scores={DiceDrop=1..}] run function system:dice/drop
 execute as @e[tag=Link_Dice] run function system:dice/act
