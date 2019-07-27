@@ -79,7 +79,7 @@ execute as @e[tag=Flash] at @s run function system:skill/hunter/flash_marking/ac
 
 #弓全般
 execute as @a[team=!Died,scores={UseBow=1..}] run tellraw @a[team=OP,tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"selector":"@s","color":"dark_aqua"},{"text":" is Use Bow","color":"dark_aqua"}]
-execute as @a[scores={UseBow=1..}] at @s if entity @e[type=arrow,distance=..5,sort=nearest,limit=1,nbt={crit:1b}] run function system:skill/hunter/sorted
+execute as @a[scores={UseBow=1..}] at @s if entity @e[type=arrow,distance=..5,sort=nearest,limit=1] run function system:skill/hunter/sorted
 execute if entity @e[nbt={inGround:1b},type=arrow] as @a run function system:main/arrow/id_verification
 
 #グラビティアロー
