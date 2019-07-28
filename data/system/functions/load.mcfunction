@@ -63,6 +63,13 @@ tag @a[tag=TeleportRemove] remove TeleportRemove
 execute as @a[team=!Died,scores={use_teleport=1..}] run tellraw @a[team=OP,tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"selector":"@s","color":"dark_aqua"},{"text":" is Use Teleport","color":"dark_aqua"}]
 execute as @a[scores={use_teleport=1..}] run function system:skill/escape/teleport/use
 
+#アイテム処理: LoD####################################################################################
+#[LoDDrop NoteBlockドロップ検知] [LoDCount LoD成功回数] [LoDCT LoD戻ってくるまでの時間]
+#確率 50% 35% 20% 5%
+execute as @a[scores={LoDDrop=1..}] at @s run function system:skill/escape/taunt/use
+execute as @a[scores={LoDCT=1..}] run scoreboard players add @s LoDCT 1
+execute as @a[scores={LoDCT=900..},team=!Hunter,team=!Wait,team=!OP] run function system:skill/escape/taunt/give
+execute as @a[scores={LoDCT=900..},team=!Escape,team=!Died] run scoreboard players reset @s LoDCT
 #スキル処理: 鬼####################################################################################
 #フラッシュサーチ
 give @a[tag=FlashSRemove,team=Hunter] minecraft:beacon{HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§eフラッシュサーチ\"",Lore:["§b§n半径20m§r§a以内の逃走者に§c発光/不運 (0:10)§a付与","§a自身に§9攻撃力 +20 (0:10)§a付与","§aCT§f: §b40秒"]}}
