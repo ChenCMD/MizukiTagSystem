@@ -1,3 +1,4 @@
+playsound minecraft:block.note.bell master @s ~ ~ ~ 1 1.2
 execute if entity @e[tag=SM,tag=OnlyEventDice] run advancement grant @s only system:give_dice_event
 execute if entity @e[tag=SM,tag=OnlyItemDice] run advancement grant @s only system:give_dice_item
 execute if entity @e[tag=SM,tag=OnlyHyperDice] run advancement grant @s only system:give_dice_hyper
