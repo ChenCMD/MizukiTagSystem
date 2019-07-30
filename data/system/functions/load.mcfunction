@@ -55,7 +55,8 @@ give @a[tag=HideRemove,team=!Wait] minecraft:light_gray_stained_glass{HideFlags:
 tag @a[tag=HideRemove] remove HideRemove
 execute as @a[team=!Died,scores={use_hide=1..}] run tellraw @a[team=OP,tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"selector":"@s","color":"dark_aqua"},{"text":" is Use Hide","color":"dark_aqua"}]
 execute as @a[scores={use_hide=1..}] run function system:skill/escape/hide/use
-execute as @a[scores={InvisibleArmor=1..}] run function system:skill/escape/hide/act
+#ここ別のとこの処理にも併用
+execute as @a[scores={InvisibleArmor=0..}] run function system:skill/escape/hide/act
 
 #スキル処理: テレポート#######################################################################################
 give @a[tag=TeleportRemove,team=!Wait] minecraft:ender_eye{HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§5テレポート\"",Lore:["§f25m前方向にテレポートする","§f途中に貫通できないブロックがあった場合そこで止まる","§aCT§f: §b80秒"]}}
