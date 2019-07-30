@@ -30,6 +30,10 @@ scoreboard players set @a[team=Escape] LoDCount 0
 execute if entity @s[tag=!NoSkillMode] run tag @a[team=Escape] add SpeedRemove
 execute if entity @s[tag=!NoSkillMode] run tag @a[team=Escape] add HideRemove
 execute if entity @s[tag=!NoSkillMode] run tag @a[team=Escape] add TeleportRemove
+execute if entity @s[tag=!NoLoD] run scoreboard players operation $LoDCopy AddTmp = $LoD AddTmp
+tellraw @a [{"text":"Luck of Dice所持者","color":"green"},{"text":": ","color":"white"}]
+execute if entity @s[tag=!NoLoD] run function system:skill/escape/taunt/loop
+tag @a remove LoD1
 #鬼スキルアイテムランダム配布
 execute if entity @s[tag=!NoSkillMode] as @a[team=Hunter] run function system:skill/skill_set
 #防具
