@@ -1,1 +1,2 @@
 execute as @a[team=Escape] at @s run function system:event/fixed_time_flash/set2
+tellraw @a [{"text":"[◆] ","color":"yellow"},{"text":"全逃走者の足元にマーカーがセットされました。","color":"green"},{"text":"\n[◆] ","color":"yellow"},{"text":"一分以内に40m離れない場合発光します。","color":"green"}]
