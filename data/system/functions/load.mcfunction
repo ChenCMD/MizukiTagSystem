@@ -43,6 +43,8 @@ execute as @a[nbt={ActiveEffects:[{Id:26b,Amplifier:12b,Duration:0}]}] run xp se
 execute as @a[team=Hunter,nbt={ActiveEffects:[{Id:26b,Amplifier:12b,Duration:0}]}] run scoreboard players set @s Health 300
 execute as @a[team=Escape,nbt={ActiveEffects:[{Id:26b,Amplifier:12b,Duration:0}]}] run scoreboard players set @s Health 100
 
+#イベント系
+execute as @a[scores={Radar_Remaining=1..}] at @s run function system:dice/content_process/radar/act_base
 
 #スキル処理: スピード#########################################################################################
 give @a[tag=SpeedRemove,team=!Wait] minecraft:feather{HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§aスピード\"",Lore:["§f自身に 移動速度上昇Ⅱ (0:05)の効果を付与する","§aCT§f: §b20秒"]}}
