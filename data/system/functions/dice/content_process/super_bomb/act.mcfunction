@@ -12,4 +12,4 @@ execute if score @s[team=Hunter] SuperBomb matches 100.. run execute if entity @
 execute if score @s[team=Hunter] SuperBomb matches 100.. run execute if entity @e[tag=SM,scores={UseRuleSelect=3}] as @a[distance=..12,team=Escape] run function system:mode/3
 execute if score @s[team=Escape] SuperBomb matches 100.. run scoreboard players set @a[distance=..12,team=Hunter] Health 0
 execute if score @s[team=Escape] SuperBomb matches 100.. run execute as @a[distance=..12,team=Hunter] run function system:mode/hunter_death
-kill @s
+execute if score @s SuperBomb matches 100.. run kill @s
