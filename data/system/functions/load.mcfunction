@@ -32,7 +32,6 @@ execute as @a[scores={UTST1=1..}] run function system:main/team_select/no
 execute as @a[scores={UTST2=1..}] run function system:main/team_select/yes
 
 #ダイス処理##################################################################################################
-execute as @a[scores={Beacon_Break=1..}] run function system:dice/give
 execute as @a[scores={DiceDrop=1..}] run function system:dice/drop
 execute as @e[tag=Link_Dice] run function system:dice/act
 
@@ -71,8 +70,8 @@ execute as @a[team=!Died,scores={use_teleport=1..}] run tellraw @a[team=OP,tag=D
 execute as @a[scores={use_teleport=1..}] run function system:skill/escape/teleport/use
 
 #アイテム処理: LoD####################################################################################
-#[LoDDrop NoteBlockドロップ検知] [LoDCount LoD成功回数] [LoDCT LoD戻ってくるまでの時間]
 #確率 50% 35% 20% 5%
+execute as @a[team=!Died,scores={LoDDrop=1..}] run tellraw @a[team=OP,tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"selector":"@s","color":"dark_aqua"},{"text":" is Use Luck of Dice","color":"dark_aqua"}]
 execute as @a[scores={LoDDrop=1..}] at @s run function system:skill/escape/taunt/use
 execute as @a[scores={LoDCT=1..}] run scoreboard players add @s LoDCT 1
 execute as @a[scores={LoDCT=900..},team=!Hunter,team=!Wait,team=!OP] run function system:skill/escape/taunt/give
