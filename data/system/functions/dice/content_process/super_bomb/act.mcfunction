@@ -51,6 +51,8 @@ scoreboard players add @s SuperBomb 1
 execute if score @s SuperBomb matches 0..95 run playsound minecraft:entity.tnt.primed master @a ~ ~ ~ 1 0.5
 execute if score @s SuperBomb matches 100.. run particle minecraft:explosion_emitter ~ ~ ~ 2 2 2 0 100
 execute if score @s SuperBomb matches 100.. run playsound minecraft:entity.generic.explode master @a ~ ~ ~ 2
+execute if score @s[tag=Hunter] SuperBomb matches 100.. if entity @a[distance=..12,team=Escape] as @a if score @s UserID = @e[tag=SuperBomb,distance=0,limit=1] UserID at @a[distance=..12,team=Escape] run tellraw @a ["",{"selector":"@s","color":"green"},{"text":" >> ","color":"green"},{"selector":"@p[distance=0]","color":"green"},{"text":" [スーパーボム]","color":"dark_red"}]
+execute if score @s[tag=Escape] SuperBomb matches 100.. if entity @a[distance=..12,team=Hunter] as @a if score @s UserID = @e[tag=SuperBomb,distance=0,limit=1] UserID at @a[distance=..12,team=Hunter] run tellraw @a ["",{"selector":"@s","color":"green"},{"text":" >> ","color":"green"},{"selector":"@p[distance=0]","color":"green"},{"text":" [スーパーボム]","color":"dark_red"}]
 execute if score @s[tag=Hunter] SuperBomb matches 100.. if entity @a[distance=..12,team=Escape] run playsound minecraft:entity.lightning_bolt.thunder player @a ~ ~ ~ 1 0.9 1
 execute if score @s[tag=Escape] SuperBomb matches 100.. if entity @a[distance=..12,team=Hunter] run playsound minecraft:entity.lightning_bolt.thunder player @a ~ ~ ~ 1 0.9 1
 execute if score @s[tag=Hunter] SuperBomb matches 100.. run scoreboard players set @a[distance=..12,team=Escape] Health 0
