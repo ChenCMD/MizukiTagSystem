@@ -1,0 +1,1 @@
+execute as @a if score @s UserID = @e[scores={Dice_Deley=60..},nbt={Item:{tag:{display:{Name:"{\"text\":\"スーパーダイス (?????)\",\"italic\":false,\"bold\":true,\"color\":\"dark_red\"}"}}}},limit=1] UserID run give @s minecraft:tnt{display:{Name:"{\"text\":\"スーパーボム\",\"italic\":false,\"color\":\"red\"}",Lore:["§a投げてから5秒後に範囲12m以内の相手チームを","§a確殺する爆弾を設置する"]}} 1

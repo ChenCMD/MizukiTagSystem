@@ -1,3 +1,3 @@
-execute if entity @s[team=Hunter] run summon minecraft:armor_stand ~ ~-0.5 ~ {Team:"Hunter",Tags:["SuperBomb"],Invulnerable:1b,Marker:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:tnt",Count:1b,tag:{Enchantments:[{id:"minecraft:protection",lvl:1s}]}}]}
-execute if entity @s[team=Escape] run summon minecraft:armor_stand ~ ~-0.5 ~ {Team:"Escape",Tags:["SuperBomb"],Invulnerable:1b,Marker:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:tnt",Count:1b,tag:{Enchantments:[{id:"minecraft:protection",lvl:1s}]}}]}
+execute if entity @s[team=Hunter] run summon minecraft:armor_stand ~ ~ ~ {Fire:200,Tags:["Hunter","SuperBomb"],Invulnerable:1b,Marker:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:tnt",Count:1b,tag:{Enchantments:[{id:"minecraft:protection",lvl:1s}]}}]}
+execute if entity @s[team=Escape] run summon minecraft:armor_stand ~ ~ ~ {Fire:200,Tags:["Escape","SuperBomb"],Invulnerable:1b,Marker:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:tnt",Count:1b,tag:{Enchantments:[{id:"minecraft:protection",lvl:1s}]}}]}
 scoreboard players reset @s use_superbomb
