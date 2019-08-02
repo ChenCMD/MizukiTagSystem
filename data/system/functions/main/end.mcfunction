@@ -1,5 +1,6 @@
 scoreboard players add @a[team=Escape] Winstroke 1
 execute as @a[team=Escape] if score @s Winstroke > @s WinStrokeMAX run scoreboard players operation @s WinStrokeMAX = @s Winstroke
+scoreboard players reset @a HunterPenalty
 title @a title {"text":"GAME END!!","color":"green","bold":true}
 clear @a
 effect clear @a
