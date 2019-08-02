@@ -11,4 +11,5 @@ execute unless entity @e[tag=SM,limit=1,scores={LoDDeley=0..}] if entity @s[team
 execute unless entity @e[tag=SM,limit=1,scores={LoDDeley=0..}] if entity @s[team=Escape] if score @s LoDCount matches 0 if score @s Random < $50 AddTmp run function system:skill/escape/taunt/success
 execute unless entity @e[tag=SM,limit=1,scores={LoDDeley=0..}] if entity @s[team=Escape] if score @s LoDCount matches 0 if score @s Random >= $50 AddTmp run function system:skill/escape/taunt/failed
 execute unless entity @e[tag=SM,limit=1,scores={LoDDeley=0..}] if entity @s[team=Escape] if score @s LoDCount matches ..3 run scoreboard players set @s LoDCT 1
-execute unless entity @e[tag=SM,limit=1,scores={LoDDeley=0..}] if entity @s[team=!Escape] run scoreboard players set @s LoDCT 895
+execute unless entity @e[tag=SM,limit=1] if entity @s[team=!Escape] run scoreboard players set @s LoDCT 895
+execute if entity @e[tag=SM,limit=1,scores={LoDDeley=0..}] run scoreboard players set @s LoDCT 895
