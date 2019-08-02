@@ -26,6 +26,7 @@ effect give @a[team=Escape] minecraft:resistance 999999 4 true
 effect give @a minecraft:saturation 999999 0 true
 #Luck of Dice回数リセット
 scoreboard players set @a[team=Escape] LoDCount 0
+scoreboard players operation @e[tag=SM] LoDDeley = $LoDDeley AddTmp
 #逃走者スキルアイテムGive
 execute if entity @s[tag=!NoSkillMode] run tag @a[team=Escape] add SpeedRemove
 execute if entity @s[tag=!NoSkillMode] run tag @a[team=Escape] add HideRemove
