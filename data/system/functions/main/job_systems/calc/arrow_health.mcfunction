@@ -1,7 +1,7 @@
 #ダメージ処理
-execute if entity @s[advancements={system:ondamage/is_projectile=true}] run scoreboard players operation @s Health -= $onHitDamage AddTmp
-execute if entity @s[advancements={system:ondamage/is_gravity_arrow=true}] run scoreboard players operation @s Health -= $ArrowDamageA AddTmp
-execute if entity @s[advancements={system:ondamage/is_chase_arrow=true}] run scoreboard players operation @s Health -= $ArrowDamageB AddTmp
+execute unless entity @s[nbt={ActiveEffects:[{Id:26b}]}] if entity @s[advancements={system:ondamage/is_projectile=true}] run scoreboard players operation @s Health -= $onHitDamage AddTmp
+execute unless entity @s[nbt={ActiveEffects:[{Id:26b}]}] if entity @s[advancements={system:ondamage/is_gravity_arrow=true}] run scoreboard players operation @s Health -= $ArrowDamageA AddTmp
+execute unless entity @s[nbt={ActiveEffects:[{Id:26b}]}] if entity @s[advancements={system:ondamage/is_chase_arrow=true}] run scoreboard players operation @s Health -= $ArrowDamageB AddTmp
 ##死亡処理
 #tag @s[scores={Health=..0},advancements={system:ondamage/is_projectile=true}] add ArrowDeath
 #tag @s[scores={Health=..0},advancements={system:ondamage/is_gravity_arrow=true}] add ArrowDeath
