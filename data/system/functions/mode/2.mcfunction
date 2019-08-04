@@ -13,5 +13,6 @@ effect clear @s minecraft:weakness
 effect clear @s minecraft:glowing
 function system:main/effect
 xp set @s 0 levels
+scoreboard players reset @s Radar_Remaining
 tp @s @e[sort=random,tag=HunterSpawnPoint,limit=1]
 team join Hunter @s
