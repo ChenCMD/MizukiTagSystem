@@ -38,8 +38,8 @@ execute if entity @e[tag=SM,scores={Menu=132}] run tag @e[tag=SM] remove NoHealt
 execute if entity @e[tag=SM,scores={Menu=132}] run tellraw @a [{"text":"体力の自然回復を無効にしました","color":"red"}]
 execute if entity @e[tag=SM,scores={Menu=133}] run tag @e[tag=SM] add NoHealthRegen
 execute if entity @e[tag=SM,scores={Menu=133}] run tellraw @a [{"text":"体力の自然回復を有効にしました","color":"green"}]
-execute if entity @e[tag=SM,scores={Menu=134}] run tag @e[tag=SM] remove NoLoD
+execute if entity @e[tag=SM,scores={Menu=134}] run tag @e[tag=SM] add NoLoD
 execute if entity @e[tag=SM,scores={Menu=134}] run tellraw @a [{"text":"Luck of Diceを無効にしました","color":"red"}]
-execute if entity @e[tag=SM,scores={Menu=135}] run tag @e[tag=SM] add NoLoD
+execute if entity @e[tag=SM,scores={Menu=135}] run tag @e[tag=SM] remove NoLoD
 execute if entity @e[tag=SM,scores={Menu=135}] run tellraw @a [{"text":"Luck of Diceを有効にしました","color":"green"}]
 execute if entity @e[tag=SM,scores={Menu=132..139}] run function system:menu/pattern/1
