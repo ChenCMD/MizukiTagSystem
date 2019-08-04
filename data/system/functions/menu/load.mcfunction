@@ -5,10 +5,12 @@ execute if entity @e[tag=SM,limit=1,scores={Menu=-1}] run function system:menu/p
 execute if entity @e[tag=SM,limit=1,scores={Menu=-2}] run function system:menu/pattern/2
 execute if entity @e[tag=SM,limit=1,scores={Menu=-3}] run function system:menu/pattern/3
 execute if entity @e[tag=SM,limit=1,scores={Menu=-4}] run function system:menu/pattern/4
+execute if entity @e[tag=SM,limit=1,scores={Menu=-5}] run function system:menu/pattern/5
 
 execute if entity @e[tag=SM,limit=1,scores={Menu=01..19}] run function system:menu/process-01-19
 execute if entity @e[tag=SM,limit=1,scores={Menu=20..49}] run function system:menu/process-20-49
 execute if entity @e[tag=SM,limit=1,scores={Menu=50..99}] run function system:menu/process-50-99
 execute if entity @e[tag=SM,limit=1,scores={Menu=100..139}] run function system:menu/process-100-139
+execute if entity @e[tag=SM,limit=1,scores={Menu=140..199}] run function system:menu/process-140-199
 
 scoreboard players reset @e[tag=SM,scores={Menu=-100..}] Menu
