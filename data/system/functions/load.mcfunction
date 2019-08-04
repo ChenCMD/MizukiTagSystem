@@ -152,12 +152,12 @@ scoreboard players reset @a Sneak
 #アイテム戻ってくるやつ#########################################################################################
 give @a[tag=BlazeRodRemove,scores={TotalKill=100..}] minecraft:blaze_rod{isWeapon:1b,display:{Name:"\"§6警棒\"",Lore:["§e100人以上を捕まえた人のみが","§e扱える警棒","§e金色に輝いている..."]},HideFlags:63,AttributeModifiers:[{AttributeName:"generic.attackSpeed",Name:"generic.attackSpeed",Amount:1,Operation:0,UUIDLeast:310539,UUIDMost:26428,Slot:"mainhand"}],Enchantments:[{id:"sharpness",lvl:99}],HideFlags:1}
 tag @a[tag=BlazeRodRemove] remove BlazeRodRemove
-tag @a[scores={Drop_BlazeRod=1..},team=!Died] add BlazeRodRemove
+tag @a[team=!OP,team=!Wait,team=!Died,scores={Drop_BlazeRod=1..}] add BlazeRodRemove
 scoreboard players reset @a Drop_BlazeRod
 
 give @a[tag=StickRemove,scores={TotalKill=0..99}] minecraft:stick{isWeapon:1b,display:{Name:"\"§6警棒\""},HideFlags:63,AttributeModifiers:[{AttributeName:"generic.attackDamage",Name:"generic.attackDamage",Amount:999,Operation:0,UUIDLeast:1,UUIDMost:1,Slot:"mainhand"},{AttributeName:"generic.attackSpeed",Name:"generic.attackSpeed",Amount:1,Operation:0,UUIDLeast:310539,UUIDMost:26428,Slot:"mainhand"}]}
 tag @a[tag=StickRemove] remove StickRemove
-tag @a[scores={Drop_Stick=1..},team=!Died] add StickRemove
+tag @a[team=!OP,team=!Wait,team=!Died,scores={Drop_Stick=1..}] add StickRemove
 scoreboard players reset @a Drop_Stick
 
 give @a[tag=BowRemove] minecraft:bow{Unbreakable:1,HideFlags:63,display:{Lore:["§a矢が戻ってこない場合弓を投げてください"]}}
@@ -165,12 +165,12 @@ execute if entity @a[tag=BowRemove] as @e[type=arrow] if score @s UserID = @a[ta
 clear @a[tag=BowRemove] minecraft:arrow
 give @a[tag=BowRemove] minecraft:arrow
 tag @a[tag=BowRemove] remove BowRemove
-tag @a[scores={Drop_Bow=1..},team=!Wait] add BowRemove
+tag @a[team=!OP,team=!Wait,team=!Died,scores={Drop_Bow=1..}] add BowRemove
 scoreboard players reset @a Drop_Bow
 
 give @a[tag=ArrowRemove] minecraft:arrow
 tag @a[tag=ArrowRemove] remove ArrowRemove
-tag @a[scores={Drop_Arrow=1..},team=!Wait] add ArrowRemove
+tag @a[team=!OP,team=!Wait,team=!Died,scores={Drop_Arrow=1..}] add ArrowRemove
 scoreboard players reset @a Drop_Arrow
 
 
