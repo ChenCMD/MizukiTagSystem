@@ -33,7 +33,7 @@ execute as @a[scores={UTST2=1..}] run function system:main/team_select/yes
 
 #ダイス処理##################################################################################################
 execute as @a[scores={DiceDrop=1..}] run function system:dice/drop
-execute as @e[tag=Link_Dice] run function system:dice/act
+execute as @e[tag=Link_Dice] at @s run function system:dice/act
 
 #アイテムs
 #スーパーボム
