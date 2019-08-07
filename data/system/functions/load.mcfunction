@@ -1,11 +1,10 @@
 #絶対実行するやつ--------------------------------------------------------------------
 execute as @e[tag=!NoInf,type=falling_block] run data merge entity @s {Time:1}
-execute as @e[tag=GiveBook] run give @s written_book{pages:["[{\"text\":\"左クリックでスキル設定\"},{\"text\":\"\\n\\n・\"},{\"text\":\"スキルをセットしない\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/trigger BowSkillType set 0\"},\"hoverEvent\":{\"action\":\"show_item\",\"value\":\"{id:\\\"minecraft:sign\\\",Count:1b,tag:{display:{Name:\\\"{\\\\\\\"text\\\\\\\":\\\\\\\"スキルをセットしない\\\\\\\",\\\\\\\"color\\\\\\\":\\\\\\\"white\\\\\\\",\\\\\\\"italic\\\\\\\":false}\\\",Lore:[\\\"§a普通の矢になります\\\",\\\"§aCT§f: §b0秒\\\"]}}}\"}},{\"text\":\"\\n\\n・\"},{\"text\":\"グラビティアロー\",\"color\":\"dark_purple\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/trigger BowSkillType set 1\"},\"hoverEvent\":{\"action\":\"show_item\",\"value\":\"{id:\\\"minecraft:sign\\\",Count:1b,tag:{display:{Name:\\\"{\\\\\\\"text\\\\\\\":\\\\\\\"グラビティアロー\\\\\\\",\\\\\\\"color\\\\\\\":\\\\\\\"dark_purple\\\\\\\",\\\\\\\"italic\\\\\\\":false}\\\",Lore:[\\\"§a矢が§n重力の影響を受けず§r§a、1.5倍の速度で飛んでいく\\\",\\\"§a威力§f: §c30ダメージ\\\",\\\"§aCT§f: §b10秒\\\"]}}}\"}},{\"text\":\"\\n\\n・\"},{\"text\":\"チェイスアロー\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/trigger BowSkillType set 2\"},\"hoverEvent\":{\"action\":\"show_item\",\"value\":\"{id:\\\"minecraft:sign\\\",Count:1b,tag:{display:{Name:\\\"{\\\\\\\"text\\\\\\\":\\\\\\\"チェイスアロー\\\\\\\",\\\\\\\"color\\\\\\\":\\\\\\\"green\\\\\\\",\\\\\\\"italic\\\\\\\":false}\\\",Lore:[\\\"§a矢の半径3m以内に逃走者がいる場合\\\",\\\"§aテレポートしてヒットする\\\",\\\"§a威力§f: §c20ダメージ\\\",\\\"§aCT§f: §b15秒\\\"]}}}\"}},{\"text\":\"\\n\\n・\"},{\"text\":\"ブラストアロー\",\"color\":\"red\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/trigger BowSkillType set 3\"},\"hoverEvent\":{\"action\":\"show_item\",\"value\":\"{id:\\\"minecraft:sign\\\",Count:1b,tag:{display:{Name:\\\"{\\\\\\\"text\\\\\\\":\\\\\\\"ブラストアロー\\\\\\\",\\\\\\\"color\\\\\\\":\\\\\\\"red\\\\\\\",\\\\\\\"italic\\\\\\\":false}\\\",Lore:[\\\"§a矢の着弾地点が爆発する\\\",\\\"§a威力§f: §c45ダメージ\\\",\\\"§aCT§f: §b40秒\\\"]}}}\"}},{\"text\":\"\\n\\n・\"},{\"text\":\"スポーンアロー\",\"color\":\"light_purple\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/trigger BowSkillType set 4\"},\"hoverEvent\":{\"action\":\"show_item\",\"value\":\"{id:\\\"minecraft:sign\\\",Count:1b,tag:{display:{Name:\\\"{\\\\\\\"text\\\\\\\":\\\\\\\"スポーンアロー\\\\\\\",\\\\\\\"color\\\\\\\":\\\\\\\"light_purple\\\\\\\",\\\\\\\"italic\\\\\\\":false}\\\",Lore:[\\\"§a矢の着弾地点にゾビィを召喚する\\\",\\\"§aゾビィ - HP§f: §b100,§aATK§f: §c30\\\",\\\"§aCT§f: §b40秒\\\"]}}}\"}}]"],title:"スナイパースキルブック",author:""}
-tag @a remove GiveBook
 #JOIN処理
 execute as @a[scores={JOIN=1}] run function system:main/fast_join
 #LEAVE処理
 execute as @a[scores={Leave=1..}] run function system:main/leave
+
 
 #メニューコマンド応答処理#####################################################################################
 execute as @e[tag=MenuPos] at @s unless block ~1 ~-1 ~ minecraft:redstone_wire[power=2] unless block ~1 ~-1 ~ minecraft:redstone_wire[power=3] as @a[scores={OpenChest=1..}] as @e[tag=MenuPos] at @s run function system:menu/pattern/0
@@ -15,8 +14,6 @@ execute as @e[tag=MenuPos] at @s if block ~1 ~-1 ~ minecraft:redstone_wire[power
 execute as @e[tag=MenuPos] at @s if block ~1 ~-1 ~ minecraft:redstone_wire[power=2] run function system:menu/load
 execute as @e[tag=MenuPos] at @s if block ~1 ~-1 ~ minecraft:redstone_wire[power=3] run function system:menu/load
 
-#トリガー回収
-execute as @a[scores={SignTrigger=1..}] run function system:main/job_systems/sign_trigger
 
 #システムサポートサブ処理#####################################################################################
 execute if entity @e[tag=SM,tag=HideMode] as @a[team=Hunter] at @s run particle block minecraft:black_wool ~ ~0.1 ~ 0.2 0 0.2 1 1 force @a
@@ -225,7 +222,6 @@ execute store result bossbar mizuki:time/mode3 value run scoreboard players get 
 execute if entity @e[tag=SM,tag=!SystemFix] run tellraw @a[tag=OP] [{"text":"[Chen'sSystem] ","color":"aqua"},{"text":"MainSystem","color":"green"},{"text":" : ","color":"white"},{"text":"VeryGood.","color":"green"}]
 tag @e[tag=SM] add SystemFix
 
-
 tag @e[tag=!NoKill,type=item,nbt=!{Item:{tag:{NoKill:1b}}},nbt=!{Item:{id:"minecraft:carrot_on_a_stick"}}] add kill
 tag @e[type=arrow,nbt={inGround:true}] add kill
 tag @e[type=spectral_arrow,nbt={inGround:true}] add kill
@@ -233,7 +229,6 @@ kill @e[tag=kill,type=!player]
 
 execute as @a[scores={Trigger=1..}] run function system:main/stats_view
 scoreboard players enable @a Trigger
-
 
 advancement revoke @a only system:onattack/for_player
 advancement revoke @a only system:onattack/is_projectile
