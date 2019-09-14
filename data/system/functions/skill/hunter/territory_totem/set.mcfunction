@@ -1,3 +1,0 @@
-execute at @s run summon area_effect_cloud ~ ~0.5 ~ {Particle:"dolphin",ReapplicationDelay:2147483647,Radius:0.01f,RadiusPerTick:0f,RadiusOnUse:0f,Duration:1200,DurationOnUse:0f,Age:0,WaitTime:0,Tags:["Totem"],Passengers:[{id:"minecraft:falling_block",BlockState:{Name:"minecraft:beacon"},NoGravity:1b,Glowing:0b,Time:-1200,DropItem:0b,HurtEntities:0b,Tags:["NoInf","Totem"]}]}
-execute at @s run playsound minecraft:block.anvil.use master @a[distance=..5] ~ ~ ~ 1 2.0
-xp add @s 30 levels

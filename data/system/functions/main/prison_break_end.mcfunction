@@ -6,8 +6,8 @@ clear @a[tag=DatugokuFlags] leather_leggings
 clear @a[tag=DatugokuFlags] leather_boots
 effect give @a[tag=DatugokuFlags] minecraft:invisibility 10 0 true
 effect give @a[tag=DatugokuFlags] minecraft:speed 10 0 true
-effect give @a[tag=DatugokuFlags] minecraft:resistance 10 0 true
+effect give @a[tag=DatugokuFlags] minecraft:luck 10 0 true
 scoreboard players set @a[tag=DatugokuFlags] Health 100
-scoreboard players set @a[tag=DatugokuFlags] InvisibleArmor 1
+scoreboard players set @a[tag=DatugokuFlags] InvisibleArmor 200
 execute as @a[tag=DatugokuFlags] at @s run tp @s @e[tag=RandSpawn,limit=1,type=armor_stand,sort=random]
 scoreboard players set @e[tag=SM] DatugokuA 0

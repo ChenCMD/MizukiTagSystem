@@ -24,10 +24,17 @@ function system:main/join_hunter
 effect give @a[team=Escape] minecraft:weakness 999999 99 true
 effect give @a[team=Escape] minecraft:resistance 999999 4 true
 effect give @a minecraft:saturation 999999 0 true
+#Luck of Dice回数リセット
+scoreboard players set @a[team=Escape] LoDCount 0
+scoreboard players operation @e[tag=SM] LoDDeley = $LoDDeley AddTmp
 #逃走者スキルアイテムGive
 execute if entity @s[tag=!NoSkillMode] run tag @a[team=Escape] add SpeedRemove
 execute if entity @s[tag=!NoSkillMode] run tag @a[team=Escape] add HideRemove
 execute if entity @s[tag=!NoSkillMode] run tag @a[team=Escape] add TeleportRemove
+execute if entity @s[tag=!NoLoD] run scoreboard players operation $LoDCopy AddTmp = $LoD AddTmp
+tellraw @a [{"text":"Luck of Dice所持者","color":"green"},{"text":": ","color":"white"}]
+execute if entity @s[tag=!NoLoD] run function system:skill/escape/taunt/loop
+tag @a remove LoD1
 #鬼スキルアイテムランダム配布
 execute if entity @s[tag=!NoSkillMode] as @a[team=Hunter] run function system:skill/skill_set
 #防具
