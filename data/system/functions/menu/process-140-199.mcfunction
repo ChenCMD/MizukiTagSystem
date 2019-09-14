@@ -1,0 +1,29 @@
+execute if entity @e[tag=SM,scores={Menu=140}] run scoreboard players set $LoD AddTmp 1
+execute if entity @e[tag=SM,scores={Menu=141}] run scoreboard players set $LoD AddTmp 2
+execute if entity @e[tag=SM,scores={Menu=142}] run scoreboard players set $LoD AddTmp 3
+execute if entity @e[tag=SM,scores={Menu=143}] run scoreboard players set $LoD AddTmp 4
+execute if entity @e[tag=SM,scores={Menu=144}] run scoreboard players set $LoD AddTmp 5
+execute if entity @e[tag=SM,scores={Menu=145}] run scoreboard players set $LoD AddTmp 6
+execute if entity @e[tag=SM,scores={Menu=146}] run scoreboard players set $LoD AddTmp 7
+execute if entity @e[tag=SM,scores={Menu=147}] run scoreboard players set $LoD AddTmp 8
+execute if entity @e[tag=SM,scores={Menu=148}] run scoreboard players set $LoD AddTmp 9
+execute if entity @e[tag=SM,scores={Menu=149}] run scoreboard players set $LoD AddTmp 10
+execute if entity @e[tag=SM,scores={Menu=150}] run scoreboard players set $LoD AddTmp 11
+execute if entity @e[tag=SM,scores={Menu=151}] run scoreboard players set $LoD AddTmp 12
+execute if entity @e[tag=SM,scores={Menu=152}] run scoreboard players set $LoD AddTmp 13
+execute if entity @e[tag=SM,scores={Menu=153}] run scoreboard players set $LoD AddTmp 14
+execute if entity @e[tag=SM,scores={Menu=154}] run scoreboard players set $LoD AddTmp 15
+execute if entity @e[tag=SM,scores={Menu=155}] run scoreboard players set $LoD AddTmp 16
+execute if entity @e[tag=SM,scores={Menu=156}] run scoreboard players set $LoD AddTmp 17
+execute if entity @e[tag=SM,scores={Menu=157}] run scoreboard players set $LoD AddTmp 18
+execute if entity @e[tag=SM,scores={Menu=158}] run scoreboard players set $LoD AddTmp 19
+execute if entity @e[tag=SM,scores={Menu=159}] run scoreboard players set $LoD AddTmp 20
+execute if entity @e[tag=SM,scores={Menu=160}] run scoreboard players set $LoD AddTmp 21
+execute if entity @e[tag=SM,scores={Menu=161}] run scoreboard players set $LoD AddTmp 22
+execute if entity @e[tag=SM,scores={Menu=162}] run scoreboard players set $LoD AddTmp 23
+execute if entity @e[tag=SM,scores={Menu=163}] run scoreboard players set $LoD AddTmp 24
+execute if entity @e[tag=SM,scores={Menu=164}] run scoreboard players set $LoD AddTmp 25
+execute if entity @e[tag=SM,scores={Menu=165}] run scoreboard players set $LoD AddTmp 26
+execute if entity @e[tag=SM,scores={Menu=166}] run scoreboard players set $LoD AddTmp 27
+execute if entity @e[tag=SM,scores={Menu=140..166}] run tellraw @a [{"text":"LoD所持人数を","color":"blue"},{"score":{"name":"$LoD","objective":"AddTmp"},"color":"blue"},{"text":"人に設定しました","color":"blue"}]
+function system:menu/pattern/5

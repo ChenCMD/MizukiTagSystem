@@ -20,6 +20,7 @@ tag @s[tag=SM] remove GameStartCount
 tag @a remove ChaseArrowReady
 tag @a remove GravityArrowReady
 xp set @a 0 levels
+function system:main/kills_in_match_view
 scoreboard players reset @s GameStartCount
 scoreboard players add @s GameCount 1
 execute if entity @s[scores={UseRuleSelect=1}] run scoreboard players set @a[team=Died] Winstroke 0
