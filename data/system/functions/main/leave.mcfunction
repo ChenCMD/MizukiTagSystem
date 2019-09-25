@@ -17,4 +17,5 @@ gamemode adventure @s[tag=!OP]
 effect give @s minecraft:saturation 999999 0 true
 effect give @s minecraft:resistance 999999 4 true
 execute unless score @s GameCount = @e[tag=SM,limit=1] GameCount run tag @s remove GamePlayer
+tag @s remove Event_Death
 scoreboard players reset @s Leave

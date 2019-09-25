@@ -2,8 +2,8 @@ execute as @a[distance=..40] if score @s UserID = @e[type=item,tag=DeleyFlash,di
 execute as @a[distance=..40] if score @s UserID = @e[type=item,tag=DeleyFlash,distance=0,limit=1] UserID run tag @s[team=Hunter] add Event_Death
 kill @e[type=item,tag=DeleyFlash,distance=0,limit=1]
 
-execute if entity @s[tag=Event_Death] run tellraw @a [{"selector":"@s[tag=Event_Death]","bold":false},{"text":"は1分以内に40m離れずに死んだ...","color":"aqua","bold":false}]
-execute if entity @s[tag=Event_Death] run scoreboard players set @s Health 0
+execute if entity @s[tag=Event_Death] run tellraw @a [{"selector":"@a[tag=Event_Death]","bold":false},{"text":"は1分以内に40m離れずに死んだ...","color":"aqua","bold":false}]
+execute if entity @s[tag=Event_Death] run scoreboard players set @a[tag=Event_Death] Health 0
 execute if entity @s[tag=Event_Death] run playsound minecraft:entity.lightning_bolt.thunder player @s ~ ~ ~ 1 0.9 1
-execute if entity @s[tag=Event_Death] run execute as @s run function system:mode/hunter_death
-execute if entity @s[tag=Event_Death] run tag @s remove Event_Death
+execute if entity @s[tag=Event_Death] as @a[tag=Event_Death] run function system:mode/hunter_death
+execute if entity @s[tag=Event_Death] run tag @a[tag=Event_Death] remove Event_Death
