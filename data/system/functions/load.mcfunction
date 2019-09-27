@@ -197,6 +197,7 @@ execute unless entity @e[tag=SM,tag=!NoHealthRegen] run function system:main/reg
 execute as @e[tag=DeleyFlash] run function system:event/fixed_time_flash/radar/act_base
 execute as @e[tag=DeleyFlash] if score @s TimeFlash > $TimeFlash AddTmp at @s run function system:event/fixed_time_flash/act
 
+#脱獄モードの場合の追加処理
 execute if entity @e[tag=SM,scores={UseRuleSelect=3}] run function system:mode/3-a
 
 
