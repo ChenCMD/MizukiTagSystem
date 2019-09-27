@@ -10,3 +10,7 @@ execute if entity @a[tag=Event_Death] run scoreboard players set @a[tag=Event_De
 execute if entity @a[tag=Event_Death] run playsound minecraft:entity.lightning_bolt.thunder player @s ~ ~ ~ 1 0.9 1
 execute if entity @a[tag=Event_Death] as @a[tag=Event_Death] run function system:mode/hunter_death
 execute if entity @a[tag=Event_Death] run tag @a[tag=Event_Death] remove Event_Death
+
+#DEBUG
+execute if score $DEBUG DEBUG_CODE matches 5 run tellraw @a[tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"text":"system:event/fixed_time_flash/act.mcfunction run stats","color":"dark_aqua"},{"text":": ","color":"white"},{"text":"SUCCESS","color":"green"},{"text":"\n[DEBUG] ","color":"dark_aqua"},{"text":"Run from","color":"dark_aqua"},{"text":": ","color":"white"},{"selector":"@s","color":"light_purple"}]
+execute if score $DEBUG DEBUG_CODE matches 5 run scoreboard players reset $DEBUG

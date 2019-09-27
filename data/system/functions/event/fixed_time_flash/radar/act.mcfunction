@@ -21,13 +21,6 @@ execute at @a[team=!Wait,team=!OP,team=!Died,distance=40..] if score @a[distance
 execute at @a[team=!Wait,team=!OP,team=!Died,distance=40..] if score @a[distance=0,limit=1,sort=nearest] UserID = @s UserID positioned ~ ~1.6 ~ facing entity @s eyes as @a[distance=0,limit=1,sort=nearest] run particle minecraft:dust 0 1 0 0.5 ^ ^ ^3 0 0 0 0 1 normal @s
 
 
-execute at @s as @e[type=item,tag=DeleyFlash,distance=40..] if score @s UserID = @a[distance=0,limit=1] UserID positioned ~ ~1.6 ~ facing entity @s eyes run particle minecraft:dust 0 1 0 0.5 ^ ^ ^1.2 0 0 0 0 1 normal @s
-execute at @s as @e[type=item,tag=DeleyFlash,distance=40..] if score @s UserID = @a[distance=0,limit=1] UserID positioned ~ ~1.6 ~ facing entity @s eyes run particle minecraft:dust 0 1 0 0.5 ^ ^ ^1.4 0 0 0 0 1 normal @s
-execute at @s as @e[type=item,tag=DeleyFlash,distance=40..] if score @s UserID = @a[distance=0,limit=1] UserID positioned ~ ~1.6 ~ facing entity @s eyes run particle minecraft:dust 0 1 0 0.5 ^ ^ ^1.6 0 0 0 0 1 normal @s
-execute at @s as @e[type=item,tag=DeleyFlash,distance=40..] if score @s UserID = @a[distance=0,limit=1] UserID positioned ~ ~1.6 ~ facing entity @s eyes run particle minecraft:dust 0 1 0 0.5 ^ ^ ^1.8 0 0 0 0 1 normal @s
-execute at @s as @e[type=item,tag=DeleyFlash,distance=40..] if score @s UserID = @a[distance=0,limit=1] UserID positioned ~ ~1.6 ~ facing entity @s eyes run particle minecraft:dust 0 1 0 0.5 ^ ^ ^2 0 0 0 0 1 normal @s
-execute at @s as @e[type=item,tag=DeleyFlash,distance=40..] if score @s UserID = @a[distance=0,limit=1] UserID positioned ~ ~1.6 ~ facing entity @s eyes run particle minecraft:dust 0 1 0 0.5 ^ ^ ^2.2 0 0 0 0 1 normal @s
-execute at @s as @e[type=item,tag=DeleyFlash,distance=40..] if score @s UserID = @a[distance=0,limit=1] UserID positioned ~ ~1.6 ~ facing entity @s eyes run particle minecraft:dust 0 1 0 0.5 ^ ^ ^2.4 0 0 0 0 1 normal @s
-execute at @s as @e[type=item,tag=DeleyFlash,distance=40..] if score @s UserID = @a[distance=0,limit=1] UserID positioned ~ ~1.6 ~ facing entity @s eyes run particle minecraft:dust 0 1 0 0.5 ^ ^ ^2.6 0 0 0 0 1 normal @s
-execute at @s as @e[type=item,tag=DeleyFlash,distance=40..] if score @s UserID = @a[distance=0,limit=1] UserID positioned ~ ~1.6 ~ facing entity @s eyes run particle minecraft:dust 0 1 0 0.5 ^ ^ ^2.8 0 0 0 0 1 normal @s
-execute at @s as @e[type=item,tag=DeleyFlash,distance=40..] if score @s UserID = @a[distance=0,limit=1] UserID positioned ~ ~1.6 ~ facing entity @s eyes run particle minecraft:dust 0 1 0 0.5 ^ ^ ^3 0 0 0 0 1 normal @s
+#DEBUG
+execute if score $DEBUG DEBUG_CODE matches 7 run tellraw @a[tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"text":"system:event/fixed_time_flash/radar/act.mcfunction run stats","color":"dark_aqua"},{"text":": ","color":"white"},{"text":"SUCCESS","color":"green"},{"text":"\n[DEBUG] ","color":"dark_aqua"},{"text":"Run from","color":"dark_aqua"},{"text":": ","color":"white"},{"selector":"@s","color":"light_purple"}]
+execute if score $DEBUG DEBUG_CODE matches 7 run scoreboard players reset $DEBUG
