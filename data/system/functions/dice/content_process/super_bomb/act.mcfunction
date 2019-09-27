@@ -46,9 +46,9 @@ particle minecraft:dust 1 0 0 1 ~10.8919 ~0.5 ~-5.4997 0 0 0 1 1
 particle minecraft:dust 1 0 0 1 ~11.5865 ~0.5 ~-4.0923 0 0 0 1 1
 particle minecraft:dust 1 0 0 1 ~12.0910 ~0.5 ~-2.6051 0 0 0 1 1
 particle minecraft:dust 1 0 0 1 ~12.3972 ~0.5 ~-1.0660 0 0 0 1 1
-execute if score @s SuperBomb matches ..62 run particle minecraft:enchant ~ ~2.8 ~ 0 0 0 10 150 normal
+execute if score @s SuperBomb matches ..42 run particle minecraft:enchant ~ ~2.8 ~ 0 0 0 10 150 normal
 scoreboard players add @s SuperBomb 1
-execute if score @s SuperBomb matches 0..95 run playsound minecraft:entity.tnt.primed master @a ~ ~ ~ 1 0.5
+execute if score @s SuperBomb matches 0..75 run playsound minecraft:entity.tnt.primed master @a ~ ~ ~ 1 0.5
 execute if score @s SuperBomb matches 80.. run particle minecraft:explosion_emitter ~ ~ ~ 2 2 2 0 100
 execute if score @s SuperBomb matches 80.. run playsound minecraft:entity.generic.explode master @a ~ ~ ~ 2
 execute if score @s[tag=Hunter] SuperBomb matches 80.. if entity @a[distance=..12,team=Escape] as @a if score @s UserID = @e[tag=SuperBomb,distance=0,limit=1] UserID at @a[distance=..12,team=Escape] run tellraw @a ["",{"selector":"@s","color":"green"},{"text":" >> ","color":"green"},{"selector":"@p[distance=0]","color":"green"},{"text":" [スーパーボム]","color":"dark_red"}]
