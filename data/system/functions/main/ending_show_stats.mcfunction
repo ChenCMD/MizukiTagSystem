@@ -19,3 +19,6 @@ scoreboard players reset #2 kills_in_match
 execute if entity @a[tag=Kim3] run tellraw @a [{"text":"3. ","color":"gold","bold":true},{"selector":"@a[tag=Kim3]","bold":false},{"text":": ","color":"white","bold":false},{"score":{"name":"#3","objective":"kills_in_match","color":"aqua"},"bold":false},{"text":"kills","color":"aqua","bold":false},{"text":"  (","color":"white","bold":false},{"text":"tot.","color":"aqua","bold":false},{"score":{"objective":"TotalKill","name":"@a[tag=Kim3]"},"color":"yellow","bold":false},{"text":")","color":"white","bold":false}]
 tag @a remove Kim3
 scoreboard players reset #3 kills_in_match
+
+
+tellraw @a [{"text":"\n[逃げ切りプレイヤー]\n","color":"yellow"},{"selector":"@a[team=Escape]"},{"text":"計","color":"yellow"},{"text":": ","color":"white"},{"score":{"objective":"PlayersCount","name":"§b残り逃走者数"},"color":"aqua"},{"text":"人","color":"aqua"}]
