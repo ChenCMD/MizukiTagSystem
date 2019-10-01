@@ -15,7 +15,6 @@ kill @e[tag=Landmine]
 kill @e[tag=Totem]
 kill @e[tag=Flash]
 kill @e[type=arrow]
-tp @a[team=!Wait] 9989.5 136.5 9996.5
 tag @s[tag=SM] remove GameStartCount
 tag @a remove ChaseArrowReady
 tag @a remove GravityArrowReady
@@ -34,3 +33,4 @@ scoreboard players operation @s GameTimeB = @s GameTimeC
 bossbar set mizuki:time/mode1 players
 bossbar set mizuki:time/mode2 players
 bossbar set mizuki:time/mode3 players
+tp @a[team=!Wait] 9989.5 136.5 9996.5
