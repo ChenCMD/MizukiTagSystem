@@ -51,8 +51,15 @@ scoreboard players add @s SuperBomb 1
 execute if score @s SuperBomb matches 0..75 run playsound minecraft:entity.tnt.primed master @a ~ ~ ~ 1 0.5
 execute if score @s SuperBomb matches 80.. run particle minecraft:explosion_emitter ~ ~ ~ 2 2 2 0 100
 execute if score @s SuperBomb matches 80.. run playsound minecraft:entity.generic.explode master @a ~ ~ ~ 2
-execute if score @s[tag=Hunter] SuperBomb matches 80.. if entity @a[distance=..12,team=Escape] as @a if score @s UserID = @e[tag=SuperBomb,distance=0,limit=1] UserID at @a[distance=..12,team=Escape] run tellraw @a ["",{"selector":"@s","color":"green"},{"text":" >> ","color":"green"},{"selector":"@p[distance=0]","color":"green"},{"text":" [スーパーボム]","color":"dark_red"}]
-execute if score @s[tag=Escape] SuperBomb matches 80.. if entity @a[distance=..12,team=Hunter] as @a if score @s UserID = @e[tag=SuperBomb,distance=0,limit=1] UserID at @a[distance=..12,team=Hunter] run tellraw @a ["",{"selector":"@s","color":"green"},{"text":" >> ","color":"green"},{"selector":"@p[distance=0]","color":"green"},{"text":" [スーパーボム]","color":"dark_red"}]
+
+execute if score @s[tag=Hunter] SuperBomb matches 80.. run say 1 @s @e[sort=nearest,distance=..0.01]
+execute if score @s[tag=Hunter] SuperBomb matches 80.. if entity @a[distance=..12,team=Escape] run say 2 @s @e[sort=nearest,distance=..0.01]
+execute if score @s[tag=Hunter] SuperBomb matches 80.. if entity @a[distance=..12,team=Escape] as @a run say 3 @s @e[sort=nearest,distance=..0.01]
+execute if score @s[tag=Hunter] SuperBomb matches 80.. if entity @a[distance=..12,team=Escape] as @a if score @s UserID = @e[tag=SuperBomb,sort=nearest,distance=..0.01,limit=1] UserID run say 4 @s @e[sort=nearest,distance=..0.01]
+execute if score @s[tag=Hunter] SuperBomb matches 80.. if entity @a[distance=..12,team=Escape] as @a if score @s UserID = @e[tag=SuperBomb,sort=nearest,distance=..0.01,limit=1] UserID at @a[distance=..12,team=Escape] run say 5 @s @e[sort=nearest,distance=..0.01]
+
+execute if score @s[tag=Hunter] SuperBomb matches 80.. if entity @a[distance=..12,team=Escape] as @a if score @s UserID = @e[tag=SuperBomb,sort=nearest,distance=..0.01,limit=1] UserID at @a[distance=..12,team=Escape] run tellraw @a ["",{"selector":"@s","color":"green"},{"text":" >> ","color":"green"},{"selector":"@p[sort=nearest,distance=..0.01]","color":"green"},{"text":" [スーパーボム]","color":"dark_red"}]
+execute if score @s[tag=Escape] SuperBomb matches 80.. if entity @a[distance=..12,team=Hunter] as @a if score @s UserID = @e[tag=SuperBomb,sort=nearest,distance=..0.01,limit=1] UserID at @a[distance=..12,team=Hunter] run tellraw @a ["",{"selector":"@s","color":"green"},{"text":" >> ","color":"green"},{"selector":"@p[sort=nearest,distance=..0.01]","color":"green"},{"text":" [スーパーボム]","color":"dark_red"}]
 execute if score @s[tag=Hunter] SuperBomb matches 80.. if entity @a[distance=..12,team=Escape] run playsound minecraft:entity.lightning_bolt.thunder player @a ~ ~ ~ 1 0.9 1
 execute if score @s[tag=Escape] SuperBomb matches 80.. if entity @a[distance=..12,team=Hunter] run playsound minecraft:entity.lightning_bolt.thunder player @a ~ ~ ~ 1 0.9 1
 execute if score @s[tag=Hunter] SuperBomb matches 80.. run scoreboard players set @a[distance=..12,team=Escape] Health 0
