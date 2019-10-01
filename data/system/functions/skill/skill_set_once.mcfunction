@@ -9,3 +9,4 @@ execute if entity @s[scores={Random=5}] run tag @s add TrapRemove
 execute if entity @s[scores={Random=6}] run tag @s add LandmineRemove
 execute if entity @s[scores={Random=7}] run tag @s add TerritoryTRemove
 scoreboard players operation @s SkillNum = @s Random
+scoreboard players reset @s Random
