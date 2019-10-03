@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 tellraw @a [{"text":"[ダイス] ","color":"dark_red","bold":true},{"selector":"@s","bold":false},{"text":"はダイスの取り扱いを間違えて死んでしまった...","color":"red","bold":false}]
+=======
+tellraw @a [{"text":"[ダイス] ","color":"light_purple","bold":true},{"selector":"@s","bold":false},{"text":"はダイスの取り扱いを間違えて死んでしまった...","color":"red","bold":false}]
+>>>>>>> c2ae0ca74badf2fafec09781b1831ce200c8e070
 scoreboard players set @s Health 0
 playsound minecraft:entity.lightning_bolt.thunder player @a ~ ~ ~ 1 0.9 1
 execute as @s[team=Hunter] run function system:mode/hunter_death
