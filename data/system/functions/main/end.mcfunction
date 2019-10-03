@@ -15,19 +15,11 @@ kill @e[tag=Landmine]
 kill @e[tag=Totem]
 kill @e[tag=Flash]
 kill @e[type=arrow]
-<<<<<<< HEAD
-=======
-tp @a[team=!Wait] 9989.5 136.5 9996.5
->>>>>>> c2ae0ca74badf2fafec09781b1831ce200c8e070
 tag @s[tag=SM] remove GameStartCount
 tag @a remove ChaseArrowReady
 tag @a remove GravityArrowReady
 xp set @a 0 levels
-<<<<<<< HEAD
 function system:main/ending_show_stats
-=======
-function system:main/kills_in_match_view
->>>>>>> c2ae0ca74badf2fafec09781b1831ce200c8e070
 scoreboard players reset @s GameStartCount
 scoreboard players add @s GameCount 1
 execute if entity @s[scores={UseRuleSelect=1}] run scoreboard players set @a[team=Died] Winstroke 0
