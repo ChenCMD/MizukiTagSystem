@@ -10,11 +10,7 @@ execute if entity @s[tag=ExplodeOn] positioned ~-2 ~-2 ~-2 run scoreboard player
 execute if entity @s[tag=ExplodeOn] at @s as @a if score @s UserID = @e[tag=Landmine,distance=0,limit=1] UserID if entity @s[nbt={ActiveEffects:[{Id:5b}]}] positioned ~-2 ~-2 ~-2 run scoreboard players operation @a[dx=6,dy=6,dz=6,nbt=!{ActiveEffects:[{Id:26b}]}] Health -= $ATKBonus AddTmp
 
 execute if entity @s[tag=ExplodeOn] run tag @s add kill
-<<<<<<< HEAD
 execute if entity @s[tag=ExplodeOn] run tellraw @a[team=OP,tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"selector":"@s","color":"dark_aqua"},{"text":" on blast damage","color":"dark_aqua"}]
-=======
-tellraw @a[team=OP,tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"selector":"@s","color":"dark_aqua"},{"text":" on blast damage","color":"dark_aqua"}]
->>>>>>> c2ae0ca74badf2fafec09781b1831ce200c8e070
 execute if entity @s[tag=ExplodeOn] positioned ~-2 ~-2 ~-2 if entity @a[dx=6,dy=6,dz=6,scores={Health=..0}] at @s as @a if score @s UserID = @e[tag=Landmine,distance=0,limit=1] UserID positioned ~-2 ~-2 ~-2 at @a[dx=6,dy=6,dz=6,scores={Health=..0}] run function system:main/job_systems/calc/skill
 
 
