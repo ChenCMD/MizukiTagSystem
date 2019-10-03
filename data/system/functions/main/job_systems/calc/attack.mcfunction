@@ -5,6 +5,7 @@ tag @a[scores={Health=..0,NoDeath=0},advancements={system:ondamage/for_player=tr
 #scoreboard players reset @a NoDeath
 #死亡処理
 execute if entity @a[tag=Death] run scoreboard players add @s[distance=..3.5,advancements={system:onattack/for_player=true}] TotalKill 1
+execute if entity @a[tag=Death] run scoreboard players add @s[distance=..3.5,advancements={system:onattack/for_player=true}] kills_in_match 1
 execute if entity @a[tag=Death] run playsound minecraft:entity.lightning_bolt.thunder player @a ~ ~ ~ 1 0.9 1
 execute if entity @a[tag=Death] as @s[distance=..3.5,advancements={system:onattack/for_player=true}] run function system:main/kill
 execute if entity @a[tag=Death] as @a[tag=Death] if entity @e[tag=SM,scores={UseRuleSelect=1}] run function system:mode/1

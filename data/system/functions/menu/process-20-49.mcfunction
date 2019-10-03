@@ -1,6 +1,7 @@
 execute if entity @e[tag=SM,scores={Menu=20}] run scoreboard players set @e[tag=SM] GameTimeC 60
 execute if entity @e[tag=SM,scores={Menu=21}] run scoreboard players set @e[tag=SM] GameTimeC 120
 execute if entity @e[tag=SM,scores={Menu=22}] run scoreboard players set @e[tag=SM] GameTimeC 180
+execute if entity @e[tag=SM,scores={Menu=20..22}] run tellraw @a [{"text":"[WARN]","color":"yellow"},{"text":" 3分以下は推奨されません。バグ等が発生する可能性があります。","color":"aqua"}]
 execute if entity @e[tag=SM,scores={Menu=23}] run scoreboard players set @e[tag=SM] GameTimeC 240
 execute if entity @e[tag=SM,scores={Menu=24}] run scoreboard players set @e[tag=SM] GameTimeC 300
 execute if entity @e[tag=SM,scores={Menu=25}] run scoreboard players set @e[tag=SM] GameTimeC 360
