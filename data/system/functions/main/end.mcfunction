@@ -25,12 +25,12 @@ scoreboard players add @s GameCount 1
 execute if entity @s[scores={UseRuleSelect=1}] run scoreboard players set @a[team=Died] Winstroke 0
 execute if entity @s[scores={UseRuleSelect=3}] run scoreboard players set @a[team=Died] Winstroke 0
 scoreboard players set @a Health 999999
-tag @a remove GamePlayer
+tp @a[team=!Wait] 9989.5 136.5 9996.5
 team join Wait @a[team=!OP]
+tag @a remove GamePlayer
 tag @s remove GameRN
 tag @s remove GameTime_Yes
 scoreboard players operation @s GameTimeB = @s GameTimeC
 bossbar set mizuki:time/mode1 players
 bossbar set mizuki:time/mode2 players
 bossbar set mizuki:time/mode3 players
-tp @a[team=!Wait] 9989.5 136.5 9996.5
