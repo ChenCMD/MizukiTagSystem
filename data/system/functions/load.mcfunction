@@ -16,7 +16,7 @@ execute as @e[tag=MenuPos] at @s if block ~1 ~-1 ~ minecraft:redstone_wire[power
 
 
 #システムサポートサブ処理#####################################################################################
-execute if entity @e[tag=SM,tag=HideMode] as @a[team=Hunter] at @s run particle block minecraft:black_wool ~ ~0.1 ~ 0.2 0 0.2 1 1 force @a
+execute if entity @e[tag=SM,tag=HideMode] as @a[team=Hunter] at @s unless data entity @s {Motion:[0.0,0.0,0.0]} run particle block minecraft:black_wool ~ ~0.1 ~ 0.2 0 0.2 1 1 force @a
 
 #ドアシステム#################################################################################################
 scoreboard players add @e[tag=SM,scores={Door=1..80}] Door 1
