@@ -14,7 +14,7 @@ playsound minecraft:block.anvil.place block @a[team=Escape,dx=2,dy=0,dz=2] ~ ~ ~
 
 ##ダメージ処理
 #execute if entity @a[team=Escape,dx=2,dy=0,dz=2] run effect give @a[dx=2,dy=0,dz=2] minecraft:instant_damage 1 0 true
-#execute if entity @a[team=Escape,dx=2,dy=0,dz=2] run scoreboard players operation @a[dx=2,dy=0,dz=2] Health = $TrapDamage AddTmp
+#execute if entity @a[team=Escape,dx=2,dy=0,dz=2] run scoreboard players operation @a[dx=2,dy=0,dz=2] Health = $TrapDamage Ver
 #execute if entity @a[team=Escape,dx=2,dy=0,dz=2] if entity @a[dx=2,dy=0,dz=2,scores={Health=..0}] as @a positioned ~1 ~ ~1 if score @s UserID = @e[tag=Trap,distance=0,limit=1] UserID at @a[dx=2,dy=0,dz=2] run function system:main/job_systems/calc/skill
 
 ##パーティクル

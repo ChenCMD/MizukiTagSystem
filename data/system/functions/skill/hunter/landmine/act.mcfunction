@@ -5,9 +5,9 @@ execute if entity @s[tag=ExplodeOn] run playsound minecraft:entity.generic.explo
 
 #死亡処理
 execute if entity @s[tag=ExplodeOn] positioned ~-2 ~-2 ~-2 run effect give @a[dx=6,dy=6,dz=6] minecraft:instant_damage 1 0 true
-execute if entity @s[tag=ExplodeOn] positioned ~-2 ~-2 ~-2 run scoreboard players operation @a[dx=6,dy=6,dz=6,nbt=!{ActiveEffects:[{Id:26b}]}] Health -= $LandmineDamage AddTmp
+execute if entity @s[tag=ExplodeOn] positioned ~-2 ~-2 ~-2 run scoreboard players operation @a[dx=6,dy=6,dz=6,nbt=!{ActiveEffects:[{Id:26b}]}] Health -= $LandmineDamage Ver
 ##補正
-execute if entity @s[tag=ExplodeOn] at @s as @a if score @s UserID = @e[tag=Landmine,distance=0,limit=1] UserID if entity @s[nbt={ActiveEffects:[{Id:5b}]}] positioned ~-2 ~-2 ~-2 run scoreboard players operation @a[dx=6,dy=6,dz=6,nbt=!{ActiveEffects:[{Id:26b}]}] Health -= $ATKBonus AddTmp
+execute if entity @s[tag=ExplodeOn] at @s as @a if score @s UserID = @e[tag=Landmine,distance=0,limit=1] UserID if entity @s[nbt={ActiveEffects:[{Id:5b}]}] positioned ~-2 ~-2 ~-2 run scoreboard players operation @a[dx=6,dy=6,dz=6,nbt=!{ActiveEffects:[{Id:26b}]}] Health -= $ATKBonus Ver
 
 execute if entity @s[tag=ExplodeOn] run tag @s add kill
 execute if entity @s[tag=ExplodeOn] run tellraw @a[team=OP,tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"selector":"@s","color":"dark_aqua"},{"text":" on blast damage","color":"dark_aqua"}]

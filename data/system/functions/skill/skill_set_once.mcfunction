@@ -1,5 +1,5 @@
 function random:generation
-scoreboard players operation @s Random %= $7 AddTmp
+scoreboard players operation @s Random %= $7 Ver
 scoreboard players add @s Random 1
 execute if entity @s[scores={Random=1}] run tag @s add FlashSRemove
 execute if entity @s[scores={Random=2}] run tag @s add FlashMRemove

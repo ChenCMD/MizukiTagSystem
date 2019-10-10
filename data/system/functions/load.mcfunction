@@ -35,7 +35,7 @@ execute as @e[tag=Link_Dice] at @s run function system:dice/act
 #アイテムs
 #スーパーボム
 execute as @a[team=!OP,team=!Wait,team=!Died,scores={use_superbomb=1..}] run tellraw @a[team=OP,tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"selector":"@s","color":"dark_aqua"},{"text":" is Use SuperBomb","color":"dark_aqua"}]
-execute as @a[scores={use_superbomb=1..}] at @s run function system:dice/content_process/super_bomb/set
+#execute as @a[scores={use_superbomb=1..}] at @s run function system:dice/content_process/super_bomb/set
 execute as @e[tag=SuperBomb] at @s run function system:dice/content_process/super_bomb/act
 #リセットポーション
 execute as @a[nbt={ActiveEffects:[{Id:26b,Amplifier:12b,Duration:0}]}] run tellraw @s {"text":"リセットポーションを飲んだ！","color":"green"}
@@ -46,84 +46,26 @@ execute as @a[team=Escape,nbt={ActiveEffects:[{Id:26b,Amplifier:12b,Duration:0}]
 #イベント系
 execute as @a[scores={Radar_Remaining=1..}] at @s run function system:dice/content_process/radar/act_base
 
-#スキル処理: スピード#########################################################################################
-give @a[tag=SpeedRemove,team=!Wait] minecraft:feather{HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§aスピード\"",Lore:["{\"text\":\"§f自身に 移動速度上昇Ⅱ (0:05)の効果を付与する\"}","{\"text\":\"§aCT§f: §b20秒\"}"]}}
-tag @a[tag=SpeedRemove] remove SpeedRemove
-execute as @a[team=!OP,team=!Wait,team=!Died,scores={use_speed=1..}] run tellraw @a[team=OP,tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"selector":"@s","color":"dark_aqua"},{"text":" is Use Speed","color":"dark_aqua"}]
-execute as @a[scores={use_speed=1..}] run function system:skill/escape/speed/use
+execute as @a[scores={CarrotClick=1..}] run function system:skill/carrot_branch
 
-#スキル処理: 透明#############################################################################################
-give @a[tag=HideRemove,team=!Wait] minecraft:light_gray_stained_glass{HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§7透明\"",Lore:["{\"text\":\"§f自身に 透明 (0:06)の効果を付与する\"}","{\"text\":\"§aCT§f: §b30秒\"}"]}}
-tag @a[tag=HideRemove] remove HideRemove
-execute as @a[team=!Died,scores={use_hide=1..}] run tellraw @a[team=OP,tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"selector":"@s","color":"dark_aqua"},{"text":" is Use Hide","color":"dark_aqua"}]
-execute as @a[scores={use_hide=1..}] run function system:skill/escape/hide/use
-#ここ別のとこの処理にも併用
+
 execute as @a[scores={InvisibleArmor=0..}] run function system:skill/escape/hide/act
-
-#スキル処理: テレポート#######################################################################################
-give @a[tag=TeleportRemove,team=!Wait] minecraft:ender_eye{HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§5テレポート\"",Lore:["{\"text\":\"§f25m前方向にテレポートする\"}","{\"text\":\"§f途中に貫通できないブロックがあった場合そこで止まる\"}","{\"text\":\"§aCT§f: §b80秒\"}"]}}
-tag @a[tag=TeleportRemove] remove TeleportRemove
-execute as @a[team=!OP,team=!Wait,team=!Died,scores={use_teleport=1..}] run tellraw @a[team=OP,tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"selector":"@s","color":"dark_aqua"},{"text":" is Use Teleport","color":"dark_aqua"}]
-execute as @a[scores={use_teleport=1..}] run function system:skill/escape/teleport/use
-
-#アイテム処理: LoD####################################################################################
 #確率 50% 35% 20% 5%
-execute as @a[team=!OP,team=!Wait,team=!Died,scores={LoDDrop=1..}] run tellraw @a[team=OP,tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"selector":"@s","color":"dark_aqua"},{"text":" is Use Luck of Dice","color":"dark_aqua"}]
-execute as @a[scores={LoDDrop=1..}] at @s run function system:skill/escape/taunt/use
 execute as @a[scores={LoDCT=1..}] run scoreboard players add @s LoDCT 1
 execute as @a[scores={LoDCT=900..},team=!Hunter,team=!Wait,team=!OP] run function system:skill/escape/taunt/give
 execute as @a[scores={LoDCT=900..},team=!Escape,team=!Died] run scoreboard players reset @s LoDCT
-#スキル処理: 鬼####################################################################################
-#フラッシュサーチ
-give @a[tag=FlashSRemove,team=Hunter] minecraft:beacon{HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§eフラッシュサーチ\"",Lore:["{\"text\":\"§b§n半径20m§r§a以内の逃走者に§c発光/不運 (0:10)§a付与\"}","{\"text\":\"§a自身に§9攻撃力 +20 (0:10)§a付与\"}","{\"text\":\"§aCT§f: §b40秒\"}"]}}
-tag @a[tag=FlashSRemove] remove FlashSRemove
-execute as @a[team=!OP,team=!Wait,team=!Died,scores={use_flash_s=1..}] run tellraw @a[team=OP,tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"selector":"@s","color":"dark_aqua"},{"text":" is Use FlashSearch","color":"dark_aqua"}]
-execute as @a[scores={use_flash_s=1..}] run function system:skill/hunter/flash_search/use
 
-#フラッシュマーキング
-give @a[tag=FlashMRemove,team=Hunter] minecraft:glowstone_dust{HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§eフラッシュマーキング\"",Lore:["{\"text\":\"§b§n半径40m§r§a以内の逃走者に§c発光 (0:01)§aを\"}","{\"text\":\"§a付与するマーカーを召喚する\"}","{\"text\":\"§aCT§f: §b50秒\"}"]}}
-tag @a[tag=FlashMRemove] remove FlashMRemove
-execute as @a[team=!OP,team=!Wait,team=!Died,scores={use_flash_m=1..}] run tellraw @a[team=OP,tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"selector":"@s","color":"dark_aqua"},{"text":" is Use FlashMarking","color":"dark_aqua"}]
-execute as @a[scores={use_flash_m=1..}] run function system:skill/hunter/flash_marking/use
 execute as @e[tag=Flash] at @s run function system:skill/hunter/flash_marking/act
 
-#弓全般
-execute as @a[team=!OP,team=!Wait,team=!Died,scores={UseBow=1..}] run tellraw @a[team=OP,tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"selector":"@s","color":"dark_aqua"},{"text":" is Use Bow","color":"dark_aqua"}]
 execute as @a[scores={UseBow=1..}] at @s if entity @e[type=arrow,distance=..5,sort=nearest,limit=1] run function system:skill/hunter/sorted
 execute if entity @e[nbt={inGround:1b},type=arrow] as @a run function system:main/arrow/id_verification
 
-#グラビティアロー
-give @a[tag=ArrowGRemove,team=Hunter] minecraft:firework_star{HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"{\"text\":\"グラビティアロー\",\"color\":\"dark_purple\",\"italic\":false}",Lore:["{\"text\":\"§a矢が§n重力の影響を受けず§r§a音速で飛んでいく\"}","{\"text\":\"§c最大まで引かなければ放てない\"}","{\"text\":\"§a射程§f: §d100m\"}","{\"text\":\"§a威力§f: §c35ダメージ\"}","{\"text\":\"§aCT§f: §b20秒\"}"]}}
-tag @a[tag=ArrowGRemove] remove ArrowGRemove
-execute as @a[team=!OP,team=!Wait,team=!Died,scores={use_arrow_g=1..}] run tellraw @a[team=OP,tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"selector":"@s","color":"dark_aqua"},{"text":" is Use GravityArrow","color":"dark_aqua"}]
-execute as @a[scores={use_arrow_g=1..}] run function system:skill/hunter/gravity_arrow/use
-
-#チェイスアロー
-give @a[tag=ArrowCRemove,team=Hunter] minecraft:emerald{HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"{\"text\":\"チェイスアロー\",\"color\":\"green\",\"italic\":false}",Lore:["{\"text\":\"§a矢の§b§n半径4m§r§a以内に逃走者がいる場合\"}","{\"text\":\"§aテレポートしてヒットする\"}","{\"text\":\"§c最大まで引かなければ放てない\"}","{\"text\":\"§a威力§f: §c35ダメージ\"}","{\"text\":\"§aCT§f: §b10秒\"}"]}}
-tag @a[tag=ArrowCRemove] remove ArrowCRemove
-execute as @a[team=!OP,team=!Wait,team=!Died,scores={use_arrow_c=1..}] run tellraw @a[team=OP,tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"selector":"@s","color":"dark_aqua"},{"text":" is Use ChaseArrow","color":"dark_aqua"}]
-execute as @a[scores={use_arrow_c=1..}] run function system:skill/hunter/chase_arrow/use
 execute as @e[tag=Arrow_Chase,type=arrow] at @s run function system:skill/hunter/chase_arrow/act
 
-#トラップ # "§a威力§f: §c35ダメージ",
-give @a[tag=TrapRemove,team=Hunter] minecraft:black_carpet{HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§8トラップ\"",Lore:["{\"text\":\"§aトラップを設置する\"}","{\"text\":\"§a範囲§f: §b3x3\"}","{\"text\":\"§a効果§f: §c鈍足/盲目/不運/発光 (0:05)\"}","{\"text\":\"§aCT§f: §b15秒 §f| §a消滅§f: §b120秒\"}"]}}
-tag @a[tag=TrapRemove] remove TrapRemove
-execute as @a[team=!OP,team=!Wait,team=!Died,scores={use_trap=1..}] run tellraw @a[team=OP,tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"selector":"@s","color":"dark_aqua"},{"text":" is Use Trap","color":"dark_aqua"}]
-execute as @a[scores={use_trap=1..}] run function system:skill/hunter/trap/use
 execute as @e[tag=Trap] at @s positioned ~-1 ~ ~-1 run function system:skill/hunter/trap/act
 
-#ランドマイン
-give @a[tag=LandmineRemove,team=Hunter] minecraft:iron_trapdoor{HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§cランドマイン\"",Lore:["{\"text\":\"§a地雷を設置する\"}","{\"text\":\"§a起爆範囲§f: §b3x3 §f| §a爆発範囲§f: §b7x7\"}","{\"text\":\"§a威力§f: §c60ダメージ\"}","{\"text\":\"§aCT§f: §b20秒 §f| §a消滅§f: §b180秒\"}"]}}
-tag @a[tag=LandmineRemove] remove LandmineRemove
-execute as @a[team=!OP,team=!Wait,team=!Died,scores={use_landmine=1..}] run tellraw @a[team=OP,tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"selector":"@s","color":"dark_aqua"},{"text":" is Use Landmine","color":"dark_aqua"}]
-execute as @a[scores={use_landmine=1..}] run function system:skill/hunter/landmine/use
 execute as @e[tag=Landmine] at @s positioned ~-1 ~ ~-1 run function system:skill/hunter/landmine/act
 
-#テリトリートテーム
-give @a[tag=TerritoryTRemove,team=Hunter] minecraft:end_rod{HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§3テリトリートーテム\"",Lore:["{\"text\":\"§aトーテムを設置する\"}","{\"text\":\"§a範囲§f: §b20x20\"}","{\"text\":\"§a効果§f: §c鈍足 Ⅱ (0:10)\"}","{\"text\":\"§aCT§f: §b30秒 §f| §a消滅§f: §b60秒\"}"]}}
-tag @a[tag=TerritoryTRemove] remove TerritoryTRemove
-execute as @a[team=!OP,team=!Wait,team=!Died,scores={use_territory_t=1..}] run tellraw @a[team=OP,tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"selector":"@s","color":"dark_aqua"},{"text":" is Use TerritoryTotem","color":"dark_aqua"}]
-execute as @a[scores={use_territory_t=1..}] run function system:skill/hunter/territory_totem/use
 execute as @e[tag=Totem] at @s positioned ~-9 ~ ~-9 run function system:skill/hunter/territory_totem/act
 
 #ハイパージャンプ
@@ -195,7 +137,7 @@ execute unless entity @e[tag=SM,tag=!NoHealthRegen] run function system:main/reg
 
 #定期フラッシュ
 execute as @e[tag=DeleyFlash] run function system:event/fixed_time_flash/radar/act_base
-execute as @e[tag=DeleyFlash] if score @s TimeFlash > $TimeFlash AddTmp at @s run function system:event/fixed_time_flash/act
+execute as @e[tag=DeleyFlash] if score @s TimeFlash > $TimeFlash Ver at @s run function system:event/fixed_time_flash/act
 
 #脱獄モードの場合の追加処理
 execute if entity @e[tag=SM,scores={UseRuleSelect=3}] run function system:mode/3-a
