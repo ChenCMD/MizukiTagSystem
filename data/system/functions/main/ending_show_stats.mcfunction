@@ -7,19 +7,28 @@ execute as @a[team=Hunter,scores={kills_in_match=1..},tag=!Kim1] if score @s kil
 scoreboard players operation #3 kills_in_match > @a[team=Hunter,scores={kills_in_match=1..},tag=!Kim1,tag=!Kim2] kills_in_match
 execute as @a[team=Hunter,scores={kills_in_match=1..},tag=!Kim1,tag=!Kim2] if score @s kills_in_match = #3 kills_in_match run tag @s add Kim3
 
-execute if entity @a[tag=Kim1] run tellraw @a [{"text":"1. ","color":"yellow","bold":true},{"selector":"@a[tag=Kim1]","bold":false},{"text":": ","color":"white","bold":false},{"score":{"name":"#1","objective":"kills_in_match"},"color":"aqua","bold":false},{"text":"kills","color":"aqua","bold":false},{"text":"  (","color":"white","bold":false},{"text":"tot.","color":"aqua","bold":false},{"score":{"objective":"TotalKill","name":"@a[tag=Kim1]"},"color":"yellow","bold":false},{"text":")","color":"white","bold":false}]
-execute if entity @a[tag=Kim2] run tellraw @a [{"text":"2. ","color":"gray","bold":true},{"selector":"@a[tag=Kim2]","bold":false},{"text":": ","color":"white","bold":false},{"score":{"name":"#2","objective":"kills_in_match"},"color":"aqua","bold":false},{"text":"kills","color":"aqua","bold":false},{"text":"  (","color":"white","bold":false},{"text":"tot.","color":"aqua","bold":false},{"score":{"objective":"TotalKill","name":"@a[tag=Kim2]"},"color":"yellow","bold":false},{"text":")","color":"white","bold":false}]
-execute if entity @a[tag=Kim3] run tellraw @a [{"text":"3. ","color":"gold","bold":true},{"selector":"@a[tag=Kim3]","bold":false},{"text":": ","color":"white","bold":false},{"score":{"name":"#3","objective":"kills_in_match"},"color":"aqua","bold":false},{"text":"kills","color":"aqua","bold":false},{"text":"  (","color":"white","bold":false},{"text":"tot.","color":"aqua","bold":false},{"score":{"objective":"TotalKill","name":"@a[tag=Kim3]"},"color":"yellow","bold":false},{"text":")","color":"white","bold":false}]
+execute as @a[tag=Kim1] run scoreboard players add #Counter1 kills_in_match 1
+execute if entity @a[tag=Kim1] if score #Counter1 kills_in_match matches 1 run tellraw @a [{"text":"1. ","color":"yellow","bold":true},{"selector":"@a[tag=Kim1]","bold":false},{"text":": ","color":"white","bold":false},{"score":{"name":"#1","objective":"kills_in_match"},"color":"aqua","bold":false},{"text":"kills","color":"aqua","bold":false},{"text":"  (","color":"white","bold":false},{"text":"tot.","color":"aqua","bold":false},{"score":{"objective":"TotalKill","name":"@a[tag=Kim1]"},"color":"yellow","bold":false},{"text":")","color":"white","bold":false}]
+execute if entity @a[tag=Kim1] unless score #Counter1 kills_in_match matches 1 run tellraw @a [{"text":"1. ","color":"yellow","bold":true},{"selector":"@a[tag=Kim1]","bold":false},{"text":": ","color":"white","bold":false},{"score":{"name":"#1","objective":"kills_in_match"},"color":"aqua","bold":false},{"text":"kills","color":"aqua","bold":false},{"text":"  (","color":"white","bold":false},{"text":"tot.","color":"aqua","bold":false},{"text":"-","color":"yellow","bold":false},{"text":")","color":"white","bold":false}]
+execute as @a[tag=Kim1] run scoreboard players add #Counter2 kills_in_match 1
+execute if entity @a[tag=Kim2] if score #Counter2 kills_in_match matches 1 run tellraw @a [{"text":"2. ","color":"gray","bold":true},{"selector":"@a[tag=Kim2]","bold":false},{"text":": ","color":"white","bold":false},{"score":{"name":"#2","objective":"kills_in_match"},"color":"aqua","bold":false},{"text":"kills","color":"aqua","bold":false},{"text":"  (","color":"white","bold":false},{"text":"tot.","color":"aqua","bold":false},{"score":{"objective":"TotalKill","name":"@a[tag=Kim2]"},"color":"yellow","bold":false},{"text":")","color":"white","bold":false}]
+execute if entity @a[tag=Kim2] unless score #Counter2 kills_in_match matches 1 run tellraw @a [{"text":"2. ","color":"gray","bold":true},{"selector":"@a[tag=Kim2]","bold":false},{"text":": ","color":"white","bold":false},{"score":{"name":"#2","objective":"kills_in_match"},"color":"aqua","bold":false},{"text":"kills","color":"aqua","bold":false},{"text":"  (","color":"white","bold":false},{"text":"tot.","color":"aqua","bold":false},{"text":"-","color":"yellow","bold":false},{"text":")","color":"white","bold":false}]
+execute as @a[tag=Kim1] run scoreboard players add #Counter3 kills_in_match 1
+execute if entity @a[tag=Kim3] if score #Counter3 kills_in_match matches 1 run tellraw @a [{"text":"3. ","color":"gold","bold":true},{"selector":"@a[tag=Kim3]","bold":false},{"text":": ","color":"white","bold":false},{"score":{"name":"#3","objective":"kills_in_match"},"color":"aqua","bold":false},{"text":"kills","color":"aqua","bold":false},{"text":"  (","color":"white","bold":false},{"text":"tot.","color":"aqua","bold":false},{"score":{"objective":"TotalKill","name":"@a[tag=Kim3]"},"color":"yellow","bold":false},{"text":")","color":"white","bold":false}]
+execute if entity @a[tag=Kim3] unless score #Counter3 kills_in_match matches 1 run tellraw @a [{"text":"3. ","color":"gold","bold":true},{"selector":"@a[tag=Kim3]","bold":false},{"text":": ","color":"white","bold":false},{"score":{"name":"#3","objective":"kills_in_match"},"color":"aqua","bold":false},{"text":"kills","color":"aqua","bold":false},{"text":"  (","color":"white","bold":false},{"text":"tot.","color":"aqua","bold":false},{"text":"-","color":"yellow","bold":false},{"text":")","color":"white","bold":false}]
 
 scoreboard players reset @a[tag=Kim1] kills_in_match
 scoreboard players reset @a[tag=Kim2] kills_in_match
 scoreboard players reset @a[tag=Kim3] kills_in_match
 tag @a remove Kim1
-scoreboard players reset #1 kills_in_match
 tag @a remove Kim2
-scoreboard players reset #2 kills_in_match
 tag @a remove Kim3
+scoreboard players reset #1 kills_in_match
+scoreboard players reset #2 kills_in_match
 scoreboard players reset #3 kills_in_match
+scoreboard players reset #Counter1 kills_in_match
+scoreboard players reset #Counter2 kills_in_match
+scoreboard players reset #Counter3 kills_in_match
 
 execute as @a[team=Escape] run scoreboard players add #PlayerCount Ver 1
 execute if score #PlayerCount Ver matches 1.. run tellraw @a [{"text":"\n[逃げ切りプレイヤー]\n","color":"yellow"},{"selector":"@a[team=Escape]"},{"text":"\n計","color":"yellow"},{"text":": ","color":"white"},{"score":{"objective":"Ver","name":"#PlayerCount"},"color":"aqua"},{"text":"人","color":"aqua"}]
