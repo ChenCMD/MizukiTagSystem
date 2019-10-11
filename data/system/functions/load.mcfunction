@@ -34,7 +34,6 @@ execute as @e[tag=Link_Dice] at @s run function system:dice/act
 
 #アイテムs
 #スーパーボム
-execute as @a[team=!OP,team=!Wait,team=!Died,scores={use_superbomb=1..}] run tellraw @a[team=OP,tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"selector":"@s","color":"dark_aqua"},{"text":" is Use SuperBomb","color":"dark_aqua"}]
 #execute as @a[scores={use_superbomb=1..}] at @s run function system:dice/content_process/super_bomb/set
 execute as @e[tag=SuperBomb] at @s run function system:dice/content_process/super_bomb/act
 #リセットポーション
@@ -46,8 +45,9 @@ execute as @a[team=Escape,nbt={ActiveEffects:[{Id:26b,Amplifier:12b,Duration:0}]
 #イベント系
 execute as @a[scores={Radar_Remaining=1..}] at @s run function system:dice/content_process/radar/act_base
 
-execute as @a[scores={CarrotClick=1..}] run function system:skill/carrot_branch
-
+execute as @a[tag=ItemGive] run function system:skill/branch/give
+execute as @a[scores={CarrotClick=1..}] at @s run function system:skill/branch/click
+execute as @a[scores={CarrotDrop=1..}] at @s run function system:skill/branch/drop
 
 execute as @a[scores={InvisibleArmor=0..}] run function system:skill/escape/hide/act
 #確率 50% 35% 20% 5%
@@ -165,7 +165,7 @@ execute store result bossbar mizuki:time/mode3 value run scoreboard players get 
 execute if entity @e[tag=SM,tag=!SystemFix] run tellraw @a[tag=OP] [{"text":"[Chen'sSystem] ","color":"aqua"},{"text":"MainSystem","color":"green"},{"text":" : ","color":"white"},{"text":"VeryGood.","color":"green"}]
 tag @e[tag=SM] add SystemFix
 
-tag @e[tag=!NoKill,type=item,nbt=!{Item:{tag:{NoKill:1b}}},nbt=!{Item:{id:"minecraft:carrot_on_a_stick"}}] add kill
+tag @e[tag=!NoKill,type=item,nbt=!{Item:{tag:{NoKill:1b}}},nbt=!{Item:{tag:{display:{Name:"{\"text\":\"BlingEdit\"}"}}}}] add kill
 tag @e[type=arrow,nbt={inGround:true}] add kill
 tag @e[type=spectral_arrow,nbt={inGround:true}] add kill
 kill @e[tag=kill,type=!player]
