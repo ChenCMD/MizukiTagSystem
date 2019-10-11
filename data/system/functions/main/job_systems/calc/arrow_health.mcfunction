@@ -1,11 +1,11 @@
 #ダメージ処理
-execute unless entity @s[nbt={ActiveEffects:[{Id:26b}]}] if entity @s[advancements={system:ondamage/is_projectile=true}] run scoreboard players operation @s Health -= $onHitDamage AddTmp
-execute unless entity @s[nbt={ActiveEffects:[{Id:26b}]}] if entity @s[advancements={system:ondamage/is_gravity_arrow=true}] run scoreboard players operation @s Health -= $ArrowDamageA AddTmp
-execute unless entity @s[nbt={ActiveEffects:[{Id:26b}]}] if entity @s[advancements={system:ondamage/is_chase_arrow=true}] run scoreboard players operation @s Health -= $ArrowDamageB AddTmp
+execute unless entity @s[nbt={ActiveEffects:[{Id:26b}]}] if entity @s[advancements={system:ondamage/is_projectile=true}] run scoreboard players operation @s Health -= $onHitDamage Ver
+execute unless entity @s[nbt={ActiveEffects:[{Id:26b}]}] if entity @s[advancements={system:ondamage/is_gravity_arrow=true}] run scoreboard players operation @s Health -= $ArrowDamageA Ver
+execute unless entity @s[nbt={ActiveEffects:[{Id:26b}]}] if entity @s[advancements={system:ondamage/is_chase_arrow=true}] run scoreboard players operation @s Health -= $ArrowDamageB Ver
 ##補正
-execute unless entity @s[nbt={ActiveEffects:[{Id:26b}]}] if entity @s[advancements={system:ondamage/is_projectile=true},nbt={ActiveEffects:[{Id:5b}]}] run scoreboard players operation @s Health -= $ATKBonus AddTmp
-execute unless entity @s[nbt={ActiveEffects:[{Id:26b}]}] if entity @s[advancements={system:ondamage/is_gravity_arrow=true},nbt={ActiveEffects:[{Id:5b}]}] run scoreboard players operation @s Health -= $ATKBonus AddTmp
-execute unless entity @s[nbt={ActiveEffects:[{Id:26b}]}] if entity @s[advancements={system:ondamage/is_chase_arrow=true},nbt={ActiveEffects:[{Id:5b}]}] run scoreboard players operation @s Health -= $ATKBonus AddTmp
+execute unless entity @s[nbt={ActiveEffects:[{Id:26b}]}] if entity @s[advancements={system:ondamage/is_projectile=true},nbt={ActiveEffects:[{Id:5b}]}] run scoreboard players operation @s Health -= $ATKBonus Ver
+execute unless entity @s[nbt={ActiveEffects:[{Id:26b}]}] if entity @s[advancements={system:ondamage/is_gravity_arrow=true},nbt={ActiveEffects:[{Id:5b}]}] run scoreboard players operation @s Health -= $ATKBonus Ver
+execute unless entity @s[nbt={ActiveEffects:[{Id:26b}]}] if entity @s[advancements={system:ondamage/is_chase_arrow=true},nbt={ActiveEffects:[{Id:5b}]}] run scoreboard players operation @s Health -= $ATKBonus Ver
 tellraw @a[team=OP,tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"selector":"@s","color":"dark_aqua"},{"text":" on hit damage","color":"dark_aqua"}]
 ##死亡処理
 #tag @s[scores={Health=..0},advancements={system:ondamage/is_projectile=true}] add ArrowDeath

@@ -1,6 +1,6 @@
 tellraw @s [{"text":"Luck of Diceに失敗した...","color":"red"}]
 function random:generation
-scoreboard players operation @s Random %= $100 AddTmp
+scoreboard players operation @s Random %= $100 Ver
 scoreboard players add @s Random 1
 execute if score @s Random matches 1..10 run effect give @s minecraft:blindness 15 0 true
 execute if score @s Random matches 11..20 run summon firework_rocket ~ ~1 ~ {LifeTime:30,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:1,Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[11743532],FadeColors:[4312372]}]}}}}

@@ -1,5 +1,5 @@
 function random:generation
-scoreboard players operation @s Random %= $6 AddTmp
+scoreboard players operation @s Random %= $6 Ver
 scoreboard players add @s Random 1
 execute if entity @s[scores={Random=1}] run function system:dice/hyper/1
 execute if entity @s[scores={Random=2}] run function system:dice/hyper/2
