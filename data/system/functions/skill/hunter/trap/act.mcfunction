@@ -2,7 +2,7 @@
 effect give @a[team=Escape,dx=2,dy=0,dz=2] minecraft:blindness 5 0 true
 effect give @a[team=Escape,dx=2,dy=0,dz=2] minecraft:slowness 5 0 true
 effect give @a[team=Escape,dx=2,dy=0,dz=2] minecraft:glowing 5 0 true
-effect give @a[team=Escape,dx=2,dy=0,dz=2] minecraft:unluck 5 0 true
+effect give @a[team=Escape,dx=2,dy=0,dz=2] minecraft:unluck 5 0 false
 effect clear @a[team=Escape,dx=2,dy=0,dz=2] minecraft:invisibility
 effect clear @a[team=Escape,dx=2,dy=0,dz=2] minecraft:speed
 
