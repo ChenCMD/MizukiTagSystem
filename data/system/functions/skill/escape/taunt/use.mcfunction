@@ -1,4 +1,3 @@
-clear @s minecraft:carrot_on_a_stick{ItemID:099}
 execute unless entity @e[tag=SM,limit=1,scores={LoDDeley=0..}] if entity @s[team=Escape] run function random:generation
 execute unless entity @e[tag=SM,limit=1,scores={LoDDeley=0..}] if entity @s[team=Escape] run scoreboard players operation @s Random %= $100 Ver
 execute unless entity @e[tag=SM,limit=1,scores={LoDDeley=0..}] if entity @s[team=Escape] run scoreboard players add @s Random 1

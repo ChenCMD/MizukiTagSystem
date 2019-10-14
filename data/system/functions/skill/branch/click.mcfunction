@@ -2,6 +2,7 @@ execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{I
 execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:2}}} run function system:skill/escape/hide/use
 execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:3}}} run function system:skill/escape/teleport/use
 execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:99}}} run function system:skill/escape/taunt/use
+execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:99}}} run clear @s minecraft:carrot_on_a_stick{ItemID:99} 1
 execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:101}}} run function system:skill/hunter/gravity_arrow/use
 execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:102}}} run function system:skill/hunter/chase_arrow/use
 execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:103}}} run function system:skill/hunter/flash_search/use

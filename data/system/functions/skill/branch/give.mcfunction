@@ -8,6 +8,7 @@ give @s[tag=G.104] minecraft:carrot_on_a_stick{CustomModelData:104,ItemID:104,Hi
 give @s[tag=G.105] minecraft:carrot_on_a_stick{CustomModelData:105,ItemID:105,HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§8トラップ\"",Lore:["{\"text\":\"§aトラップを設置する\"}","{\"text\":\"§a範囲§f: §b3x3\"}","{\"text\":\"§a効果§f: §c鈍足/盲目/不運/発光 (0:05)\"}","{\"text\":\"§aCT§f: §b15秒 §f| §a消滅§f: §b120秒\"}"]}}
 give @s[tag=G.106] minecraft:carrot_on_a_stick{CustomModelData:106,ItemID:106,HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§cランドマイン\"",Lore:["{\"text\":\"§a地雷を設置する\"}","{\"text\":\"§a起爆範囲§f: §b3x3 §f| §a爆発範囲§f: §b7x7\"}","{\"text\":\"§a威力§f: §c60ダメージ\"}","{\"text\":\"§aCT§f: §b20秒 §f| §a消滅§f: §b180秒\"}"]}}
 give @s[tag=G.107] minecraft:carrot_on_a_stick{CustomModelData:107,ItemID:107,HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§3テリトリートーテム\"",Lore:["{\"text\":\"§aトーテムを設置する\"}","{\"text\":\"§a範囲§f: §b20x20\"}","{\"text\":\"§a効果§f: §c鈍足 Ⅱ (0:10)\"}","{\"text\":\"§aCT§f: §b30秒 §f| §a消滅§f: §b60秒\"}"]}}
+give @s[tag=G.204] minecraft:carrot_on_a_stick{CustomModelData:204,ItemID:204,display:{Name:"{\"text\":\"スーパーボム\",\"italic\":false,\"color\":\"red\"}",Lore:["{\"text\":\"§a投げてから4秒後に範囲12m以内の相手チームを\"}","{\"text\":\"§a確殺する爆弾を設置する\"}"]}}
 tag @s remove G.001
 tag @s remove G.002
 tag @s remove G.003
@@ -18,4 +19,5 @@ tag @s remove G.104
 tag @s remove G.105
 tag @s remove G.106
 tag @s remove G.107
+tag @s remove G.204
 tag @s remove ItemGive
