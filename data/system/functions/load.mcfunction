@@ -34,7 +34,6 @@ execute as @e[tag=Link_Dice] at @s run function system:dice/act
 
 #アイテムs
 #スーパーボム
-#execute as @a[scores={use_superbomb=1..}] at @s run function system:dice/content_process/super_bomb/set
 execute as @e[tag=SuperBomb] at @s run function system:dice/content_process/super_bomb/act
 #リセットポーション
 execute as @a[nbt={ActiveEffects:[{Id:26b,Amplifier:12b,Duration:0}]}] run tellraw @s {"text":"リセットポーションを飲んだ！","color":"green"}
