@@ -10,9 +10,7 @@ execute as @a[scores={Leave=1..}] run function system:main/leave
 execute as @e[tag=MenuPos] at @s unless block ~1 ~-1 ~ minecraft:redstone_wire[power=2] unless block ~1 ~-1 ~ minecraft:redstone_wire[power=3] as @a[scores={OpenChest=1..}] as @e[tag=MenuPos] at @s run function system:menu/pattern/0
 execute as @a[scores={OpenChest=1..}] run scoreboard players reset @s OpenChest
 
-execute as @e[tag=MenuPos] at @s if block ~1 ~-1 ~ minecraft:redstone_wire[power=1] run function system:menu/load
-execute as @e[tag=MenuPos] at @s if block ~1 ~-1 ~ minecraft:redstone_wire[power=2] run function system:menu/load
-execute as @e[tag=MenuPos] at @s if block ~1 ~-1 ~ minecraft:redstone_wire[power=3] run function system:menu/load
+execute as @e[tag=MenuPos] at @s unless block ~1 ~-1 ~ minecraft:redstone_wire[power=0] run function system:menu/load
 
 
 #システムサポートサブ処理#####################################################################################
@@ -28,66 +26,44 @@ execute if entity @e[tag=SM,scores={Door=101..180}] run function system:door/clo
 execute as @a[scores={UTST1=1..}] run function system:main/team_select/no
 execute as @a[scores={UTST2=1..}] run function system:main/team_select/yes
 
-#ダイス処理##################################################################################################
-execute as @a[scores={DiceDrop=1..}] run function system:dice/drop
-execute as @e[tag=Link_Dice] at @s run function system:dice/act
-
-#アイテムs
-#スーパーボム
-execute as @e[tag=SuperBomb] at @s run function system:dice/content_process/super_bomb/act
-#リセットポーション
-execute as @a[nbt={ActiveEffects:[{Id:26b,Amplifier:12b,Duration:0}]}] run tellraw @s {"text":"リセットポーションを飲んだ！","color":"green"}
-execute as @a[nbt={ActiveEffects:[{Id:26b,Amplifier:12b,Duration:0}]}] run xp set @s 0 levels
-execute as @a[team=Hunter,nbt={ActiveEffects:[{Id:26b,Amplifier:12b,Duration:0}]}] run scoreboard players set @s Health 300
-execute as @a[team=Escape,nbt={ActiveEffects:[{Id:26b,Amplifier:12b,Duration:0}]}] run scoreboard players set @s Health 100
-
-#イベント系
-execute as @a[scores={Radar_Remaining=1..}] at @s run function system:dice/content_process/radar/act_base
-
+###############################################################################################################################################################
+#根本的なアイテム処理
 execute as @a[tag=ItemGive] run function system:skill/branch/give
 execute as @a[scores={CarrotClick=1..}] at @s run function system:skill/branch/click
 execute as @a[scores={CarrotDrop=1..}] at @s run function system:skill/branch/drop
-
-execute as @a[scores={InvisibleArmor=0..}] run function system:skill/escape/hide/act
-#確率 50% 35% 20% 5%
+#ダイス処理 確率 50% 35% 20% 5%
 execute as @a[scores={LoDCT=1..}] run scoreboard players add @s LoDCT 1
 execute as @a[scores={LoDCT=900..},team=!Hunter,team=!Wait,team=!OP] run function system:skill/escape/taunt/give
 execute as @a[scores={LoDCT=900..},team=!Escape,team=!Died] run scoreboard players reset @s LoDCT
-
-execute as @e[tag=Flash] at @s run function system:skill/hunter/flash_marking/act
-
+#ダイス処理
+execute as @a[scores={DiceDrop=1..}] run function system:dice/drop
+execute as @e[tag=Link_Dice] at @s run function system:dice/act
+#ダイスイベント系
+execute as @a[scores={Radar_Remaining=1..}] at @s run function system:dice/content_process/radar/act_base
+#ダイスアイテムs
+execute as @e[tag=SuperBomb] at @s run function system:dice/content_process/super_bomb/act
+execute as @a[nbt={ActiveEffects:[{Id:26b,Amplifier:12b,Duration:0}]}] run function system:dice/content_process/reset_potion/act
+execute as @e[tag=Smoke] at @s run function system:dice/content_process/smoke/act
+execute as @e[tag=CaptureNet] at @s run function system:dice/content_process/capture_net/act
+execute as @e[tag=InstantWall] at @s run function system:dice/content_process/instant_wall/act
+#弓処理
 execute as @a[scores={UseBow=1..}] at @s if entity @e[type=arrow,distance=..5,sort=nearest,limit=1] run function system:skill/hunter/sorted
 execute if entity @e[nbt={inGround:1b},type=arrow] as @a run function system:main/arrow/id_verification
-
+#スキル処理
+execute as @a[scores={InvisibleArmor=0..}] run function system:skill/escape/hide/act
+execute as @e[tag=Flash] at @s run function system:skill/hunter/flash_marking/act
 execute as @e[tag=Arrow_Chase,type=arrow] at @s run function system:skill/hunter/chase_arrow/act
-
 execute as @e[tag=Trap] at @s positioned ~-1 ~ ~-1 run function system:skill/hunter/trap/act
-
 execute as @e[tag=Landmine] at @s positioned ~-1 ~ ~-1 run function system:skill/hunter/landmine/act
-
 execute as @e[tag=Totem] at @s positioned ~-9 ~ ~-9 run function system:skill/hunter/territory_totem/act
-
 #ハイパージャンプ
+function system:skill/hunter/hyper_jump/tick
+
+#アイテム戻ってくるやつ#########################################################################################
 give @a[tag=HyperJumpRemove,team=Hunter] minecraft:slime_ball{HyperJump:1b,HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§bハイパージャンプ\"",Lore:["{\"text\":\"§a持った状態でシフトで溜める\"}","{\"text\":\"§a溜め中は動くことが出来ない\"}","{\"text\":\"§a最大10m飛ぶことが出来る\"}"]}}
 tag @a[tag=HyperJumpRemove] remove HyperJumpRemove
 tag @a[scores={use_highjump=1..}] add HyperJumpRemove
 scoreboard players reset @a[scores={use_highjump=1..}] use_highjump
-
-execute as @a[nbt={SelectedItem:{tag:{HyperJump:1b}}},scores={Sneak=1..}] at @s run function system:skill/hunter/hyper_jump/act
-execute as @a unless entity @s[scores={Sneak=0..}] run scoreboard players reset @s HighJump
-execute as @a[team=Hunter] unless entity @s[scores={Sneak=0..}] run effect clear @s minecraft:slowness
-execute as @a[team=Hunter] unless entity @s[scores={Sneak=0..}] run effect clear @s minecraft:jump_boost
-execute as @a[scores={Jump=0..}] run scoreboard players reset @s HighJump
-execute as @a[scores={Jump=0..},team=Hunter] run effect clear @s minecraft:slowness
-execute as @a[scores={Jump=0..},team=Hunter] run effect clear @s minecraft:jump_boost
-execute as @a[nbt=!{SelectedItem:{tag:{HyperJump:1b}}}] run scoreboard players reset @s HighJump
-execute as @a[nbt=!{SelectedItem:{tag:{HyperJump:1b}}},team=Hunter] run effect clear @s minecraft:slowness
-execute as @a[nbt=!{SelectedItem:{tag:{HyperJump:1b}}},team=Hunter] run effect clear @s minecraft:jump_boost
-scoreboard players reset @a Jump
-scoreboard players reset @a Sneak
-
-
-#アイテム戻ってくるやつ#########################################################################################
 
 give @a[tag=BowRemove] minecraft:bow{Unbreakable:1,HideFlags:63,display:{Lore:["{\"text\":\"§a矢が戻ってこない場合弓を投げてください\"}"]}}
 execute if entity @a[tag=BowRemove] as @e[type=arrow] if score @s UserID = @a[tag=BowRemove,limit=1] UserID run kill @s

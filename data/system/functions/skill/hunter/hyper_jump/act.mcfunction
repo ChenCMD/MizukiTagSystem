@@ -1,5 +1,5 @@
 scoreboard players add @s HighJump 1
-effect give @s minecraft:slowness 1 9 true
+effect give @s minecraft:slowness 1 6 true
 execute if score @s HighJump matches 1 run playsound minecraft:entity.experience_orb.pickup player @s ~ ~ ~ 1 0.5
 execute if score @s HighJump matches 1..5 run effect give @s minecraft:jump_boost 1 0 false
 execute if score @s HighJump matches 6 run playsound minecraft:entity.experience_orb.pickup player @s ~ ~ ~ 1 0.6
