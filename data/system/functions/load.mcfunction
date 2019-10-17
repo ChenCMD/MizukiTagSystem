@@ -44,7 +44,7 @@ execute as @a[scores={Radar_Remaining=1..}] at @s run function system:dice/conte
 execute as @e[tag=SuperBomb] at @s run function system:dice/content_process/super_bomb/act
 execute as @a[nbt={ActiveEffects:[{Id:26b,Amplifier:12b,Duration:0}]}] run function system:dice/content_process/reset_potion/act
 execute as @e[tag=Smoke] at @s run function system:dice/content_process/smoke/act
-execute as @e[tag=CaptureNet] at @s run function system:dice/content_process/capture_net/act
+execute as @e[tag=CaptureNet] at @s positioned ~-1 ~ ~-1 run function system:dice/content_process/capture_net/act
 execute as @e[tag=InstantWall] at @s run function system:dice/content_process/instant_wall/act
 #弓処理
 execute as @a[scores={UseBow=1..}] at @s if entity @e[type=arrow,distance=..5,sort=nearest,limit=1] run function system:skill/hunter/sorted

@@ -11,17 +11,17 @@ execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{I
 execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:106}}} run function system:skill/hunter/landmine/use
 execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:107}}} run function system:skill/hunter/territory_totem/use
 execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:204}}} run function system:dice/content_process/super_bomb/set
-execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:204}}} run clear @s minecraft:carrot_on_a_stick{ItemID:204} 1
+execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:204}}} run clear @s[tag=!InfinityItem] minecraft:carrot_on_a_stick{ItemID:204} 1
 execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:205}}} run function system:dice/content_process/smoke/set
-execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:205}}} run clear @s minecraft:carrot_on_a_stick{ItemID:205} 1
+execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:205}}} run clear @s[tag=!InfinityItem] minecraft:carrot_on_a_stick{ItemID:205} 1
 #
 #
 execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:207}}} run function system:dice/content_process/capture_net/set
-execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:207}}} run clear @s minecraft:carrot_on_a_stick{ItemID:207} 1
+execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:207}}} run clear @s[tag=!InfinityItem] minecraft:carrot_on_a_stick{ItemID:207} 1
 execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:208}}} run function system:dice/content_process/instant_wall/set
-execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:208}}} run clear @s minecraft:carrot_on_a_stick{ItemID:208} 1
+execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:208}}} run clear @s[tag=!InfinityItem] minecraft:carrot_on_a_stick{ItemID:208} 1
 execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:209}}} run function system:dice/content_process/stop_watch/act
-execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:209}}} run clear @s minecraft:carrot_on_a_stick{ItemID:209} 1
+execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:209}}} run clear @s[tag=!InfinityItem] minecraft:carrot_on_a_stick{ItemID:209} 1
 execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:210}}} run function system:dice/content_process/milk_cake/act
-execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:210}}} run clear @s minecraft:carrot_on_a_stick{ItemID:210} 1
+execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:210}}} run clear @s[tag=!InfinityItem] minecraft:carrot_on_a_stick{ItemID:210} 1
 scoreboard players reset @s CarrotClick

@@ -26,6 +26,13 @@ execute if data entity @e[sort=nearest,distance=..4,limit=1,type=item,nbt={Item:
 execute if data entity @e[sort=nearest,distance=..4,limit=1,type=item,nbt={Item:{id:"minecraft:carrot_on_a_stick"}}] {Item:{tag:{ItemID:105}}} run tag @s add G.105
 execute if data entity @e[sort=nearest,distance=..4,limit=1,type=item,nbt={Item:{id:"minecraft:carrot_on_a_stick"}}] {Item:{tag:{ItemID:106}}} run tag @s add G.106
 execute if data entity @e[sort=nearest,distance=..4,limit=1,type=item,nbt={Item:{id:"minecraft:carrot_on_a_stick"}}] {Item:{tag:{ItemID:107}}} run tag @s add G.107
+execute if data entity @e[sort=nearest,distance=..4,limit=1,type=item,nbt={Item:{id:"minecraft:carrot_on_a_stick"}}] {Item:{tag:{ItemID:204}}} run tag @s[tag=InfinityItem] add G.204
+execute if data entity @e[sort=nearest,distance=..4,limit=1,type=item,nbt={Item:{id:"minecraft:carrot_on_a_stick"}}] {Item:{tag:{ItemID:205}}} run tag @s[tag=InfinityItem] add G.205
+#
+execute if data entity @e[sort=nearest,distance=..4,limit=1,type=item,nbt={Item:{id:"minecraft:carrot_on_a_stick"}}] {Item:{tag:{ItemID:207}}} run tag @s[tag=InfinityItem] add G.207
+execute if data entity @e[sort=nearest,distance=..4,limit=1,type=item,nbt={Item:{id:"minecraft:carrot_on_a_stick"}}] {Item:{tag:{ItemID:208}}} run tag @s[tag=InfinityItem] add G.208
+execute if data entity @e[sort=nearest,distance=..4,limit=1,type=item,nbt={Item:{id:"minecraft:carrot_on_a_stick"}}] {Item:{tag:{ItemID:209}}} run tag @s[tag=InfinityItem] add G.209
+execute if data entity @e[sort=nearest,distance=..4,limit=1,type=item,nbt={Item:{id:"minecraft:carrot_on_a_stick"}}] {Item:{tag:{ItemID:210}}} run tag @s[tag=InfinityItem] add G.210
 execute unless entity @e[sort=nearest,distance=..4,limit=1,type=item,nbt={Item:{id:"minecraft:carrot_on_a_stick"}}] run tellraw @a[tag=OP] [{"text":"[DEBUG]","color":"dark_aqua"},{"text":" Items that can be referenced does not exist","color":"red"},{"text":"\nPlayer ","color":"dark_aqua"},{"selector":"@s"}]
 tag @s add ItemGive
 #DEBUG
