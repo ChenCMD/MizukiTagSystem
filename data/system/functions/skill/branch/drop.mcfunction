@@ -10,7 +10,11 @@ execute if data entity @e[sort=nearest,distance=..4,limit=1,type=item,nbt={Item:
 execute if data entity @e[sort=nearest,distance=..4,limit=1,type=item,nbt={Item:{id:"minecraft:carrot_on_a_stick"}}] {Item:{tag:{ItemID:106}}} run function system:skill/hunter/landmine/use
 execute if data entity @e[sort=nearest,distance=..4,limit=1,type=item,nbt={Item:{id:"minecraft:carrot_on_a_stick"}}] {Item:{tag:{ItemID:107}}} run function system:skill/hunter/territory_totem/use
 execute if data entity @e[sort=nearest,distance=..4,limit=1,type=item,nbt={Item:{id:"minecraft:carrot_on_a_stick"}}] {Item:{tag:{ItemID:204}}} run function system:dice/content_process/super_bomb/set
-
+execute if data entity @e[sort=nearest,distance=..4,limit=1,type=item,nbt={Item:{id:"minecraft:carrot_on_a_stick"}}] {Item:{tag:{ItemID:205}}} run function system:dice/content_process/smoke/set
+execute if data entity @e[sort=nearest,distance=..4,limit=1,type=item,nbt={Item:{id:"minecraft:carrot_on_a_stick"}}] {Item:{tag:{ItemID:207}}} run function system:dice/content_process/capture_net/set
+execute if data entity @e[sort=nearest,distance=..4,limit=1,type=item,nbt={Item:{id:"minecraft:carrot_on_a_stick"}}] {Item:{tag:{ItemID:208}}} run function system:dice/content_process/instant_wall/set
+execute if data entity @e[sort=nearest,distance=..4,limit=1,type=item,nbt={Item:{id:"minecraft:carrot_on_a_stick"}}] {Item:{tag:{ItemID:209}}} run function system:dice/content_process/stop_watch/act
+execute if data entity @e[sort=nearest,distance=..4,limit=1,type=item,nbt={Item:{id:"minecraft:carrot_on_a_stick"}}] {Item:{tag:{ItemID:210}}} run function system:dice/content_process/milk_cake/act
 
 execute if data entity @e[sort=nearest,distance=..4,limit=1,type=item,nbt={Item:{id:"minecraft:carrot_on_a_stick"}}] {Item:{tag:{ItemID:1}}} run tag @s add G.001
 execute if data entity @e[sort=nearest,distance=..4,limit=1,type=item,nbt={Item:{id:"minecraft:carrot_on_a_stick"}}] {Item:{tag:{ItemID:2}}} run tag @s add G.002

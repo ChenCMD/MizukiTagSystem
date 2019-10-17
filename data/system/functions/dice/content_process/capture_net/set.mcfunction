@@ -1,0 +1,3 @@
+execute at @s[team=Hunter] run summon area_effect_cloud ~ ~0.5 ~ {Particle:"falling_dust barrier",ReapplicationDelay:2147483647,Radius:0.01f,RadiusPerTick:0f,RadiusOnUse:0f,Duration:4000,DurationOnUse:0f,Age:0,WaitTime:0,Tags:["Hunter","CaptureNet"]}
+execute at @s[team=Escape] run summon area_effect_cloud ~ ~0.5 ~ {Particle:"falling_dust barrier",ReapplicationDelay:2147483647,Radius:0.01f,RadiusPerTick:0f,RadiusOnUse:0f,Duration:4000,DurationOnUse:0f,Age:0,WaitTime:0,Tags:["Escape","CaptureNet"]}
+execute at @s run playsound minecraft:block.anvil.use master @a[distance=..5] ~ ~ ~ 1 2.0
