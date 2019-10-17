@@ -10,7 +10,7 @@ give @s[tag=G.106] minecraft:carrot_on_a_stick{CustomModelData:106,ItemID:106,Hi
 give @s[tag=G.107] minecraft:carrot_on_a_stick{CustomModelData:107,ItemID:107,HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§3テリトリートーテム\"",Lore:["{\"text\":\"§aその場にトーテムを設置する\"}","{\"text\":\"§a範囲§f: §b20x20\"}","{\"text\":\"§a効果§f: §c鈍足 Ⅱ (0:10)\"}","{\"text\":\"§aCT§f: §b30秒 §f| §a消滅§f: §b60秒\"}"]}}
 give @s[tag=G.204] minecraft:carrot_on_a_stick{CustomModelData:204,ItemID:204,display:{Name:"{\"text\":\"スーパーボム\",\"italic\":false,\"color\":\"red\"}",Lore:["{\"text\":\"§a使用してから4秒後に範囲12m以内の相手チームを\"}","{\"text\":\"§a確殺する爆弾を設置する\"}"]}}
 give @s[tag=G.205] minecraft:carrot_on_a_stick{CustomModelData:205,ItemID:205,display:{Name:"{\"text\":\"煙幕\",\"italic\":false,\"color\":\"dark_gray\"}",Lore:["{\"text\":\"§aその場に煙玉を設置する\"}","{\"text\":\"§a範囲§f: §b半径5m\"}","{\"text\":\"§a効果§f: §c盲目/鈍足 (0:01)\"}","{\"text\":\"§a消滅§f: §b15秒\"}"]}}
-#
+give @s[tag=G.206] minecraft:potion{display:{Name:"{\"text\":\"リセットポーション\",\"color\":\"green\",\"italic\":\"false\"}"},HideFlags:32,CustomPotionEffects:[{Id:26b,Amplifier:12b,Duration:0,ShowParticles:1b}],CustomPotionColor:11075505} 1
 give @s[tag=G.207] minecraft:carrot_on_a_stick{CustomModelData:207,ItemID:207,display:{Name:"{\"text\":\"捕獲ネット\",\"italic\":false,\"color\":\"light_purple\"}",Lore:["{\"text\":\"§aその場に捕獲ネットを設置する\"}","{\"text\":\"§a範囲§f: §b3x3\"}","{\"text\":\"§a効果§f: §c鈍足/跳躍力変化 (0:08)\"}","{\"text\":\"§a消滅§f: §b200秒\"}"]}}
 give @s[tag=G.208] minecraft:carrot_on_a_stick{CustomModelData:208,ItemID:208,display:{Name:"{\"text\":\"即席壁\",\"italic\":false,\"color\":\"aqua\"}",Lore:["{\"text\":\"§a自分の後ろにガラスの壁を設置する\"}","{\"text\":\"§c自身及び味方チームにも効果があるので注意\"}","{\"text\":\"§a範囲§f: §b3x3x1\"}","{\"text\":\"§a消滅§f: §b20秒\"}"]}}
 give @s[tag=G.209] minecraft:carrot_on_a_stick{CustomModelData:209,ItemID:209,display:{Name:"{\"text\":\"ストップウォッチ\",\"italic\":false,\"color\":\"dark_purple\"}",Lore:["{\"text\":\"§a使用すると相手チームに\"}","{\"text\":\"§a15秒のクールタイムを追加で付与する\"}"]}}
@@ -28,7 +28,7 @@ tag @s remove G.106
 tag @s remove G.107
 tag @s remove G.204
 tag @s remove G.205
-#
+tag @s remove G.206
 tag @s remove G.207
 tag @s remove G.208
 tag @s remove G.209
