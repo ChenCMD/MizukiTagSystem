@@ -55,7 +55,7 @@ execute as @e[tag=Flash] at @s run function system:skill/hunter/flash_marking/ac
 execute as @e[tag=Arrow_Chase,type=arrow] at @s run function system:skill/hunter/chase_arrow/act
 execute as @e[tag=Trap] at @s positioned ~-1 ~ ~-1 run function system:skill/hunter/trap/act
 execute as @e[tag=Landmine] at @s positioned ~-1 ~ ~-1 run function system:skill/hunter/landmine/act
-execute as @e[tag=Totem] at @s positioned ~-9 ~ ~-9 run function system:skill/hunter/territory_totem/act
+execute as @e[tag=Totem] at @s positioned ~-6.5 ~ ~-6.5 run function system:skill/hunter/territory_totem/act
 #ハイパージャンプ
 function system:skill/hunter/hyper_jump/tick
 
