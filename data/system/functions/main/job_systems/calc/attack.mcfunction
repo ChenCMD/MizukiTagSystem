@@ -14,4 +14,3 @@ execute if entity @a[tag=Death] as @a[tag=Death] if entity @e[tag=SM,scores={Use
 tag @a remove Death
 advancement revoke @a only system:ondamage/for_player
 advancement revoke @s only system:onattack/for_player
-tellraw @a[team=OP,tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"selector":"@s","color":"dark_aqua"},{"text":" is strike weapon","color":"dark_aqua"}]

@@ -13,4 +13,3 @@ advancement revoke @a only system:ondamage/is_projectile
 advancement revoke @a only system:ondamage/is_gravity_arrow
 advancement revoke @a only system:ondamage/is_chase_arrow
 give @s arrow
-tellraw @a[team=OP,tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"selector":"@s","color":"dark_aqua"},{"text":" is hit arrow","color":"dark_aqua"}]
