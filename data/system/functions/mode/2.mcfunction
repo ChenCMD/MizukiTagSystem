@@ -2,8 +2,8 @@ clear @s
 scoreboard players set @s Health 300
 scoreboard players set @s Winstroke 0
 execute if entity @e[tag=SM,tag=!HideMode] as @s run function system:armor/hunter
-tag @a[team=Hunter] add G.1001
-tag @a[team=Hunter] add ItemGive
+tag @s add G.1001
+tag @s add ItemGive
 replaceitem entity @s hotbar.8 minecraft:slime_ball{HyperJump:1b,HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§bハイパージャンプ\"",Lore:["{\"text\":\"§a持った状態でシフトで溜める\"}","{\"text\":\"§a溜め中は動くことが出来ない\"}","{\"text\":\"§a最大10m飛ぶことが出来る\"}"]}}
 give @s minecraft:bow{Unbreakable:1,HideFlags:63,display:{Lore:["{\"text\":\"§a矢が戻ってこない場合弓を投げてください\"}"]}}
 give @s minecraft:arrow
