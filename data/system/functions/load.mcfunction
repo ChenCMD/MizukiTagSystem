@@ -142,6 +142,9 @@ scoreboard players enable @a Trigger
 advancement revoke @a only system:onattack/for_player
 advancement revoke @a only system:onattack/is_projectile
 
+#グリッチ対策
+execute as @a at @s if block ~ ~ ~ minecraft:cauldron if block ~ ~1 ~ minecraft:iron_trapdoor[open=false,half=bottom] run tp @s ~ ~1.3 ~
+
 #DEBUG
 execute if score $DEBUG DEBUG_CODE matches 1 run tellraw @a[tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"text":"system:load.mcfunction run stats","color":"dark_aqua"},{"text":": ","color":"white"},{"text":"SUCCESS","color":"green"},{"text":"\n[DEBUG] ","color":"dark_aqua"},{"text":"Run from","color":"dark_aqua"},{"text":": ","color":"white"},{"selector":"@s","color":"light_purple"}]
 execute if score $DEBUG DEBUG_CODE matches 1 run scoreboard players reset $DEBUG
