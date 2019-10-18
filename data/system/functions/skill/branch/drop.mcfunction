@@ -33,6 +33,7 @@ execute if data entity @e[sort=nearest,distance=..4,limit=1,type=item,nbt={Item:
 execute if data entity @e[sort=nearest,distance=..4,limit=1,type=item,nbt={Item:{id:"minecraft:carrot_on_a_stick"}}] {Item:{tag:{ItemID:208}}} run tag @s[tag=InfinityItem] add G.208
 execute if data entity @e[sort=nearest,distance=..4,limit=1,type=item,nbt={Item:{id:"minecraft:carrot_on_a_stick"}}] {Item:{tag:{ItemID:209}}} run tag @s[tag=InfinityItem] add G.209
 execute if data entity @e[sort=nearest,distance=..4,limit=1,type=item,nbt={Item:{id:"minecraft:carrot_on_a_stick"}}] {Item:{tag:{ItemID:210}}} run tag @s[tag=InfinityItem] add G.210
+execute if data entity @e[sort=nearest,distance=..4,limit=1,type=item,nbt={Item:{id:"minecraft:carrot_on_a_stick"}}] {Item:{tag:{ItemID:1001}}} run tag @s add G.1001
 execute unless entity @e[sort=nearest,distance=..4,limit=1,type=item,nbt={Item:{id:"minecraft:carrot_on_a_stick"}}] run tellraw @a[tag=OP] [{"text":"[DEBUG]","color":"dark_aqua"},{"text":" Items that can be referenced does not exist","color":"red"},{"text":"\nPlayer ","color":"dark_aqua"},{"selector":"@s"}]
 tag @s add ItemGive
 #DEBUG
