@@ -15,7 +15,7 @@ give @s[tag=G.207] minecraft:carrot_on_a_stick{CustomModelData:207,ItemID:207,di
 give @s[tag=G.208] minecraft:carrot_on_a_stick{CustomModelData:208,ItemID:208,display:{Name:"{\"text\":\"即席壁\",\"italic\":false,\"color\":\"aqua\"}",Lore:["{\"text\":\"§a自分の後ろにガラスの壁を設置する\"}","{\"text\":\"§c自身及び味方チームにも効果があるので注意\"}","{\"text\":\"§a範囲§f: §b3x3x1\"}","{\"text\":\"§a消滅§f: §b10秒\"}"]}}
 give @s[tag=G.209] minecraft:carrot_on_a_stick{CustomModelData:209,ItemID:209,display:{Name:"{\"text\":\"ストップウォッチ\",\"italic\":false,\"color\":\"dark_purple\"}",Lore:["{\"text\":\"§a使用すると相手チームに\"}","{\"text\":\"§a15秒のクールタイムを追加で付与する\"}"]}}
 give @s[tag=G.210] minecraft:carrot_on_a_stick{CustomModelData:210,ItemID:210,display:{Name:"{\"text\":\"ミルクケーキ\",\"italic\":false,\"color\":\"light_purple\"}",Lore:["{\"text\":\"§a使用すると自身に\"}","{\"text\":\"§aかかったマイナスエフェクトを\"}","{\"text\":\"§a全て消し去る\"}"]}}
-give @s[tag=G.1001] minecraft:carrot_on_a_stick{CustomModelData:1001,ItemID:1001,isWeapon:1b,display:{Name:"\"\""},HideFlags:63,AttributeModifiers:[{AttributeName:"generic.attackSpeed",Name:"generic.attackSpeed",Amount:1,Operation:0,UUIDLeast:310539,UUIDMost:26428,Slot:"mainhand"}],Enchantments:[{id:"sharpness",lvl:99}],HideFlags:1}
+give @s[tag=G.1001] minecraft:carrot_on_a_stick{CustomModelData:1001,ItemID:1001,isWeapon:1b,display:{Name:"{\"text\":\"これは武器だよ!!!!!\",\"italic\":false,\"color\":\"red\"}"},HideFlags:63,AttributeModifiers:[{AttributeName:"generic.attackSpeed",Name:"generic.attackSpeed",Amount:1,Operation:0,UUIDLeast:310539,UUIDMost:26428,Slot:"mainhand"}],Enchantments:[{id:"sharpness",lvl:99}],HideFlags:1}
 tag @s remove G.001
 tag @s remove G.002
 tag @s remove G.003
