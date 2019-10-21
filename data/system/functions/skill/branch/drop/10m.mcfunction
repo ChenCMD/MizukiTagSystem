@@ -1,4 +1,4 @@
-tag @e[sort=nearest,distance=..10,limit=1,type=item,nbt={Item:{id:"minecraft:carrot_on_a_stick"}}] add TargetItem
+tag @e[sort=nearest,distance=..10,limit=1,type=item,nbt={Item:{id:"minecraft:carrot_on_a_stick"}},nbt=!{Item:{tag:{display:{Name:"{\"text\":\"BlingEdit\"}"}}}}] add TargetItem
 execute if data entity @e[tag=TargetItem,limit=1,sort=nearest] {Item:{tag:{ItemID:1}}} run function system:skill/escape/speed/use
 execute if data entity @e[tag=TargetItem,limit=1,sort=nearest] {Item:{tag:{ItemID:2}}} run function system:skill/escape/hide/use
 execute if data entity @e[tag=TargetItem,limit=1,sort=nearest] {Item:{tag:{ItemID:3}}} run function system:skill/escape/teleport/use
