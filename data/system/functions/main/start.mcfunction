@@ -55,6 +55,8 @@ replaceitem entity @a[team=Hunter] hotbar.8 minecraft:slime_ball{HyperJump:1b,Hi
 scoreboard players set @a[team=Hunter] Health 300
 scoreboard players set @a[team=Escape] Health 100
 #全員TP
+function system:main/chunk_load/esp
+function system:main/chunk_load/hsp
 execute as @a[team=Escape] run tp @s @e[sort=random,tag=EscapeSpawnPoint,limit=1]
 execute as @a[team=Hunter] run tp @s @e[sort=random,tag=HunterSpawnPoint,limit=1]
 #スタートフラグ設定

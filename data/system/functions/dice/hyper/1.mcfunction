@@ -9,6 +9,7 @@ execute if entity @s[team=Escape] if entity @a[team=Died] run effect give @a[tea
 execute if entity @s[team=Escape] if entity @a[team=Died] run effect give @a[team=Died] minecraft:speed 10 0 true
 execute if entity @s[team=Escape] if entity @a[team=Died] run effect give @a[team=Died] minecraft:luck 10 0 true
 execute if entity @s[team=Escape] if entity @a[team=Died] run scoreboard players set @a[team=Died] InvisibleArmor 200
+execute if entity @s[team=Escape] if entity @a[team=Died] run function system:main/chunk_load/rs
 execute if entity @s[team=Escape] if entity @a[team=Died] as @a[team=Died] at @s run tp @s @e[tag=RandSpawn,limit=1,type=armor_stand,sort=random]
 execute if entity @s[team=Escape] if entity @a[team=Died] run team join Escape @a[team=Died]
 

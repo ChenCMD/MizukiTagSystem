@@ -30,7 +30,7 @@ execute as @a[scores={UTST2=1..}] run function system:main/team_select/yes
 #根本的なアイテム処理
 execute as @a[tag=ItemGive] run function system:skill/branch/give
 execute as @a[scores={CarrotClick=1..}] at @s run function system:skill/branch/click
-execute as @a[scores={CarrotDrop=1..}] at @s run function system:skill/branch/drop
+execute as @a[scores={CarrotDrop=1..}] at @s run function system:skill/branch/drop/main
 #ダイス処理 確率 50% 35% 20% 5%
 execute as @a[scores={LoDCT=1..}] run scoreboard players add @s LoDCT 1
 execute as @a[scores={LoDCT=900..},team=!Hunter,team=!Wait,team=!OP] run function system:skill/escape/taunt/give
