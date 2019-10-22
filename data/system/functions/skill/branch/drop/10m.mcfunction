@@ -16,6 +16,8 @@ execute if data entity @e[tag=TargetItem,limit=1,sort=nearest] {Item:{tag:{ItemI
 execute if data entity @e[tag=TargetItem,limit=1,sort=nearest] {Item:{tag:{ItemID:208}}} run function system:dice/content_process/instant_wall/set
 execute if data entity @e[tag=TargetItem,limit=1,sort=nearest] {Item:{tag:{ItemID:209}}} run function system:dice/content_process/stop_watch/act
 execute if data entity @e[tag=TargetItem,limit=1,sort=nearest] {Item:{tag:{ItemID:210}}} run function system:dice/content_process/milk_cake/act
+execute if data entity @e[tag=TargetItem,limit=1,sort=nearest] {Item:{tag:{ItemID:501}}} run function system:main/team_select/no
+execute if data entity @e[tag=TargetItem,limit=1,sort=nearest] {Item:{tag:{ItemID:502}}} run function system:main/team_select/yes
 
 execute if data entity @e[tag=TargetItem,limit=1,sort=nearest] {Item:{tag:{ItemID:1}}} run tag @s add G.001
 execute if data entity @e[tag=TargetItem,limit=1,sort=nearest] {Item:{tag:{ItemID:2}}} run tag @s add G.002

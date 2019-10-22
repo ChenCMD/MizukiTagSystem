@@ -10,11 +10,13 @@ give @s[tag=G.106] minecraft:carrot_on_a_stick{CustomModelData:106,ItemID:106,Hi
 give @s[tag=G.107] minecraft:carrot_on_a_stick{CustomModelData:107,ItemID:107,HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§3テリトリートーテム\"",Lore:["{\"text\":\"§aその場にトーテムを設置する\"}","{\"text\":\"§a範囲§f: §b15x15\"}","{\"text\":\"§a効果§f: §c鈍足 Ⅱ (0:10)\"}","{\"text\":\"§aCT§f: §b30秒 §f| §a消滅§f: §b60秒\"}"]}}
 give @s[tag=G.204] minecraft:carrot_on_a_stick{CustomModelData:204,ItemID:204,display:{Name:"{\"text\":\"スーパーボム\",\"italic\":false,\"color\":\"red\"}",Lore:["{\"text\":\"§a使用してから4秒後に範囲12m以内の相手チームを\"}","{\"text\":\"§a確殺する爆弾を設置する\"}"]}}
 give @s[tag=G.205] minecraft:carrot_on_a_stick{CustomModelData:205,ItemID:205,display:{Name:"{\"text\":\"煙幕\",\"italic\":false,\"color\":\"dark_gray\"}",Lore:["{\"text\":\"§aその場に煙玉を設置する\"}","{\"text\":\"§a範囲§f: §b半径5m\"}","{\"text\":\"§a効果§f: §c盲目/鈍足 (0:01)\"}","{\"text\":\"§a消滅§f: §b15秒\"}"]}}
-give @s[tag=G.206] minecraft:potion{display:{Name:"{\"text\":\"リセットポーション\",\"color\":\"green\",\"italic\":\"false\"}",Lore:["{\"text\":\"§a使用すると自身の\"}","{\"text\":\"§a体力,クールタイムを\"}","{\"text\":\"§a初期状態にリセットする\"}"]},HideFlags:32,CustomPotionEffects:[{Id:26b,Amplifier:12b,Duration:0,ShowParticles:1b}],CustomPotionColor:11075505} 1
+give @s[tag=G.206] minecraft:potion{display:{Name:"{\"text\":\"リセットポーション\",\"color\":\"green\",\"italic\":\"false\"}",Lore:["{\"text\":\"§a使用すると自身の\"}","{\"text\":\"§a体力,クールタイムを\"}","{\"text\":\"§a初期状態にリセットする\"}"]},HideFlags:32,CustomPotionEffects:[{Id:26b,Amplifier:12b,Duration:0,ShowParticles:1b}],CustomPotionColor:11075505}
 give @s[tag=G.207] minecraft:carrot_on_a_stick{CustomModelData:207,ItemID:207,display:{Name:"{\"text\":\"捕獲ネット\",\"italic\":false,\"color\":\"light_purple\"}",Lore:["{\"text\":\"§aその場に捕獲ネットを設置する\"}","{\"text\":\"§a範囲§f: §b3x3\"}","{\"text\":\"§a効果§f: §c鈍足/跳躍力変化 (0:08)\"}","{\"text\":\"§a消滅§f: §b200秒\"}"]}}
 give @s[tag=G.208] minecraft:carrot_on_a_stick{CustomModelData:208,ItemID:208,display:{Name:"{\"text\":\"即席壁\",\"italic\":false,\"color\":\"aqua\"}",Lore:["{\"text\":\"§a自分の後ろにガラスの壁を設置する\"}","{\"text\":\"§c自身及び味方チームにも効果があるので注意\"}","{\"text\":\"§a範囲§f: §b3x3x1\"}","{\"text\":\"§a消滅§f: §b10秒\"}"]}}
 give @s[tag=G.209] minecraft:carrot_on_a_stick{CustomModelData:209,ItemID:209,display:{Name:"{\"text\":\"ストップウォッチ\",\"italic\":false,\"color\":\"dark_purple\"}",Lore:["{\"text\":\"§a使用すると相手チームに\"}","{\"text\":\"§a15秒のクールタイムを追加で付与する\"}"]}}
 give @s[tag=G.210] minecraft:carrot_on_a_stick{CustomModelData:210,ItemID:210,display:{Name:"{\"text\":\"ミルクケーキ\",\"italic\":false,\"color\":\"light_purple\"}",Lore:["{\"text\":\"§a使用すると自身に\"}","{\"text\":\"§aかかったマイナスエフェクトを\"}","{\"text\":\"§a全て消し去る\"}"]}}
+give @s[tag=G.501] minecraft:carrot_on_a_stick{CustomModelData:501,ItemID:501,display:{Name:"\"§a鬼参加\""},Enchantments:[{id:protection,lvl:1}],HideFlags:1}
+give @s[tag=G.502] minecraft:carrot_on_a_stick{CustomModelData:502,ItemID:502,display:{Name:"\"§c鬼拒否\""},Enchantments:[{id:protection,lvl:1}],HideFlags:1}
 give @s[tag=G.1001] minecraft:carrot_on_a_stick{CustomModelData:1001,ItemID:1001,isWeapon:1b,display:{Name:"{\"text\":\"これは武器だよ!!!!!\",\"italic\":false,\"color\":\"red\"}"},HideFlags:63,AttributeModifiers:[{AttributeName:"generic.attackSpeed",Name:"generic.attackSpeed",Amount:1,Operation:0,UUIDLeast:310539,UUIDMost:26428,Slot:"mainhand"}],Enchantments:[{id:"sharpness",lvl:99}],HideFlags:1}
 tag @s remove G.001
 tag @s remove G.002
@@ -33,5 +35,7 @@ tag @s remove G.207
 tag @s remove G.208
 tag @s remove G.209
 tag @s remove G.210
+tag @s remove G.501
+tag @s remove G.502
 tag @s remove G.1001
 tag @s remove ItemGive

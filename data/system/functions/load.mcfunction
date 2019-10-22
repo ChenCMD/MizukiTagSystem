@@ -22,10 +22,6 @@ execute if entity @e[tag=SM,scores={Door=1..80}] run function system:door/open
 scoreboard players add @e[tag=SM,scores={Door=101..180}] Door 1
 execute if entity @e[tag=SM,scores={Door=101..180}] run function system:door/close
 
-#鬼抽選処理参加|拒否##########################################################################################
-execute as @a[scores={UTST1=1..}] run function system:main/team_select/no
-execute as @a[scores={UTST2=1..}] run function system:main/team_select/yes
-
 ###############################################################################################################################################################
 #根本的なアイテム処理
 execute as @a[tag=ItemGive] run function system:skill/branch/give
