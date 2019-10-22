@@ -10,7 +10,7 @@ execute if entity @s[tag=Escape] run effect give @a[team=Hunter,dx=2,dy=0,dz=2] 
 execute if entity @s[tag=Escape] run effect give @a[team=Hunter,dx=2,dy=0,dz=2] minecraft:unluck 8 0 false
 execute if entity @s[tag=Escape] run effect give @a[team=Hunter,dx=2,dy=0,dz=2] minecraft:blindness 8 0 true
 execute if entity @s[tag=Escape] run effect clear @a[team=Hunter,dx=2,dy=0,dz=2] minecraft:speed
-execute if entity @s[tag=Escape] if entity @a[team=Escape,dx=2,dy=0,dz=2] at @a[team=Escape,dx=2,dy=0,dz=2] run tp @s ~ ~0.005 ~
+execute if entity @s[tag=Escape] if entity @a[team=Hunter,dx=2,dy=0,dz=2] at @a[team=Hunter,dx=2,dy=0,dz=2] run tp @s ~ ~0.005 ~
 
 ##メッセージ送信
 execute if entity @s[tag=Hunter] run tellraw @a[team=Escape,dx=2,dy=0,dz=2] {"text":"捕獲ネットを踏んでしまった！","color":"red"}
