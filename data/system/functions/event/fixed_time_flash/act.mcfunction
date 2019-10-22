@@ -1,5 +1,5 @@
 execute as @a[distance=..40] if score @s UserID = @e[type=item,tag=DeleyFlash,distance=0,limit=1] UserID run effect give @s[team=Escape] minecraft:glowing 60 0 true
-execute as @a[distance=..40] if score @s UserID = @e[type=item,tag=DeleyFlash,distance=0,limit=1] UserID if entity @e[tag=SM,scores={UseRuleSelect=..2}] run effect give @s minecraft:unluck 40 0 false
+execute as @a[distance=..40] if score @s UserID = @e[type=item,tag=DeleyFlash,distance=0,limit=1] UserID if entity @e[tag=SM,scores={UseRuleSelect=..2}] run effect give @s[team=Hunter] minecraft:unluck 40 0 false
 execute as @a[distance=..40] if score @s UserID = @e[type=item,tag=DeleyFlash,distance=0,limit=1] UserID if entity @e[tag=SM,scores={UseRuleSelect=3}] run tag @s[team=Hunter] add Event_Death
 kill @e[type=item,tag=DeleyFlash,distance=0,limit=1]
 
