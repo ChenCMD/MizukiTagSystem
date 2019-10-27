@@ -135,8 +135,11 @@ kill @e[tag=kill,type=!player]
 execute as @a[scores={Trigger=1..}] run function system:main/stats_view
 scoreboard players enable @a Trigger
 
-advancement revoke @a only system:onattack/for_player
-advancement revoke @a only system:onattack/is_projectile
+execute as @a[advancements={system:ondamage/for_player=true}] run function system:main/job_systems/calc/health
+execute as @a[advancements={system:ondamage/is_projectile=true}] run function system:main/job_systems/calc/arrow_health
+execute as @a[advancements={system:ondamage/is_gravity_arrow=true}] run function system:main/job_systems/calc/arrow_health
+execute as @a[advancements={system:ondamage/is_chase_arrow=true}] run function system:main/job_systems/calc/arrow_health
+execute as @a[advancements={system:onattack/is_projectile=true}] run function system:main/job_systems/calc/arrow_attack
 
 #グリッチ対策
 execute as @a at @s if block ~ ~ ~ minecraft:cauldron if block ~ ~1 ~ minecraft:iron_trapdoor[open=false,half=bottom] run tp @s ~ ~1.3 ~

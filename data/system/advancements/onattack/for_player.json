@@ -30,8 +30,5 @@
                 }
             }
         }
-    },
-    "rewards": {
-        "function": "system:main/job_systems/calc/attack"
     }
 }
