@@ -71,8 +71,8 @@ scoreboard players reset @a Drop_Bow
 
 give @a[tag=ArrowRemove] minecraft:arrow
 tag @a[tag=ArrowRemove] remove ArrowRemove
-tag @a[team=!OP,team=!Wait,team=!Died,scores={Drop_Arrow=1..}] add ArrowRemove
-scoreboard players reset @a Drop_Arrow
+tag @a[team=!OP,team=!Wait,team=!Died,team=!Escape,scores={ArrowDrop=1..}] add ArrowRemove
+scoreboard players reset @a ArrowDrop
 
 
 #Count系変数処理##############################################################################################
@@ -148,3 +148,6 @@ execute if score $DEBUG DEBUG_CODE matches 1 run scoreboard players reset $DEBUG
 execute if score $DEBUG DEBUG_CODE matches 1.. run scoreboard players add $DEBUG DEBUG_CODE_DELY 1
 execute if score $DEBUG DEBUG_CODE matches 1.. if score $DEBUG DEBUG_CODE_DELY matches 300.. run tellraw @a[tag=DebugView] [{"text":"[DEBUG] ","color":"dark_aqua"},{"text":"function run stats","color":"dark_aqua"},{"text":": ","color":"white"},{"text":"TIMEOUT","color":"red"}]
 execute if score $DEBUG DEBUG_CODE matches 1.. if score $DEBUG DEBUG_CODE_DELY matches 300.. run scoreboard players reset $DEBUG
+
+tp @e[tag=ChunkLoadEntity] ~ ~-300 ~
+kill @e[tag=ChunkLoadEntity]
