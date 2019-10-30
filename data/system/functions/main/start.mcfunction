@@ -33,7 +33,8 @@ execute if entity @s[tag=!NoSkillMode] run tag @a[team=Escape] add G.002
 execute if entity @s[tag=!NoSkillMode] run tag @a[team=Escape] add G.003
 execute if entity @s[tag=!NoSkillMode] run tag @a[team=Escape] add ItemGive
 execute if entity @s[tag=!NoLoD] run scoreboard players operation $LoDCopy Ver = $LoD Ver
-tellraw @a [{"text":"Luck of Dice所持者","color":"green"},{"text":": ","color":"white"}]
+execute if entity @s[tag=!HalloweenEvent] run tellraw @a [{"text":"Luck of Dice所持者","color":"green"},{"text":": ","color":"white"}]
+execute if entity @s[tag=HalloweenEvent] run tellraw @a [{"text":"お菓子箱所持者","color":"gold"},{"text":": ","color":"white"}]
 execute if entity @s[tag=!NoLoD] run function system:skill/escape/taunt/loop
 tag @a remove LoD1
 #鬼スキルアイテムランダム配布
@@ -43,12 +44,12 @@ execute as @a[team=Escape] run function system:armor/escape
 execute if entity @s[tag=!HideMode] as @a[team=Hunter] run function system:armor/hunter
 #ハイドモードの場合鬼に透明付与
 execute if entity @s[tag=HideMode] run effect give @a[team=Hunter] invisibility 999999 0 true
+execute if entity @s[tag=HalloweenEvent] run effect give @a[team=Hunter] invisibility 999999 0 true
 #鬼の特殊Effects付与
 execute as @a[team=Hunter] run function system:main/effect
 #鬼武器Give
 tag @a[team=Hunter] add G.1001
 tag @a[team=Hunter] add ItemGive
-give @a[team=Hunter] minecraft:bow{Unbreakable:1,HideFlags:63,display:{Lore:["{\"text\":\"§a矢が戻ってこない場合弓を投げてください\"}"]}}
 give @a[team=Hunter] minecraft:arrow
 replaceitem entity @a[team=Hunter] hotbar.8 minecraft:slime_ball{HyperJump:1b,HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§bハイパージャンプ\"",Lore:["{\"text\":\"§a持った状態でシフトで溜める\"}","{\"text\":\"§a溜め中は動くことが出来ない\"}","{\"text\":\"§a最大10m飛ぶことが出来る\"}"]}}
 #参加者体力設定

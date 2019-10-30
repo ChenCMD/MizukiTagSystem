@@ -42,8 +42,11 @@ execute as @a[nbt={ActiveEffects:[{Id:26b,Amplifier:12b,Duration:0}]}] run funct
 execute as @e[tag=Smoke] at @s run function system:dice/content_process/smoke/act
 execute as @e[tag=CaptureNet] at @s positioned ~-1 ~ ~-1 run function system:dice/content_process/capture_net/act
 execute as @e[tag=InstantWall] at @s run function system:dice/content_process/instant_wall/act
+execute if entity @e[tag=SM,tag=HalloweenEvent] as @e[tag=Cookie] at @s run function system:skill/escape/cookie/act
 #弓処理
 execute as @a[scores={UseBow=1..}] at @s if entity @e[type=arrow,distance=..5,sort=nearest,limit=1] run function system:skill/hunter/sorted
+execute if entity @e[tag=SM,tag=!HalloweenEvent] as @e[nbt={life:0s}] at @s run particle minecraft:dust 0.5 0 0.5 1 ~ ~ ~ 0 0 0 1 1 force
+execute if entity @e[tag=SM,tag=HalloweenEvent] as @e[nbt={life:0s}] at @s run particle minecraft:dust 1 0.5 0 1 ~ ~ ~ 0 0 0 1 1 force
 execute if entity @e[nbt={inGround:1b},type=arrow] as @a run function system:main/arrow/id_verification
 #スキル処理
 execute as @a[scores={InvisibleArmor=0..}] run function system:skill/escape/hide/act
@@ -61,7 +64,8 @@ tag @a[tag=HyperJumpRemove] remove HyperJumpRemove
 tag @a[scores={use_highjump=1..}] add HyperJumpRemove
 scoreboard players reset @a[scores={use_highjump=1..}] use_highjump
 
-give @a[tag=BowRemove] minecraft:bow{Unbreakable:1,HideFlags:63,display:{Lore:["{\"text\":\"§a矢が戻ってこない場合弓を投げてください\"}"]}}
+tag @a[tag=BowRemove] add G.1001
+tag @a[tag=BowRemove] add ItemGive
 execute if entity @a[tag=BowRemove] as @e[type=arrow] if score @s UserID = @a[tag=BowRemove,limit=1] UserID run kill @s
 clear @a[tag=BowRemove] minecraft:arrow
 give @a[tag=BowRemove] minecraft:arrow

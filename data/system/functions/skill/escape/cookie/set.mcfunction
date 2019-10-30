@@ -1,0 +1,2 @@
+execute at @s run summon area_effect_cloud ~ ~0.5 ~ {Particle:"falling_dust barrier",ReapplicationDelay:2147483647,Radius:0.01f,RadiusPerTick:0f,RadiusOnUse:0f,Duration:1200,DurationOnUse:0f,Age:0,WaitTime:0,Tags:["Cookie"]}
+execute at @s run playsound minecraft:entity.horse.saddle master @a[distance=..5] ~ ~ ~ 1 1.5

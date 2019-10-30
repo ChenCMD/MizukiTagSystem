@@ -18,6 +18,7 @@ execute if data entity @e[tag=TargetItem,limit=1,sort=nearest] {Item:{tag:{ItemI
 execute if data entity @e[tag=TargetItem,limit=1,sort=nearest] {Item:{tag:{ItemID:210}}} run function system:dice/content_process/milk_cake/act
 execute if data entity @e[tag=TargetItem,limit=1,sort=nearest] {Item:{tag:{ItemID:501}}} run function system:main/team_select/no
 execute if data entity @e[tag=TargetItem,limit=1,sort=nearest] {Item:{tag:{ItemID:502}}} run function system:main/team_select/yes
+execute if data entity @e[tag=TargetItem,limit=1,sort=nearest] {Item:{tag:{ItemID:1031}}} run function system:skill/escape/cookie/set
 
 execute if data entity @e[tag=TargetItem,limit=1,sort=nearest] {Item:{tag:{ItemID:1}}} run tag @s add G.001
 execute if data entity @e[tag=TargetItem,limit=1,sort=nearest] {Item:{tag:{ItemID:2}}} run tag @s add G.002
@@ -37,4 +38,5 @@ execute if data entity @e[tag=TargetItem,limit=1,sort=nearest] {Item:{tag:{ItemI
 execute if data entity @e[tag=TargetItem,limit=1,sort=nearest] {Item:{tag:{ItemID:209}}} run tag @s[tag=InfinityItem] add G.209
 execute if data entity @e[tag=TargetItem,limit=1,sort=nearest] {Item:{tag:{ItemID:210}}} run tag @s[tag=InfinityItem] add G.210
 execute if data entity @e[tag=TargetItem,limit=1,sort=nearest] {Item:{tag:{ItemID:1001}}} run tag @s add G.1001
+execute if data entity @e[tag=TargetItem,limit=1,sort=nearest] {Item:{tag:{ItemID:1031}}} run tag @s[tag=InfinityItem] add G.1031
 kill @e[tag=TargetItem,limit=1,sort=nearest]

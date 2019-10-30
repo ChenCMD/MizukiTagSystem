@@ -28,4 +28,6 @@ execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{I
 execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:501}}} run clear @s minecraft:carrot_on_a_stick{ItemID:501} 1
 execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:502}}} run function system:main/team_select/yes
 execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:502}}} run clear @s minecraft:carrot_on_a_stick{ItemID:502} 1
+execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:1031}}} run function system:skill/escape/cookie/set
+execute if data entity @s {SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{ItemID:1031}}} run clear @s minecraft:carrot_on_a_stick{ItemID:1031} 1
 scoreboard players reset @s CarrotClick

@@ -17,8 +17,11 @@ give @s[tag=G.209] minecraft:carrot_on_a_stick{CustomModelData:209,ItemID:209,di
 give @s[tag=G.210] minecraft:carrot_on_a_stick{CustomModelData:210,ItemID:210,display:{Name:"{\"text\":\"ミルクケーキ\",\"italic\":false,\"color\":\"light_purple\"}",Lore:["{\"text\":\"§a使用すると自身に\"}","{\"text\":\"§aかかったマイナスエフェクトを\"}","{\"text\":\"§a全て消し去る\"}"]}}
 give @s[tag=G.501] minecraft:carrot_on_a_stick{CustomModelData:501,ItemID:501,display:{Name:"\"§a鬼参加\""},Enchantments:[{id:protection,lvl:1}],HideFlags:1}
 give @s[tag=G.502] minecraft:carrot_on_a_stick{CustomModelData:502,ItemID:502,display:{Name:"\"§c鬼拒否\""},Enchantments:[{id:protection,lvl:1}],HideFlags:1}
-execute if entity @e[tag=SM,tag=UseresourcePack] run give @s[tag=G.1001] minecraft:carrot_on_a_stick{CustomModelData:1001,ItemID:1001,isWeapon:1b,display:{Name:"{\"text\":\"これは武器だよ!!!!!\",\"italic\":false,\"color\":\"red\"}"},HideFlags:63,AttributeModifiers:[{AttributeName:"generic.attackSpeed",Name:"generic.attackSpeed",Amount:1,Operation:0,UUIDLeast:310539,UUIDMost:26428,Slot:"mainhand"}],Enchantments:[{id:"sharpness",lvl:99}],HideFlags:1}
-execute if entity @e[tag=SM,tag=!UseresourcePack] run give @s[tag=G.1001] minecraft:carrot_on_a_stick{CustomModelData:2001,ItemID:1001,isWeapon:1b,display:{Name:"{\"text\":\"これは武器だよ!!!!!\",\"italic\":false,\"color\":\"red\"}"},HideFlags:63,AttributeModifiers:[{AttributeName:"generic.attackSpeed",Name:"generic.attackSpeed",Amount:1,Operation:0,UUIDLeast:310539,UUIDMost:26428,Slot:"mainhand"}],Enchantments:[{id:"sharpness",lvl:99}],HideFlags:1}
+execute if entity @e[tag=SM,tag=!HalloweenEvent,tag=UseresourcePack] run give @s[tag=G.1001] minecraft:bow{CustomModelData:1001,ItemID:1001,isWeapon:1b,display:{Name:"{\"text\":\"遠近両用特殊武器\",\"italic\":false,\"color\":\"red\"}"},HideFlags:63,AttributeModifiers:[{AttributeName:"generic.attackSpeed",Name:"generic.attackSpeed",Amount:1,Operation:0,UUIDLeast:310539,UUIDMost:26428,Slot:"mainhand"}],Enchantments:[{id:"sharpness",lvl:99}],HideFlags:1}
+execute if entity @e[tag=SM,tag=!HalloweenEvent,tag=!UseresourcePack] run give @s[tag=G.1001] minecraft:bow{CustomModelData:2001,ItemID:1001,isWeapon:1b,display:{Name:"{\"text\":\"遠近両用特殊警棒\",\"italic\":false,\"color\":\"red\"}"},HideFlags:63,AttributeModifiers:[{AttributeName:"generic.attackSpeed",Name:"generic.attackSpeed",Amount:1,Operation:0,UUIDLeast:310539,UUIDMost:26428,Slot:"mainhand"}],Enchantments:[{id:"sharpness",lvl:99}],HideFlags:1}
+execute if entity @e[tag=SM,tag=HalloweenEvent] run give @s[tag=G.1001] minecraft:bow{CustomModelData:1031,ItemID:1001,isWeapon:1b,display:{Name:"[{\"text\":\"ハロウィンロッド\",\"color\":\"gold\",\"italic\":false,\"bold\":true},{\"text\":\" ～お菓子くれなきゃ捕まえちゃうぞ～\",\"bold\":false}]",Lore:["{\"text\":\"§a殴りで近接\"}","{\"text\":\"§a右クリック長押しで魔法弾を飛ばせる\"}","{\"text\":\"§a特殊な武器\"}"]},HideFlags:63,AttributeModifiers:[{AttributeName:"generic.attackSpeed",Name:"generic.attackSpeed",Amount:1031,Operation:0,UUIDLeast:310539,UUIDMost:26428,Slot:"mainhand"}],Enchantments:[{id:"sharpness",lvl:99}],HideFlags:1}
+give @s[tag=G.1031] minecraft:carrot_on_a_stick{CustomModelData:1031,ItemID:1031,display:{Name:"\"§6クッキー\"",Lore:["{\"text\":\"§aその場にクッキーを設置する\"}","{\"text\":\"§a範囲§f: §b半径2.5m\"}","{\"text\":\"§a効果§f: §c鈍足/跳躍力変化 (0:15)\"}","{\"text\":\"§a消滅§f: §b60秒\"}"]}}
+
 tag @s remove G.001
 tag @s remove G.002
 tag @s remove G.003
@@ -39,4 +42,5 @@ tag @s remove G.210
 tag @s remove G.501
 tag @s remove G.502
 tag @s remove G.1001
+tag @s remove G.1031
 tag @s remove ItemGive

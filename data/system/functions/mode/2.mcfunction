@@ -9,6 +9,7 @@ give @s minecraft:bow{Unbreakable:1,HideFlags:63,display:{Lore:["{\"text\":\"§a
 give @s minecraft:arrow
 execute if entity @e[tag=SM,tag=!NoSkillMode] run function system:skill/skill_set_once
 execute if entity @e[tag=SM,tag=HideMode] run effect give @s invisibility 999999 0 true
+execute if entity @e[tag=SM,tag=HalloweenEvent] run effect give @a[team=Hunter] invisibility 999999 0 true
 effect clear @s minecraft:weakness
 effect clear @s minecraft:glowing
 function system:main/effect
