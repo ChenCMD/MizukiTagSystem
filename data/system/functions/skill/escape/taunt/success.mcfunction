@@ -3,4 +3,4 @@ execute if entity @e[tag=SM,tag=HalloweenEvent] run tellraw @s [{"text":"お菓�
 scoreboard players add @s LoDCount 1
 execute if entity @e[tag=SM,tag=!HalloweenEvent] run function system:dice/give
 execute if entity @e[tag=SM,tag=HalloweenEvent] run tag @s add G.1031
-execute if entity @e[tag=SM,tag=HalloweenEvent] run tag @s add ItemGive
+execute if entity @e[tag=SM,tag=HalloweenEvent] run function system:skill/branch/give

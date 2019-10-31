@@ -10,4 +10,4 @@ execute if entity @s[scores={Random=6}] run tag @s add G.106
 execute if entity @s[scores={Random=7}] run tag @s add G.107
 scoreboard players operation @s SkillNum = @s Random
 scoreboard players reset @s Random
-tag @s add ItemGive
+function system:skill/branch/give
