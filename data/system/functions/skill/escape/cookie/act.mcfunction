@@ -23,7 +23,6 @@ effect give @a[team=Hunter,distance=..2.5] minecraft:slowness 15 10 true
 effect give @a[team=Hunter,distance=..2.5] minecraft:jump_boost 15 128 true
 effect give @a[team=Hunter,distance=..2.5] minecraft:unluck 15 0 false
 effect give @a[team=Hunter,distance=..2.5] minecraft:blindness 15 0 true
-effect clear @a[team=Hunter,distance=..2.5] minecraft:speed
 execute if entity @a[team=Hunter,distance=..2.5] at @a[team=Hunter,distance=..2.5] run tp @s ~ ~0.005 ~
 execute if entity @a[team=Hunter,distance=..2.5] at @a[team=Hunter,distance=..2.5] run summon area_effect_cloud ~ ~1.5 ~ {Particle:"item cookie",ReapplicationDelay:2147483647,Radius:0.5f,RadiusPerTick:0f,RadiusOnUse:0f,Duration:300,DurationOnUse:0f,Age:0,WaitTime:0}
 ##メッセージ送信
