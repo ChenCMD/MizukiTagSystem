@@ -8,7 +8,7 @@ replaceitem entity @s hotbar.8 minecraft:slime_ball{HyperJump:1b,HideFlags:1,Enc
 execute if entity @e[tag=SM,tag=!NoSkillMode] run function system:skill/skill_set_once
 give @s minecraft:arrow{display:{Name:"\"§5魔力\""}}
 execute if entity @e[tag=SM,tag=HideMode] run effect give @s invisibility 999999 0 true
-execute if entity @e[tag=SM,tag=HalloweenEvent] run effect give @a[team=Hunter] invisibility 999999 0 true
+execute if entity @e[tag=SM,tag=HalloweenEvent] run effect give @s invisibility 999999 0 true
 effect clear @s minecraft:weakness
 effect clear @s minecraft:glowing
 function system:main/effect
