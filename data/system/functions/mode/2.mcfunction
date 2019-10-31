@@ -5,9 +5,8 @@ execute if entity @e[tag=SM,tag=!HideMode] as @s run function system:armor/hunte
 tag @s add G.1001
 function system:skill/branch/give
 replaceitem entity @s hotbar.8 minecraft:slime_ball{HyperJump:1b,HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§bハイパージャンプ\"",Lore:["{\"text\":\"§a持った状態でシフトで溜める\"}","{\"text\":\"§a溜め中は動くことが出来ない\"}","{\"text\":\"§a最大10m飛ぶことが出来る\"}"]}}
-give @s minecraft:bow{Unbreakable:1,HideFlags:63,display:{Lore:["{\"text\":\"§a矢が戻ってこない場合弓を投げてください\"}"]}}
-give @s minecraft:arrow
 execute if entity @e[tag=SM,tag=!NoSkillMode] run function system:skill/skill_set_once
+give @s minecraft:arrow{display:{Name:"\"§5魔力\""}}
 execute if entity @e[tag=SM,tag=HideMode] run effect give @s invisibility 999999 0 true
 execute if entity @e[tag=SM,tag=HalloweenEvent] run effect give @a[team=Hunter] invisibility 999999 0 true
 effect clear @s minecraft:weakness
