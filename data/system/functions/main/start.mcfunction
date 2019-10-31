@@ -9,6 +9,9 @@ execute if entity @s[scores={UseRuleSelect=1}] run bossbar set mizuki:time/mode1
 execute if entity @s[scores={UseRuleSelect=2}] run bossbar set mizuki:time/mode2 players @a
 execute if entity @s[scores={UseRuleSelect=3}] run bossbar set mizuki:time/mode3 players @a
 scoreboard players set @s END_COUNT 1
+#HalloweenPrefix
+execute if entity @s[tag=HalloweenEvent] run team modify Hunter prefix {"text":"[幽霊] ","color":"red"}
+execute if entity @s[tag=!HalloweenEvent] run team modify Hunter prefix {"text":"[鬼] ","color":"red"}
 #参加者にタグ付与
 tag @a[gamemode=!spectator,team=!OP] add GamePlayer
 #ゲーム回数をプレイヤーにコピー
