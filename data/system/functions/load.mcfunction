@@ -60,7 +60,8 @@ execute as @e[tag=Totem] at @s positioned ~-6.5 ~ ~-6.5 run function system:skil
 function system:skill/hunter/hyper_jump/tick
 
 #アイテム戻ってくるやつ#########################################################################################
-give @a[tag=HyperJumpRemove,team=Hunter] minecraft:slime_ball{HyperJump:1b,HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§bハイパージャンプ\"",Lore:["{\"text\":\"§a持った状態でシフトで溜める\"}","{\"text\":\"§a溜め中は動くことが出来ない\"}","{\"text\":\"§a最大10m飛ぶことが出来る\"}"]}}
+execute if entity @e[tag=SM,tag=!HalloweenEvent] run give @a[tag=HyperJumpRemove,team=Hunter] minecraft:slime_ball{HyperJump:1b,HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§bハイパージャンプ\"",Lore:["{\"text\":\"§a持った状態でシフトで溜める\"}","{\"text\":\"§a溜め中は動くことが出来ない\"}","{\"text\":\"§a最大10m飛ぶことが出来る\"}"]}}
+execute if entity @e[tag=SM,tag=HalloweenEvent] run give @a[tag=HyperJumpRemove,team=Hunter] minecraft:slime_ball{HyperJump:1b,HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§bハイパージャンプ\"",Lore:["{\"text\":\"§a持った状態でシフトで溜める\"}","{\"text\":\"§a溜め中は動くことが出来ない\"}","{\"text\":\"§a最大§m10m§r§6§l18m§r§a飛ぶことが出来る\"}"]}}
 tag @a[tag=HyperJumpRemove] remove HyperJumpRemove
 tag @a[scores={use_highjump=1..}] add HyperJumpRemove
 scoreboard players reset @a[scores={use_highjump=1..}] use_highjump
