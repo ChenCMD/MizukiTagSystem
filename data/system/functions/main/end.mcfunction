@@ -16,6 +16,7 @@ kill @e[type=arrow]
 tag @s[tag=SM] remove GameStartCount
 tag @a remove ChaseArrowReady
 tag @a remove GravityArrowReady
+tag @a remove HaveLoD
 xp set @a 0 levels
 function system:main/ending_show_stats
 scoreboard players reset @s GameStartCount

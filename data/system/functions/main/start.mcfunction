@@ -31,6 +31,7 @@ effect give @a[team=Escape] minecraft:resistance 999999 4 true
 effect give @a minecraft:saturation 999999 0 true
 #Luck of Dice回数リセット
 scoreboard players set @a[team=Escape] LoDCount 0
+scoreboard players set @a[team=Escape] LoDSuccessCount 20
 scoreboard players operation @e[tag=SM] LoDDeley = $LoDDeley Ver
 #逃走者スキルアイテムGive
 execute if entity @s[tag=!NoSkillMode] run tag @a[team=Escape] add G.001
@@ -41,7 +42,6 @@ execute if entity @s[tag=!NoLoD] run scoreboard players operation $LoDCopy Ver =
 execute if entity @s[tag=!HalloweenEvent] run tellraw @a [{"text":"Luck of Dice所持者","color":"green"},{"text":": ","color":"white"}]
 execute if entity @s[tag=HalloweenEvent] run tellraw @a [{"text":"お菓子箱所持者","color":"gold"},{"text":": ","color":"white"}]
 execute if entity @s[tag=!NoLoD] run function system:skill/escape/taunt/loop
-tag @a remove LoD1
 #鬼スキルアイテムランダム配布
 execute if entity @s[tag=!NoSkillMode] as @a[team=Hunter] run function system:skill/skill_set
 #防具

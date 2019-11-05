@@ -29,9 +29,11 @@ execute as @a[tag=ItemGive] run function system:skill/branch/give
 execute as @a[scores={CarrotClick=1..}] at @s run function system:skill/branch/click
 execute as @a[scores={CarrotDrop=1..}] at @s run function system:skill/branch/drop/main
 #ダイス処理 確率 50% 35% 20% 5%
-execute as @a[scores={LoDCT=1..}] run scoreboard players add @s LoDCT 1
-execute as @a[scores={LoDCT=900..},team=!Hunter,team=!Wait,team=!OP] run function system:skill/escape/taunt/give
-execute as @a[scores={LoDCT=900..},team=!Escape,team=!Died] run scoreboard players reset @s LoDCT
+execute as @a[scores={LoDCT=1..}] run scoreboard players remove @s LoDCT 1
+execute as @a[scores={LoDCT=0}] run function system:skill/escape/taunt/give
+execute as @a[team=Escape,scores={LoDCount=..99}] unless score @s LoDCT matches 0.. run scoreboard players add @s LoDAddCycle 1
+execute as @a[team=Escape,scores={LoDCount=..99}] unless score @s LoDCT matches 0.. if score @s LoDAddCycle >= @s LoDSuccessCount run scoreboard players add @s LoDCount 1
+execute as @a[team=Escape] if score @s LoDAddCycle >= @s LoDSuccessCount run scoreboard players set @s LoDAddCycle 0
 #ダイス処理
 execute as @a[scores={DiceDrop=1..}] run function system:dice/drop
 execute as @e[tag=Link_Dice] at @s run function system:dice/act
@@ -96,7 +98,8 @@ execute as @a[team=Hunter,tag=!ChaseArrowReady,tag=!GravityArrowReady] unless sc
 execute as @a[team=Hunter,tag=!ChaseArrowReady,tag=GravityArrowReady] unless score @s HighJump matches 0.. run function system:main/job_systems/gravity_health
 execute as @a[team=Hunter,tag=ChaseArrowReady,tag=!GravityArrowReady] unless score @s HighJump matches 0.. run function system:main/job_systems/chase_health
 
-execute as @a[team=Escape] run function system:main/job_systems/health
+execute as @a[team=Escape,tag=!HaveLoD] run function system:main/job_systems/health
+execute as @a[team=Escape,tag=HaveLoD] run function system:main/job_systems/escape_health
 execute if entity @a[scores={CT=1..}] run function system:main/ct
 execute if entity @e[tag=!GameStartCount,tag=!GameTime_Yes,tag=SM] run function system:main/actionbar_mes
 

@@ -1,7 +1,7 @@
 
-execute as @r[team=Escape,tag=!LoD1] run tag @s add LoD0
+execute as @r[team=Escape,tag=!HaveLoD] run tag @s add LoD0
 execute as @a[tag=LoD0] run function system:skill/escape/taunt/give
-execute as @a[tag=LoD0] run tag @s add LoD1
+execute as @a[tag=LoD0] run tag @s add HaveLoD
 execute if entity @a[tag=LoD0] run tellraw @a {"selector":"@a[tag=LoD0]","color":"aqua"}
 execute as @a[tag=LoD0] run tag @s remove LoD0
 scoreboard players remove $LoDCopy Ver 1
