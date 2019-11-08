@@ -1,5 +1,6 @@
 function system:main/chunk_load/hsp
 tp @s @e[sort=random,tag=HunterSpawnPoint,limit=1]
+tag @a remove ItemGive
 clear @s
 scoreboard players set @s Health 300
 scoreboard players set @s Winstroke 0

@@ -4,6 +4,7 @@ scoreboard players reset @a HunterPenalty
 title @a title {"text":"GAME END!!","color":"green","bold":true}
 
 
+tag @a remove ItemGive
 clear @a
 effect clear @a
 effect give @a minecraft:saturation 999999 0 true

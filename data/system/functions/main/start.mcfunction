@@ -1,4 +1,5 @@
 #アイテムclear
+tag @a remove ItemGive
 clear @a[gamemode=!spectator,team=!OP]
 #時間関連の設定
 scoreboard players operation @s GameTimeB = @s GameTimeC
