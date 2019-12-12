@@ -22,6 +22,7 @@ execute if entity @e[tag=SM,tag=!HalloweenEvent,tag=!UseResourcePack] run give @
 execute if entity @e[tag=SM,tag=HalloweenEvent] run give @s[tag=G.1001] minecraft:bow{Unbreakable:1b,CustomModelData:1031,ItemID:1001,isWeapon:1b,display:{Name:"[{\"text\":\"ハロウィンロッド\",\"color\":\"gold\",\"italic\":false,\"bold\":true},{\"text\":\" ～お菓子くれなきゃ捕まえちゃうぞ～\",\"bold\":false}]",Lore:["{\"text\":\"§a殴りで近接\"}","{\"text\":\"§a右クリック長押しで魔法弾を飛ばせる\"}","{\"text\":\"§a特殊な武器\"}"]},HideFlags:63,AttributeModifiers:[{AttributeName:"generic.attackSpeed",Name:"generic.attackSpeed",Amount:1031,Operation:0,UUIDLeast:310539,UUIDMost:26428,Slot:"mainhand"}],Enchantments:[{id:"sharpness",lvl:99}],HideFlags:1}
 give @s[tag=G.1031] minecraft:carrot_on_a_stick{CustomModelData:1031,ItemID:1031,display:{Name:"\"§6クッキー\"",Lore:["{\"text\":\"§aその場にクッキーを設置する\"}","{\"text\":\"§a範囲§f: §b半径2.5m\"}","{\"text\":\"§a効果§f: §c鈍足/跳躍力変化 (0:10)\"}","{\"text\":\"§a消滅§f: §b20秒\"}"]}}
 
+kill @e[nbt={PickupDelay: 32767s, Age: 5999s}]
 tag @s remove G.001
 tag @s remove G.002
 tag @s remove G.003
