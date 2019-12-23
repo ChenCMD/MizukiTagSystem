@@ -55,10 +55,14 @@ execute if entity @s[tag=HalloweenEvent] run effect give @a[team=Hunter] invisib
 execute as @a[team=Hunter] run function system:main/effect
 #鬼武器Give
 tag @a[team=Hunter] add G.1001
-tag @a[team=Hunter] add ItemGive
+execute as @a[team=Hunter] run function system:skill/branch/give
 give @a[team=Hunter] minecraft:arrow
-execute if entity @e[tag=SM,tag=!HalloweenEvent] run replaceitem entity @a[team=Hunter] hotbar.8 minecraft:slime_ball{HyperJump:1b,HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§bハイパージャンプ\"",Lore:["{\"text\":\"§a持った状態でシフトで溜める\"}","{\"text\":\"§a溜め中は動くことが出来ない\"}","{\"text\":\"§a最大10m飛ぶことが出来る\"}"]}}
-execute if entity @e[tag=SM,tag=HalloweenEvent] run replaceitem entity @a[team=Hunter] hotbar.8 minecraft:slime_ball{HyperJump:1b,HideFlags:1,Enchantments:[{id:protection,lvl:1}],display:{Name:"\"§bハイパージャンプ\"",Lore:["{\"text\":\"§a持った状態でシフトで溜める\"}","{\"text\":\"§a溜め中は動くことが出来ない\"}","{\"text\":\"§a最大§m10m§r§6§l18m§r§a飛ぶことが出来る\"}"]}}
+execute if entity @e[tag=SM,tag=!HalloweenEvent] run replaceitem entity @a[team=Hunter] hotbar.8 minecraft:slime_ball{HyperJump:1b,HideFlags:1,Enchantments:[{id:protection,lvl:1s}],display:{Name:"\"§bハイパージャンプ\"",Lore:["{\"text\":\"§a持った状態でシフトで溜める\"}","{\"text\":\"§a溜め中は動くことが出来ない\"}","{\"text\":\"§a最大10m飛ぶことが出来る\"}"]}}
+execute if entity @e[tag=SM,tag=HalloweenEvent] run replaceitem entity @a[team=Hunter] hotbar.8 minecraft:slime_ball{HyperJump:1b,HideFlags:1,Enchantments:[{id:protection,lvl:1s}],display:{Name:"\"§bハイパージャンプ\"",Lore:["{\"text\":\"§a持った状態でシフトで溜める\"}","{\"text\":\"§a溜め中は動くことが出来ない\"}","{\"text\":\"§a最大§m10m§r§6§l18m§r§a飛ぶことが出来る\"}"]}}
+#くりすますもーど
+execute if entity @s[tag=XmasEvent] run tag @a[team=Escape] add G.1224s
+execute if entity @s[tag=XmasEvent] run tag @a[team=Hunter] add G.1224s
+execute if entity @s[tag=XmasEvent] run tag @a add ItemGive
 #参加者体力設定
 scoreboard players set @a[team=Hunter] Health 300
 scoreboard players set @a[team=Escape] Health 100
