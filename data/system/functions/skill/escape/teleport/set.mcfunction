@@ -1,4 +1,4 @@
-#execute at @s run summon armor_stand ~ ~ ~ {Tags:["TP"],NoGravity:1b,Small:1,Marker:1b,Invisible:1,Invulnerable:1}
+#execute at @s run summon armor_stand ~ ~ ~ {Tags:["TP"],NoGravity:1b,Small:1b,Marker:1b,Invisible:1b,Invulnerable:1b}
 #execute at @s run scoreboard players operation @e[type=armor_stand,tag=TP,distance=..2,tag=!Link_TP] UserID = @s UserID
 #tp @e[type=armor_stand,tag=TP,tag=!Link_TP] @s
 #execute at @s run tag @e[tag=TP,distance=..2,tag=!Link_TP] add Link_TP

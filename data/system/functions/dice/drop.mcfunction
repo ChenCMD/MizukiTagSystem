@@ -5,3 +5,5 @@ execute at @s positioned ~ ~1 ~ if entity @e[distance=..5,nbt={Item:{id:"minecra
 execute at @s positioned ~ ~1 ~ if entity @e[distance=..5,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:"{\"text\":\"スーパーダイス (アイテム)\",\"italic\":false,\"bold\":true,\"color\":\"green\"}"}}}}] run tellraw @a [{"selector":"@s"},{"text":" は","color":"aqua"},{"text":"スーパーダイス (アイテム)","color":"green","bold":true},{"text":"を振った！","color":"aqua"}]
 execute at @s positioned ~ ~1 ~ if entity @e[distance=..5,nbt={Item:{id:"minecraft:player_head",tag:{display:{Name:"{\"text\":\"スーパーダイス (?????)\",\"italic\":false,\"bold\":true,\"color\":\"dark_red\"}"}}}}] run tellraw @a [{"selector":"@s"},{"text":" は","color":"aqua"},{"text":"スーパーダイス (?????)","color":"dark_red","bold":true},{"text":"を振った！","color":"aqua"}]
 scoreboard players reset @s DiceDrop
+
+summon item ~ ~ ~ {Health:1s}

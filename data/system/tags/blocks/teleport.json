@@ -105,6 +105,7 @@
         "minecraft:activator_rail",
         "minecraft:redstone_wire",
         "minecraft:repeater",
-        "minecraft:comparator"
+        "minecraft:comparator",
+        "minecraft:snow"
     ]
 }

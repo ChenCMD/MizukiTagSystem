@@ -1,2 +1,2 @@
-execute if entity @s[team=Hunter] run summon minecraft:item ~ ~ ~ {Tags:["NoKill","Hunter","Smoke"],Item:{id:"minecraft:firework_star",Count:1b,tag:{Explosion:{Type:0}}},Age:5700,PickupDelay:32767}
-execute if entity @s[team=Escape] run summon minecraft:item ~ ~ ~ {Tags:["NoKill","Escape","Smoke"],Item:{id:"minecraft:firework_star",Count:1b,tag:{Explosion:{Type:0}}},Age:5700,PickupDelay:32767}
+execute if entity @s[team=Hunter] run summon minecraft:item ~ ~ ~ {Tags:["NoKill","Hunter","Smoke"],Item:{id:"minecraft:firework_star",Count:1b,tag:{Explosion:{Type:0}}},Age:5700s,PickupDelay:32767s}
+execute if entity @s[team=Escape] run summon minecraft:item ~ ~ ~ {Tags:["NoKill","Escape","Smoke"],Item:{id:"minecraft:firework_star",Count:1b,tag:{Explosion:{Type:0}}},Age:5700s,PickupDelay:32767s}

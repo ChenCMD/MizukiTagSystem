@@ -60,8 +60,10 @@ execute as @e[tag=Landmine] at @s positioned ~-1 ~ ~-1 run function system:skill
 execute as @e[tag=Totem] at @s positioned ~-6.5 ~ ~-6.5 run function system:skill/hunter/territory_totem/act
 #Xmas
 execute if entity @e[tag=SM,tag=XmasEvent] run function system:event/xmas/tick
+execute if entity @e[tag=SM,tag=XmasEvent] if entity @a[team=OP] run function system:event/xmas/snowball/op_act
 execute if entity @e[tag=SM,tag=XmasEvent] as @e[type=snowball] at @s run function system:event/xmas/snowball/tick
-execute if entity @e[tag=SM,tag=XmaxEvent] as @e[type=armor_stand,tag=GravityCheck,nbt=!{FallDistance:0f}] at @s run function system:event/xmas/snowball/act
+execute if entity @e[tag=SM,tag=XmasEvent] as @e[type=armor_stand,tag=GravityCheck,nbt=!{FallDistance:0f}] at @s positioned ~ ~-1.1 ~ run function system:event/xmas/snowball/act
+execute if entity @e[tag=SM,tag=XmasEvent] as @e[type=armor_stand,tag=GravityCheck,nbt={OnGround:1b}] at @s run function system:event/xmas/snowball/act
 #ハイパージャンプ
 function system:skill/hunter/hyper_jump/tick
 
@@ -111,8 +113,8 @@ execute if entity @e[tag=!GameStartCount,tag=!GameTime_Yes,tag=SM] run function 
 execute unless entity @e[tag=SM,tag=!NoHealthRegen] run function system:main/regen
 
 #定期フラッシュ
-execute as @e[tag=DeleyFlash] run function system:event/fixed_time_flash/radar/act_base
-execute as @e[tag=DeleyFlash] if score @s TimeFlash > $TimeFlash Ver at @s run function system:event/fixed_time_flash/act
+execute as @e[tag=DelayFlash] run function system:event/fixed_time_flash/radar/act_base
+execute as @e[tag=DelayFlash] if score @s TimeFlash > $TimeFlash Ver at @s run function system:event/fixed_time_flash/act
 
 #脱獄モードの場合の追加処理
 execute if entity @e[tag=SM,scores={UseRuleSelect=3}] run function system:mode/3-a

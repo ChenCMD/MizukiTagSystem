@@ -33,7 +33,7 @@ effect give @a minecraft:saturation 999999 0 true
 #Luck of Dice回数リセット
 scoreboard players set @a[team=Escape] LoDCount 0
 scoreboard players set @a[team=Escape] LoDSuccessCount 20
-scoreboard players operation @e[tag=SM] LoDDeley = $LoDDeley Ver
+scoreboard players operation @e[tag=SM] LoDDelay = $LoDDelay Ver
 #逃走者スキルアイテムGive
 execute if entity @s[tag=!NoSkillMode] run tag @a[team=Escape] add G.001
 execute if entity @s[tag=!NoSkillMode] run tag @a[team=Escape] add G.002
@@ -63,6 +63,9 @@ execute if entity @e[tag=SM,tag=HalloweenEvent] run replaceitem entity @a[team=H
 execute if entity @s[tag=XmasEvent] run tag @a[team=Escape] add G.1224s
 execute if entity @s[tag=XmasEvent] run tag @a[team=Hunter] add G.1224s
 execute if entity @s[tag=XmasEvent] run tag @a add ItemGive
+execute if entity @s[tag=XmasEvent] run time set midnight
+execute if entity @s[tag=XmasEvent] run weather rain 1000000
+execute if entity @s[tag=!XmasEvent] run weather clear
 #参加者体力設定
 scoreboard players set @a[team=Hunter] Health 300
 scoreboard players set @a[team=Escape] Health 100

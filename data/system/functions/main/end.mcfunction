@@ -12,7 +12,7 @@ effect give @a minecraft:resistance 999999 4 true
 fill 1137 24 679 1137 25 678 orange_stained_glass
 fill 961 26 444 961 24 445 orange_stained_glass
 execute as @e[tag=InstantWall] at @s run setblock ~ ~ ~ air destroy
-execute as @e[type=!player,tag=!SM,tag=!HunterSpawnPoint,tag=!EscapeSpawnPoint,tag=!RandSpawn] unless entity @s[tag=!Link_Dice,tag=!SuperBomb,tag=!Smoke,tag=!CaptureNet,tag=!InstantWall,tag=!Trap,tag=!Landmine,tag=!Totem,tag=!Flash,tag=!DeleyFlash] run kill @s
+execute as @e[type=!player,tag=!SM,tag=!HunterSpawnPoint,tag=!EscapeSpawnPoint,tag=!RandSpawn] unless entity @s[tag=!Link_Dice,tag=!SuperBomb,tag=!Smoke,tag=!CaptureNet,tag=!InstantWall,tag=!Trap,tag=!Landmine,tag=!Totem,tag=!Flash,tag=!DelayFlash] run kill @s
 kill @e[type=arrow]
 tag @s[tag=SM] remove GameStartCount
 tag @a remove ChaseArrowReady
@@ -34,3 +34,5 @@ scoreboard players operation @s GameTimeB = @s GameTimeC
 bossbar set mizuki:time/mode1 players
 bossbar set mizuki:time/mode2 players
 bossbar set mizuki:time/mode3 players
+execute if entity @s[tag=XmasEvent] run weather rain 1000000
+execute if entity @s[tag=!XmasEvent] run weather clear
