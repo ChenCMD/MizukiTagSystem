@@ -1,5 +1,5 @@
 #絶対実行するやつ--------------------------------------------------------------------
-execute as @e[tag=!NoInf,type=falling_block] run data merge entity @s {Time:1}
+execute as @e[type=falling_block,tag=!NoInf] run data merge entity @s {Time:1}
 #JOIN処理
 execute as @a[scores={JOIN=1}] run function system:main/fast_join
 #LEAVE処理
@@ -50,11 +50,11 @@ execute if entity @e[tag=SM,tag=HalloweenEvent] as @e[tag=Cookie] at @s run func
 execute as @a[scores={UseBow=1..}] at @s if entity @e[type=arrow,distance=..5,sort=nearest,limit=1] run function system:skill/hunter/sorted
 execute if entity @e[tag=SM,tag=!HalloweenEvent] as @e[nbt={life:0s}] at @s run particle minecraft:dust 0.5 0 0.5 1 ~ ~ ~ 0 0 0 1 1 force
 execute if entity @e[tag=SM,tag=HalloweenEvent] as @e[nbt={life:0s}] at @s run particle minecraft:dust 1 0.5 0 1 ~ ~ ~ 0 0 0 1 1 force
-execute if entity @e[nbt={inGround:1b},type=arrow] as @a run function system:main/arrow/id_verification
+execute if entity @e[type=arrow,nbt={inGround:1b}] as @a run function system:main/arrow/id_verification
 #スキル処理
 execute as @a[scores={InvisibleArmor=0..}] run function system:skill/escape/hide/act
 execute as @e[tag=Flash] at @s run function system:skill/hunter/flash_marking/act
-execute as @e[tag=Arrow_Chase,type=arrow] at @s run function system:skill/hunter/chase_arrow/act
+execute as @e[type=arrow,tag=Arrow_Chase] at @s run function system:skill/hunter/chase_arrow/act
 execute as @e[tag=Trap] at @s positioned ~-1 ~ ~-1 run function system:skill/hunter/trap/act
 execute as @e[tag=Landmine] at @s positioned ~-1 ~ ~-1 run function system:skill/hunter/landmine/act
 execute as @e[tag=Totem] at @s positioned ~-6.5 ~ ~-6.5 run function system:skill/hunter/territory_totem/act
@@ -68,8 +68,8 @@ execute if entity @e[tag=SM,tag=XmasEvent] as @e[type=armor_stand,tag=GravityChe
 function system:skill/hunter/hyper_jump/tick
 
 #アイテム戻ってくるやつ#########################################################################################
-execute if entity @e[tag=SM,tag=!HalloweenEvent] run give @a[tag=HyperJumpRemove,team=Hunter] minecraft:slime_ball{HyperJump:1b,HideFlags:1,Enchantments:[{id:protection,lvl:1s}],display:{Name:"\"§bハイパージャンプ\"",Lore:["{\"text\":\"§a持った状態でシフトで溜める\"}","{\"text\":\"§a溜め中は動くことが出来ない\"}","{\"text\":\"§a最大10m飛ぶことが出来る\"}"]}}
-execute if entity @e[tag=SM,tag=HalloweenEvent] run give @a[tag=HyperJumpRemove,team=Hunter] minecraft:slime_ball{HyperJump:1b,HideFlags:1,Enchantments:[{id:protection,lvl:1s}],display:{Name:"\"§bハイパージャンプ\"",Lore:["{\"text\":\"§a持った状態でシフトで溜める\"}","{\"text\":\"§a溜め中は動くことが出来ない\"}","{\"text\":\"§a最大§m10m§r§6§l18m§r§a飛ぶことが出来る\"}"]}}
+execute if entity @e[tag=SM,tag=!HalloweenEvent] run give @a[team=Hunter,tag=HyperJumpRemove] minecraft:slime_ball{HyperJump:1b,HideFlags:1,Enchantments:[{id:protection,lvl:1s}],display:{Name:"\"§bハイパージャンプ\"",Lore:["{\"text\":\"§a持った状態でシフトで溜める\"}","{\"text\":\"§a溜め中は動くことが出来ない\"}","{\"text\":\"§a最大10m飛ぶことが出来る\"}"]}}
+execute if entity @e[tag=SM,tag=HalloweenEvent] run give @a[team=Hunter,tag=HyperJumpRemove] minecraft:slime_ball{HyperJump:1b,HideFlags:1,Enchantments:[{id:protection,lvl:1s}],display:{Name:"\"§bハイパージャンプ\"",Lore:["{\"text\":\"§a持った状態でシフトで溜める\"}","{\"text\":\"§a溜め中は動くことが出来ない\"}","{\"text\":\"§a最大§m10m§r§6§l18m§r§a飛ぶことが出来る\"}"]}}
 tag @a[tag=HyperJumpRemove] remove HyperJumpRemove
 tag @a[scores={use_highjump=1..}] add HyperJumpRemove
 scoreboard players reset @a[scores={use_highjump=1..}] use_highjump
@@ -90,10 +90,10 @@ scoreboard players reset @a ArrowDrop
 
 
 #Count系変数処理##############################################################################################
-execute if entity @e[tag=!GameStartCount,tag=!GameTime_Yes,tag=SM] run scoreboard players set @e[tag=SM] UTSTCount 0
-execute if entity @e[tag=!GameStartCount,tag=!GameTime_Yes,tag=SM] as @a[scores={UseTeamSelect=2},gamemode=!spectator,team=!OP] run scoreboard players add @e[tag=SM] UTSTCount 1
-execute if entity @e[tag=!GameStartCount,tag=!GameTime_Yes,tag=SM] run scoreboard players set @e[tag=SM] PlayerCount 0
-execute if entity @e[tag=!GameStartCount,tag=!GameTime_Yes,tag=SM] as @a[team=Wait,gamemode=!spectator] run scoreboard players add @e[tag=SM] PlayerCount 1
+execute if entity @e[tag=SM,tag=!GameStartCount,tag=!GameTime_Yes] run scoreboard players set @e[tag=SM] UTSTCount 0
+execute if entity @e[tag=SM,tag=!GameStartCount,tag=!GameTime_Yes] as @a[gamemode=!spectator,team=!OP,scores={UseTeamSelect=2}] run scoreboard players add @e[tag=SM] UTSTCount 1
+execute if entity @e[tag=SM,tag=!GameStartCount,tag=!GameTime_Yes] run scoreboard players set @e[tag=SM] PlayerCount 0
+execute if entity @e[tag=SM,tag=!GameStartCount,tag=!GameTime_Yes] as @a[gamemode=!spectator,team=Wait] run scoreboard players add @e[tag=SM] PlayerCount 1
 
 #鬼ペナ処理
 execute as @a[scores={HunterPenalty=1..}] run function system:mode/penalty
@@ -101,13 +101,13 @@ execute as @a[scores={HunterPenalty=1..}] run function system:mode/penalty
 
 #アイテム系Title処理##########################################################################################
 execute as @a[team=Hunter,tag=!ChaseArrowReady,tag=!GravityArrowReady] unless score @s HighJump matches 0.. run function system:main/job_systems/health
-execute as @a[team=Hunter,tag=!ChaseArrowReady,tag=GravityArrowReady] unless score @s HighJump matches 0.. run function system:main/job_systems/gravity_health
+execute as @a[team=Hunter,tag=GravityArrowReady,tag=!ChaseArrowReady] unless score @s HighJump matches 0.. run function system:main/job_systems/gravity_health
 execute as @a[team=Hunter,tag=ChaseArrowReady,tag=!GravityArrowReady] unless score @s HighJump matches 0.. run function system:main/job_systems/chase_health
 
 execute as @a[team=Escape,tag=!HaveLoD] run function system:main/job_systems/health
 execute as @a[team=Escape,tag=HaveLoD] run function system:main/job_systems/escape_health
 execute if entity @a[scores={CT=1..}] run function system:main/ct
-execute if entity @e[tag=!GameStartCount,tag=!GameTime_Yes,tag=SM] run function system:main/actionbar_mes
+execute if entity @e[tag=SM,tag=!GameStartCount,tag=!GameTime_Yes] run function system:main/actionbar_mes
 
 #自然回復
 execute unless entity @e[tag=SM,tag=!NoHealthRegen] run function system:main/regen
@@ -142,10 +142,10 @@ execute store result bossbar mizuki:time/mode3 value run scoreboard players get 
 execute if entity @e[tag=SM,tag=!SystemFix] run tellraw @a[tag=OP] [{"text":"[Chen'sSystem] ","color":"aqua"},{"text":"MainSystem","color":"green"},{"text":" : ","color":"white"},{"text":"VeryGood.","color":"green"}]
 tag @e[tag=SM] add SystemFix
 
-tag @e[tag=!NoKill,type=item,nbt=!{Item:{tag:{NoKill:1b}}},nbt=!{Item:{tag:{display:{Name:"{\"text\":\"BlingEdit\"}"}}}}] add kill
+tag @e[type=item,tag=!NoKill,nbt=!{Item:{tag:{NoKill:1b}}},nbt=!{Item:{tag:{display:{Name:"{\"text\":\"BlingEdit\"}"}}}}] add kill
 tag @e[type=arrow,nbt={inGround:true}] add kill
 tag @e[type=spectral_arrow,nbt={inGround:true}] add kill
-kill @e[tag=kill,type=!player]
+kill @e[type=!player,tag=kill]
 
 execute as @a[scores={Trigger=1..}] run function system:main/stats_view
 scoreboard players enable @a Trigger

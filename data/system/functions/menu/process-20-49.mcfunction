@@ -29,6 +29,6 @@ execute if entity @e[tag=SM,scores={Menu=46}] run scoreboard players set @e[tag=
 execute if entity @e[tag=SM,scores={Menu=47}] run scoreboard players set @e[tag=SM] GameTimeC 1680
 execute if entity @e[tag=SM,scores={Menu=48}] run scoreboard players set @e[tag=SM] GameTimeC 1740
 execute if entity @e[tag=SM,scores={Menu=49}] run scoreboard players set @e[tag=SM] GameTimeC 1800
-execute if entity @e[distance=..6,type=item,nbt={Item:{tag:{MenuItem:1b}}},limit=1] store result score @e[tag=SM] GameMinutes run data get entity @e[distance=..6,type=item,nbt={Item:{tag:{MenuItem:1b}}},limit=1] Item.tag.GameMinutes
+execute if entity @e[type=item,nbt={Item:{tag:{MenuItem:1b}}},distance=..6,limit=1] store result score @e[tag=SM] GameMinutes run data get entity @e[type=item,nbt={Item:{tag:{MenuItem:1b}}},distance=..6,limit=1] Item.tag.GameMinutes
 tellraw @a [{"text":"制限時間を","color":"light_purple"},{"score":{"name":"@e[tag=SM,limit=1]","objective":"GameMinutes"},"color":"light_purple"},{"text":"分に設定しました","color":"light_purple"}]
 function system:menu/pattern/3

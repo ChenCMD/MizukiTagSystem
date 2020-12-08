@@ -1,11 +1,11 @@
 scoreboard players operation #1 kills_in_match > @a[team=Hunter] kills_in_match
 execute as @a[team=Hunter] if score @s kills_in_match = #1 kills_in_match run tag @s add Kim1
 
-scoreboard players operation #2 kills_in_match > @a[team=Hunter,scores={kills_in_match=1..},tag=!Kim1] kills_in_match
-execute as @a[team=Hunter,scores={kills_in_match=1..},tag=!Kim1] if score @s kills_in_match = #2 kills_in_match run tag @s add Kim2
+scoreboard players operation #2 kills_in_match > @a[team=Hunter,tag=!Kim1,scores={kills_in_match=1..}] kills_in_match
+execute as @a[team=Hunter,tag=!Kim1,scores={kills_in_match=1..}] if score @s kills_in_match = #2 kills_in_match run tag @s add Kim2
 
-scoreboard players operation #3 kills_in_match > @a[team=Hunter,scores={kills_in_match=1..},tag=!Kim1,tag=!Kim2] kills_in_match
-execute as @a[team=Hunter,scores={kills_in_match=1..},tag=!Kim1,tag=!Kim2] if score @s kills_in_match = #3 kills_in_match run tag @s add Kim3
+scoreboard players operation #3 kills_in_match > @a[team=Hunter,tag=!Kim1,tag=!Kim2,scores={kills_in_match=1..}] kills_in_match
+execute as @a[team=Hunter,tag=!Kim1,tag=!Kim2,scores={kills_in_match=1..}] if score @s kills_in_match = #3 kills_in_match run tag @s add Kim3
 
 execute as @a[tag=Kim1] run scoreboard players add #Counter1 kills_in_match 1
 execute if entity @a[tag=Kim1] if score #Counter1 kills_in_match matches 1 run tellraw @a [{"text":"1. ","color":"yellow","bold":true},{"selector":"@a[tag=Kim1]","bold":false},{"text":": ","color":"white","bold":false},{"score":{"name":"#1","objective":"kills_in_match"},"color":"aqua","bold":false},{"text":"kills","color":"aqua","bold":false},{"text":"  (","color":"white","bold":false},{"text":"tot.","color":"aqua","bold":false},{"score":{"objective":"TotalKill","name":"@a[tag=Kim1]"},"color":"yellow","bold":false},{"text":")","color":"white","bold":false}]

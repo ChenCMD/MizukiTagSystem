@@ -1,2 +1,2 @@
-execute if entity @s[team=Hunter,level=0,nbt=!{ActiveEffects:[{Id:27b}]}] at @s unless entity @e[distance=..20,tag=PrisonPos] run function system:skill/hunter/territory_totem/set
-execute if entity @s[team=Hunter,level=0,nbt=!{ActiveEffects:[{Id:27b}]}] at @s if entity @e[distance=..20,tag=PrisonPos] run tellraw @s [{"text":"[エラー] ","color":"red"},{"text":"牢獄が20m以内に存在するため設置出来ません","color":"red"}]
+execute if entity @s[team=Hunter,nbt=!{ActiveEffects:[{Id:27b}]},level=0] at @s unless entity @e[tag=PrisonPos,distance=..20] run function system:skill/hunter/territory_totem/set
+execute if entity @s[team=Hunter,nbt=!{ActiveEffects:[{Id:27b}]},level=0] at @s if entity @e[tag=PrisonPos,distance=..20] run tellraw @s [{"text":"[エラー] ","color":"red"},{"text":"牢獄が20m以内に存在するため設置出来ません","color":"red"}]

@@ -26,8 +26,8 @@ execute if entity @s[tag=Escape] run playsound minecraft:block.anvil.place block
 ##パーティクル
 scoreboard players add @s TrapParticle 1
 execute if entity @s[scores={TrapParticle=6..}] run particle minecraft:dust 0.9725 0.9490 0.9451 1 ~1 ~1 ~1 0.3 0.35 0.3 1 1
-execute if entity @s[scores={TrapParticle=6..},tag=Hunter] run particle minecraft:barrier ~1 ~ ~1 0 0 0 0 1 force @a[team=Hunter]
-execute if entity @s[scores={TrapParticle=6..},tag=Escape] run particle minecraft:barrier ~1 ~ ~1 0 0 0 0 1 force @a[team=Escape]
+execute if entity @s[tag=Hunter,scores={TrapParticle=6..}] run particle minecraft:barrier ~1 ~ ~1 0 0 0 0 1 force @a[team=Hunter]
+execute if entity @s[tag=Escape,scores={TrapParticle=6..}] run particle minecraft:barrier ~1 ~ ~1 0 0 0 0 1 force @a[team=Escape]
 execute if entity @s[scores={TrapParticle=6..}] run scoreboard players reset @s TrapParticle
 
 #トラップ消去

@@ -1,1 +1,1 @@
-execute if entity @s[team=Hunter,level=0,nbt=!{ActiveEffects:[{Id:27b}]}] run function system:skill/hunter/flash_marking/set
+execute if entity @s[team=Hunter,nbt=!{ActiveEffects:[{Id:27b}]},level=0] run function system:skill/hunter/flash_marking/set
