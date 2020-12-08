@@ -15,7 +15,7 @@ execute if entity @e[tag=SM,scores={UseRuleSelect=3}] if entity @s[team=Escape] 
 execute if entity @e[tag=SM,scores={UseRuleSelect=3}] if entity @s[team=Escape] if entity @a[team=Died] run effect give @a[team=Died] minecraft:luck 10 0 true
 execute if entity @e[tag=SM,scores={UseRuleSelect=3}] if entity @s[team=Escape] if entity @a[team=Died] run scoreboard players set @a[team=Died] InvisibleArmor 200
 execute if entity @e[tag=SM,scores={UseRuleSelect=3}] if entity @s[team=Escape] if entity @a[team=Died] run function system:main/chunk_load/rs
-execute if entity @e[tag=SM,scores={UseRuleSelect=3}] if entity @s[team=Escape] if entity @a[team=Died] as @a[team=Died] at @s run tp @s @e[tag=RandSpawn,limit=1,type=armor_stand,sort=random]
+execute if entity @e[tag=SM,scores={UseRuleSelect=3}] if entity @s[team=Escape] if entity @a[team=Died] as @a[team=Died] at @s run tp @s @e[type=armor_stand,tag=RandSpawn,sort=random,limit=1]
 execute if entity @e[tag=SM,scores={UseRuleSelect=3}] if entity @s[team=Escape] if entity @a[team=Died] run team join Escape @a[team=Died]
 
 execute if entity @s[team=Hunter] run tellraw @a [{"text":"[ダイス]","color":"dark_red","bold":true},{"text":" 60秒間脱獄不可能になった！","color":"aqua","bold":false}]

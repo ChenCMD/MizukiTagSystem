@@ -1,2 +1,2 @@
-execute if entity @e[tag=SM,tag=!SpeedBan] if entity @s[team=Escape,level=0,nbt=!{ActiveEffects:[{Id:27b}]}] run function system:skill/escape/speed/set
+execute if entity @e[tag=SM,tag=!SpeedBan] if entity @s[team=Escape,nbt=!{ActiveEffects:[{Id:27b}]},level=0] run function system:skill/escape/speed/set
 execute if entity @e[tag=SM,tag=SpeedBan] run tellraw @s [{"text":"[エラー] このスキルは現在使用不可です","color":"red"}]

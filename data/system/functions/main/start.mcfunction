@@ -72,8 +72,8 @@ scoreboard players set @a[team=Escape] Health 100
 #全員TP
 function system:main/chunk_load/esp
 function system:main/chunk_load/hsp
-execute as @a[team=Escape] run tp @s @e[sort=random,tag=EscapeSpawnPoint,limit=1]
-execute as @a[team=Hunter] run tp @s @e[sort=random,tag=HunterSpawnPoint,limit=1]
+execute as @a[team=Escape] run tp @s @e[tag=EscapeSpawnPoint,sort=random,limit=1]
+execute as @a[team=Hunter] run tp @s @e[tag=HunterSpawnPoint,sort=random,limit=1]
 #スタートフラグ設定
 tag @s add GameStartCount
 #ゲーム中フラグ
